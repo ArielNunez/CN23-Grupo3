@@ -21,4 +21,4 @@
     - Santiago Bullrich: Apasionado por la música, el diseño y el marketing digital.
     - Ariel Nuñez: Misionero, hincha de River y amiguero. Aprendiz de cosas.
     - Nina Samartin: Estudiante de Ingeniería en Sistemas. Me gusta mucho el cine y tocar la guitarra.
-    - Eugenia Porretti: amante de los viajes, la música y la lógica!
+    - Eugenia Porretti: amante de los viajes, la música y la lógica.
