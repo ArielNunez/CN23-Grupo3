@@ -22,3 +22,5 @@
     - Ariel Nuñez: Misionero, hincha de River y amiguero. Aprendiz de cosas.
     - Nina Samartin: Estudiante de Ingeniería en Sistemas. Me gusta mucho el cine y tocar la guitarra.
     - Eugenia Porretti: amante de los viajes, la música y la lógica.
+    
+- Tablero de trabajo: https://trello.com/b/tvRqxLq4/championes 
