@@ -1,9 +1,3 @@
-# Sprint 1 - CN 23 Grupo 3
-
-### Requisitos Obligatorios:
-
-1. [Link de Repositorio grupal] (../ArielNunez/CN23-Grupo3)
-2. Requisitos archivo README.md
 - Temática del sitio: 
     - Página web de E-Comerce para un emprendimiento de venta de calzado multimarca.
 - Público Objetivo:
