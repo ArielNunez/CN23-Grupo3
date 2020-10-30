@@ -1,0 +1,22 @@
+{
+  "name": "cn23-grupo3",
+  "version": "1.0.0",
+  "description": "- Temática del sitio: \r     - Página web de E-Comerce para un emprendimiento de venta de calzado multimarca.\r - Público Objetivo:\r     - Hombres y mujeres entre los 18 y 55 años que utilicen un estilo urbano de vestimenta para el día a día. \r     - Deportistas amateurs o personas que aunque no practiquen deportes prefieren este tipo de calzado para uso urbano.",
+  "main": "./src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArielNunez/CN23-Grupo3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArielNunez/CN23-Grupo3/issues"
+  },
+  "homepage": "https://github.com/ArielNunez/CN23-Grupo3#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
