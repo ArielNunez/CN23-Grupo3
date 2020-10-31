@@ -1,9 +1,3 @@
-# Sprint 1 - CN 23 Grupo 3
-
-### Requisitos Obligatorios:
-
-1. [Link de Repositorio grupal] (../ArielNunez/CN23-Grupo3)
-2. Requisitos archivo README.md
 - Temática del sitio: 
     - Página web de E-Comerce para un emprendimiento de venta de calzado multimarca.
 - Público Objetivo:
@@ -22,3 +16,5 @@
     - Ariel Nuñez: Misionero, hincha de River y amiguero. Aprendiz de cosas.
     - Nina Samartin: Estudiante de Ingeniería en Sistemas. Me gusta mucho el cine y tocar la guitarra.
     - Eugenia Porretti: amante de los viajes, la música y la lógica.
+    
+- Tablero de trabajo: https://trello.com/b/tvRqxLq4/championes 
