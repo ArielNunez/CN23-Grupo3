@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* =============== 
+- General
+================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto';
+    font-weight: 400;
+}
+
+/* =============== 
+- Header
+================= */
+
+header {
+    background: #000;
+    padding: 9px 79.96px 12.43px 22.25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav {
+    padding: 0;
+}
+
+header div.menu1 img {
+    width: 87.09px;
+    height: 90.01;
+} 
+
+header div nav.nav1 ul {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 550px;
+    padding: 0;
+    margin-left: 52px;
+}
+
+header div nav.nav2 ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 206px;
+    padding: 0;
+}
+
+header div nav ul li {
+    display: inline-block;
+}
+
+header div nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+main {
+    height: 842px;
+}
+
+/* =============== 
+- Footer
+================= */
+
+footer {
+    height: 253px;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 36.21px 74px 14px 56px;
+}
+
+footer div.info {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+footer div img[alt="logo"] {
+    width: 160px;
+}
+
+footer div div.menu3 ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+    height: 100%;
+}
+
+
+footer div div.menu3 ul li a {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 16px;
+}
+
+footer div div.menu4 p {
+    color: #FFF;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+footer div div.menu4 ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+footer div div.menu4 ul li {
+    display: inline-block;
+}
+
+footer small {
+    align-self: center;
+}
