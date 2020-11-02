@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/productCart.css">
 </head>
 <body>
     <header>
@@ -30,7 +31,62 @@
         </div>
     </header>
     <main>
-
+        <h1>Carrito de compras</h1>
+        <div class="contenedor">
+            <div class="carrito">
+                <div class="producto">
+                    <h3>Producto</h3>
+                    <div>
+                        <img src="https://www.dressinn.com/f/125/1252953/vans-old-skool.jpg" alt="producto">
+                        <div>
+                            <p>Zapatillas Vans Original</p>
+                            <p class="talle">Talle:38</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="precio">
+                    <h3>Precio</h3>
+                    <p>$7.999</p>
+                </div>
+                <div class="cantidad">
+                    <h3>Cant.</h3>
+                    <input type="text" name="cantidad">
+                </div>
+                <div class="subtotal">
+                    <h3>Subtotal</h3>
+                    <p>$7.999</p>
+                </div>
+                <div class="eliminar">
+                    <h3>Eliminar</h3>
+                    <img src="/img/tacho-de-basura.svg" alt="">
+                </div>
+            </div>
+            <div class="resumen">
+                <h3>Resumen</h3>
+                <div class="datosProducto">
+                    <p>1x</p>
+                    <div>
+                        <p>Zapatillas Vans Original</p>
+                        <p class="talle">Talle:38</p>
+                    </div>
+                    <p>$7.999</p>
+                </div>
+                <p>¿Tenés un cupón de descuento?</p>
+                <form>
+                    <input type="text" name="cupon">
+                    <button type="submit">Aplicar Cupón</button>
+                </form>
+                <div>
+                    <p>Subtotal</p>
+                    <p>$7.999</p>
+                </div>
+                <div>
+                    <p>Total</p>
+                    <p>$7.999</p>
+                </div>
+            </div>
+        </div>
+        
     </main>
     <footer>
         <div class="info">
