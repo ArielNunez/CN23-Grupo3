@@ -10,6 +10,8 @@ app.get('/detalle-producto', (req, res) => res.sendFile(path.join(__dirname, './
 
 app.get('/carrito-de-compras', (req, res) => res.sendFile(path.join(__dirname, './views/productCart.html')));
 
-app.get('/registro-ingreso', (req, res) => res.sendFile(path.join(__dirname, './views/register.html')));
+app.get('/ingresar', (req, res) => res.sendFile(path.join(__dirname, './views/login.html')));
+
+app.get('/registro', (req, res) => res.sendFile(path.join(__dirname, './views/register.html')));
 
 app.listen(3000, () => console.log('El servidor está corriendo en el puerto 3000'));
