@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar/Registrarme</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+    <header>
+        <div class="menu1">
+            <a href="#"><img src="/design/logo/championes-logo.svg" alt="logo del sitio"></a>
+            <nav class="nav1">
+                <ul>
+                    <li><a href="#">Calzado urbano</a></li>
+                    <li><a href="#">Calzado deportivo</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="menu2">
+            <nav class="nav2">
+                <ul>
+                    <li><a href="#"><img src="/img/carrito.svg" alt=""></a></li>
+                    <li><a href="#">Registro / Ingreso</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Registrarme</h2>
+
+            <div class="row">
+                <ul>
+                    <li class="inicio"><a href="/ingresar">Iniciar Sesión</a></li>
+                    <li class="registro"><a href="#">Registrarme</a></li>
+                </ul>     
+            </div>
+
+            <form action="" method="POST">
+                <div class="datos">
+                    <div class="col-uno">
+                        <div class="nombre">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="nombre" id="nombre">
+                        </div>
+                        <div class="nacimiento">
+                            <label for="nacimiento">Fecha de nacimiento</label>
+                            <input type="date" name="nacimiento" id="nacimiento">
+                        </div>
+                        <div class="email">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email">
+                        </div>
+                        <div class="pass">
+                            <label for="pass">Contraseña</label>
+                            <input type="password" name="pass" id="pass">
+                        </div>
+                    </div>
+                    <div class="col-dos">
+                        <div class="apellido">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" name="apellido" id="apellido">
+                        </div>
+                        <div class="dni">
+                            <label for="dni">DNI</label>
+                            <input type="number" name="dni" id="dni">
+                        </div>
+                        <div class="confmail">
+                            <label for="confEmail">Confirmar email</label>
+                            <input type="email" name="confEmail" id="confEmail">
+                        </div>
+                        <div class="confpass">
+                            <label for="confPass">Confirmar contraseña</label>
+                            <input type="password" name="confPass" id="confPass">
+                        </div>
+                    </div>
+                </div>
+                <div class="fila-cinco"> 
+                    <div class="tyc">                   
+                        <input type="checkbox" name="TyC" value="si" id="TyC">
+                        <label for="TyC"> Acepto las <a href="#">Políticas de Privacidad</a> y <a href="#">Términos y Condiciones</a></label>
+                    </div>
+                    <div class="suscripcion">
+                        <input type="checkbox" name="suscripcion" value="si" id="suscripcion" checked>
+                        <label for="suscripcion">Quiero recibir emails de promociones y noticias.</label>
+                    </div>
+                </div>
+                <button type="button">Crear mi cuenta</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="info">
+            <img src="/design/logo/championes-logo.svg" alt="logo">
+            <div class="menu3">
+                <ul>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">FAQS</a></li>
+                    <li><a href="#">Quiénes somos</a></li>
+                    <li><a href="#">Políticas de privacidad</a></li>
+                </ul>
+            </div>
+            <div class="menu4">
+                <p>Seguinos en las redes!</p>
+                <ul>
+                    <li><a href="#"><img src="/img/logo-facebook.svg" alt="logo de facebook"></a></li>
+                    <li><a href="#"><img src="/img/logo-instagram.svg" alt=""></a></li>
+                    <li><a href="#"><img src="/img/logo-twitter.svg" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+        <small>© 2020 CHAMPIONES</small>
+    </footer>
+</body>
+</html>
