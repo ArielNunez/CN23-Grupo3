@@ -14,7 +14,7 @@ main {
     padding: 70px 91px 160px 60px;
 }
 
-div.contenedor {
+div.container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -23,7 +23,7 @@ div.contenedor {
 
 div.carrito {
     display: flex;
-    flex-grow: 0.95;
+    flex-grow: 0.9;
     justify-content: space-around;
     flex-wrap: wrap;
 }
@@ -38,20 +38,112 @@ div.carrito h3 {
     margin-bottom: 19.4px
 }
 
+div.producto {
+    width: 40%;
+}
+
+div.producto div.detalle {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.detalle > * {
+    margin: 0px 18px;
+}
+
+div.detalle div p:nth-child(1) {
+    padding-bottom: 12px;
+}
+
+div.cantidad #cantidad {
+    width: 52px;
+    height: 31px;
+    border: solid 3px #CCCCCC;
+    font-size: 16px;
+}
+
+div.eliminar button {
+    border: none;
+    background: none;
+}
+
 div.resumen {
     border: solid 3px #CCCCCC;
-    width: 317px;
-    min-height: 487.5px;
+    width: 28%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    position: relative;
+    top: 34px;
+}
+
+div.resumen h3 {
+    padding-bottom: 48px;
+    padding-top: 23px;
 }
 
 div.resumen .datosProducto {
     display: flex;
     justify-content: space-between;
     width: 85%;
+    padding-bottom: 30px;
+}
+
+div.resumen form {
+    padding-top: 28px;
+    padding-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 280px;
+}
+
+div.resumen form input {
+    width: 70%;
+    height: 22.5px;
+}
+
+div.resumen form button:nth-child(2) {
+    width: 50%;
+    height: 22px;
+    background: none;
+    color: #BF488D;
+    border: 1px solid #BF488D;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+div.resumen form div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 55%;
+    justify-content: space-between;
+}
+
+div.resumen form div p {
+    width: 50%;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+}
+
+div.resumen form div p:nth-child(even) {
+    text-align: right;
+}
+
+div.resumen form button:nth-child(4) {
+    width: 72%;
+    height: 30px;
+    background: #BF488D;
+    color: #fff;
+    border: 1px solid #BF488D;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 700;
 }
 
 
