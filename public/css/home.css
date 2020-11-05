@@ -10,6 +10,15 @@ body {
 .banner {
     background-image: url(https://caliroots.com/images/341198/vans-banner-mall.jpg);
     height: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner h1 {
+    color: white;
+    font-size: 46px;
+    text-shadow: 3px 3px 6px black; 
 }
 
 .cuotas-envio {

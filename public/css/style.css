@@ -12,6 +12,7 @@
 body {
     font-family: 'Roboto';
     font-weight: 400;
+    padding-top: 110px;
 }
 
 /* =============== 
@@ -25,6 +26,11 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 99;
 }
 
 header div {
