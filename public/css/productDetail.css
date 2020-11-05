@@ -1,0 +1,149 @@
+/* ======================================
+-----------------General-----------------
+=======================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ======================================
+-----------------Body--------------------
+=======================================*/
+
+body {
+    font-family: "Roboto";
+}
+
+nav.ruta ul li {
+    display: inline-block
+}
+
+nav.ruta ul li a {
+    font-family: "Roboto";
+    font-weight: 400;
+    color: #9E9E9E;
+    text-decoration: none;
+}
+
+div.zapaydescripcion {
+    display: flex;  
+    margin: 92px 99px 92px 92px;
+}
+
+
+div.imagenesZapas div img {
+    width: 397px;
+}
+
+div.imagenesZapas{
+    display: flex;
+    flex-direction: column;
+}
+
+
+div.imagenesZapas div ul li {
+    display: inline-block;
+    justify-content: space-between;
+}
+div.imagenesZapas div ul li img {
+    width: 73px;
+    margin-right: 25px;
+}
+
+div.descripcion {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+div.descripcion h3 {
+    color: #BF488D;
+}
+
+div.descripcion p {
+        font-weight: bold;
+        font-size: 18px;
+}
+div.descripcion div.envios {
+    border-bottom: solid 0.5px #9E9E9E;
+
+}
+
+div div.talles {
+    font-family: "Roboto";
+    font-size: 19px;
+    color: #00182C;
+    ;
+}
+ div ul.talles34al44 li {
+     font-family: "Roboto";
+     color: #00182C;
+     font-size: 16px;
+     border: 3px solid #CCCCCC;
+     display: inline-block;
+     margin-right: 10px;
+
+ }
+
+ div.agregarCarrito {
+     display: inline-block;
+ }
+ 
+ div.agregarCarrito p {
+     font-size: 17px;
+     font-weight: bold;
+     display: inline-block;
+     border: 3px solid #BF488D;
+     color: #BF488D;
+     padding: 0px 20px 0px 20px;
+     margin: 0px 12px 0px 12px;
+}
+
+div.agregarCarrito select {
+    font-weight: 700;
+}
+
+div.agregarCarrito p:nth-child(4) {
+    background-color: #BF488D;
+    color: #FFF;
+}
+
+div div.lorem {
+    margin: 0px 92px 92px 92px;
+}
+div div.similaresgrande {
+    margin: 0px 92px 0px 92px;
+}
+
+div div ul.similares li img {
+    width: 234px;
+    
+}  
+div div ul.similares li img.flechas {
+    width: 17.49px;
+    border: none;
+    padding-bottom: 100px;
+    display: inline-block;
+}   
+
+div div ul.similares li {
+    display: inline-block;
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 16px;
+    color: #00182C;
+    box-shadow: 4px 3px 5px 0px rgba(153,153,153,1);
+    padding: 0px 12px 0px 12px;
+}
+
+div div ul.similares li p {
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: 700;
+    color: #BF488D  ;
+}
