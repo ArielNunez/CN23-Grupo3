@@ -7,8 +7,14 @@ body {
     font-family: "Roboto";
 }
 
+/* ============
+    BANNER
+===============*/
+
 .banner {
-    background-image: url(https://caliroots.com/images/341198/vans-banner-mall.jpg);
+    background-image: url(https://cdn.shopify.com/s/files/1/1342/3335/files/vans_image_banner_02.jpg?v=1485461227);
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 340px;
     display: flex;
     justify-content: center;
@@ -21,6 +27,9 @@ body {
     text-shadow: 3px 3px 6px black; 
 }
 
+/* ============
+    BANNER 2
+===============*/
 .cuotas-envio {
     height: 54px;
     background-color: #BF488D;
@@ -40,8 +49,11 @@ body {
     margin-right: 20px;
 }
 
+/* ============
+    NOVEDADES
+===============*/
 .novedades h2 {
-    margin-top: 40px;
+    padding-top: 40px;
     text-align: center;
     font-size: 32px;
 }
@@ -52,6 +64,10 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
 }
+
+/* =================
+    CAJA PRODUCTO
+===================*/
 
 .producto {
     padding: 15px;
@@ -85,6 +101,10 @@ body {
 
 }
 
+/* ============
+    BUTTONS
+===============*/
+
 .button {
     margin-top: 80px;
     display: flex;
@@ -103,23 +123,30 @@ body {
     margin-bottom: 40px;
 }
 
+/* ============
+    OFERTAS
+===============*/
+
 .ofertas {
     background-color:#E8E8E8;
 }
 
 .ofertas h2 {
-    position: relative;
-    top: 40px;
+    padding-top: 40px;
     text-align: center;
     font-size: 32px;
 }
 
 .listado-ofertas {
-    margin-top: 100px;
+    margin-top: 60px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
+
+/* ================
+    BANNER LOGOS
+===================*/
 
 .marcas {
     height: 100px;
@@ -132,12 +159,6 @@ body {
 
 }
 
-.todoslosproductos h2 {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 32px;
-}
-
 .logos {
     display: flex;
     justify-content: center;
@@ -147,3 +168,14 @@ body {
     height: 40px;
     padding: 0px 20px 0px 20px;
 }
+
+/* =======================
+    TODOS LOS PRODUCTOS
+========================*/
+
+.todoslosproductos h2 {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 32px;
+}
+
