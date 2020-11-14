@@ -14,4 +14,5 @@ app.get('/ingresar', (req, res) => res.sendFile(path.join(__dirname, './views/lo
 
 app.get('/registro', (req, res) => res.sendFile(path.join(__dirname, './views/register.html')));
 
-app.listen(3000, () => console.log('El servidor está corriendo en el puerto 3000'));
+app.listen(3000, function() {console.log('El servidor está corriendo en el puerto 3000')
+console.log('http://localhost:3000/')});
