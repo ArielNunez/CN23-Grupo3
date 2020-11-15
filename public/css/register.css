@@ -97,7 +97,6 @@ form div.fila-cinco {
 
 form div.fila-cinco div {
     display: flex;
-    flex-wrap: wrap;
     padding-top: 15px;
 }
 
@@ -130,7 +129,29 @@ form button {
 
 @media(max-width: 426px) {
     main {
-        margin: 0px;
+        margin: 35px 0px;
     }
     
+    form div.datos div {
+        flex-direction: column;
+    }
+
+    form div.datos div div {
+        width: auto;
+    }
+
+    form div.fila-cinco {
+        width: 80%;
+    }
+
+    form div.fila-cinco div input {
+        height: auto;
+        width: auto;
+        margin: 2px;
+        align-self: auto;
+    }
+
+    form button {
+        width: 80%;
+    }
 }
