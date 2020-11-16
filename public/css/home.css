@@ -13,6 +13,7 @@ body {
 
 .banner {
     background-image: url(https://cdn.shopify.com/s/files/1/1342/3335/files/vans_image_banner_02.jpg?v=1485461227);
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 340px;
@@ -88,6 +89,7 @@ body {
 }
 .producto img {
     height:160px;
+    max-width: 100%;
 }
 
 .producto h5 {
@@ -179,3 +181,57 @@ body {
     font-size: 32px;
 }
 
+/* =======================
+        RESPONSIVE
+========================*/
+
+@media (max-width: 500px) {
+    .banner {
+        height: 145px;
+    }
+    .banner h1 {
+        font-size: 34px;
+        margin-left: 35px;
+    }
+    .cuotas-envio {
+        font-size: 12px;
+        height: 35px;
+    }
+    #textotarjeta {
+        margin-right: 5px;
+    }
+    #textoenvio {
+        margin-left: 5px;
+    }
+    .listado-novedades {
+        margin-top: 30px;
+    }
+    .listado-ofertas {
+        margin-top: 30px;
+    }
+    .producto {
+        width: 40%;
+        margin-top: 20px;
+    }
+    .button {
+        margin-top: 50px;
+    }
+    #button {
+        font-size: 14px;
+    }
+    .novedades h2 {
+        font-size: 30px;
+    }
+    .ofertas h2 {
+        font-size: 30px;
+    }
+    .todoslosproductos h2 {
+        font-size: 30px;
+    }
+    .marcas {
+        height: 70px;
+    }
+    .logos img {
+        height: 30px;
+    }
+}

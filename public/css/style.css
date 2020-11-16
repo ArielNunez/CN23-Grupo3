@@ -116,7 +116,7 @@ footer div div.menu3 ul {
 }
 
 
-footer div div.menu3 ul li a {
+footer div div.menu3 ul li a  {
     text-decoration: none;
     color: #FFF;
     font-size: 16px;
@@ -142,4 +142,82 @@ footer small {
     align-self: center;
     color: #828282;
     font-size: 10px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 500px) {
+    header {
+        padding-right: 20px;
+        padding-left: 10px;
+        width: 100%;
+    }
+    body {
+        padding-top: 75px;
+        max-width: 100%;
+    }
+    header div nav.nav1 ul {
+        display: none;
+    }
+    .nav2 #registrarse {
+        font-size: 10px;
+        margin-left: 5px;
+    }
+    .menu1 img {
+        height: 50px;
+    }
+    header div nav.nav2 ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: auto;
+        padding: 0;
+    }
+    .burger {
+        margin-left: 70px;
+        color: white;
+        background-color: black;
+        border-color: white;
+        border-radius: 3px;
+        font-size: 18px;
+    }
+    footer {
+        height: 200px;
+        padding: 0;
+    }
+
+    footer div img[alt="logo"] {
+        height: 50px;
+    }
+
+    .menu3 {
+        align-self: center;
+    }
+
+    .menu4 {
+        margin-right: 30px;
+    }
+
+    footer div div.menu3 ul li a {
+        font-size: 10px;
+    }
+
+    footer div div.menu4 p {
+        font-size: 10px;
+    }
+
+    footer div div.menu4 ul li a img {
+        width: 20px;
+    }
+
+    footer small {
+        font-size: 8px;
+    }
+
+}
+
+@media (min-width: 501px) {
+    .burger {
+        display: none;
+    }
 }
