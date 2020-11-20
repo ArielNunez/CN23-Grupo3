@@ -87,15 +87,17 @@ div div.talles {
 }
  div ul.talles34al44 li {
      font-family: "Roboto";
-     color: #00182C;
+     font-weight: 400;
      font-size: 16px;
+     line-height: 19px;
+     color: #00182C;
      border: 3px solid #CCCCCC;
      display: inline-block;
      margin-right: 10px;
 
  }
 
- div.agregarCarrito {
+ div.agregarCarrito div {
      display: inline-block;
  }
  
@@ -109,11 +111,11 @@ div div.talles {
      margin: 0px 12px 0px 12px;
 }
 
-div.agregarCarrito select {
+div.agregarCarrito div select {
     font-weight: 700;
 }
 
-div.agregarCarrito p:nth-child(4) {
+div.agregarCarrito p:nth-child(3) {
     background-color: #BF488D;
     color: #FFF;
 }
@@ -152,3 +154,118 @@ div div ul.similares li p {
     font-weight: 700;
     color: #BF488D  ;
 }
+
+
+
+/* =======================
+        RESPONSIVE
+========================*/
+
+@media (max-width: 500px) {
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    div.zapaydescripcion {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    div.descripcion {
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+    }
+    
+    main div.zapasydescripcion div.imagenesZapas{
+        display: flex;
+        margin-left: 0px;
+    }
+    main div.zapasydescripcion div.imagenesZapas img {
+        width: 460px;
+    }
+    div.imagenesZapas div ul {
+        margin-left: 30px;
+    }
+    
+    div.imagenesZapas div ul li img {
+        width: 51.69px;
+    }
+
+    div.descripcion {
+        margin-top: 23px;
+    }
+
+    div.envios h1 {
+        font-size: 26px;
+    }
+    div.envios h3 {
+        font-weight: 700;
+        font-size: 22px;
+    }
+
+    div.envios p {
+        font-size: 14px;
+    }
+
+    div div.talles {
+        font-size: 16px;
+    }
+    div ul.talles34al44 li {
+        font-size: 12px;
+    }
+
+    div.agregarCarrito  div{
+        font-weight: 700;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    div.agregarCarrito p {
+        display: flex;
+        justify-content: stretch;
+        align-self: center;
+        margin: 20px 0px 10px 0px;
+    }
+    div div.lorem {
+        margin: 40px;
+    }
+
+    div div.similaresgrande {
+        margin: 40px;
+        
+    }
+    div div.similaresgrande h2 {
+        display: flex;
+        text-align: center;
+        font-size: 20px;
+    }
+    div.similaresconflechas {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0px;
+    }
+
+    div.similaresconflechas ul.similares li {
+        padding: 0px;
+        margin-bottom: 5px;
+        box-shadow: none;
+    }
+
+    div.similaresconflechas ul.similares li img {
+        display: flex; 
+        flex-wrap: wrap;
+        width: 172px;
+        
+    }
+
+    div.similaresconflechas ul.similares li div img.flechas {
+        width: 10.79px;
+    }
+
+    }
