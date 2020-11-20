@@ -2,17 +2,18 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+const mainRouter = require('./routes/main');
+const productsRouter = require('./routes/products');
+const usersRouter = require('./routes/users');
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, './views'));
+
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, './views/index.html')));
-
-app.get('/detalle-producto', (req, res) => res.sendFile(path.join(__dirname, './views/productDetail.html')));
-
-app.get('/carrito-de-compras', (req, res) => res.sendFile(path.join(__dirname, './views/productCart.html')));
-
-app.get('/ingresar', (req, res) => res.sendFile(path.join(__dirname, './views/login.html')));
-
-app.get('/registro', (req, res) => res.sendFile(path.join(__dirname, './views/register.html')));
+app.use('/', mainRouter);
+app.use('/productos', productsRouter);
+app.use('/usuario', usersRouter);
 
 app.listen(3000, function() {console.log('El servidor está corriendo en el puerto 3000')
 console.log('http://localhost:3000/')});
