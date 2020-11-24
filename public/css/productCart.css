@@ -1,8 +1,8 @@
-h1 {
+h2 {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 32px;
-    padding-bottom: 38px;
+    font-size: 26px;
+    padding-bottom: 30px;
 }
 
 h3 {
@@ -44,7 +44,6 @@ div.producto {
 
 div.producto div.detalle {
     display: flex;
-    flex-wrap: wrap;
 }
 
 div.detalle > * {
@@ -65,6 +64,7 @@ div.cantidad #cantidad {
 div.eliminar button {
     border: none;
     background: none;
+    padding-left: 20px;
 }
 
 div.resumen {
@@ -88,6 +88,10 @@ div.resumen .datosProducto {
     justify-content: space-between;
     width: 85%;
     padding-bottom: 30px;
+}
+
+div.resumen .datosProducto p.num {    
+    padding-right: 10px;
 }
 
 div.resumen form {
@@ -148,10 +152,36 @@ div.resumen form button:nth-child(4) {
 
 
 img[alt="producto"] {
-    width: 54px;
+    height: 15vh;;
 }
 
 .talle {
     text-transform: uppercase;
     font-size: 12px;
+}
+
+
+@media(max-width: 426px) {
+
+    h2 {
+        text-align: center;
+    }
+
+    main {
+        padding: 78px 10px 160px 10px;
+    }
+
+    div.container {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    div.carrito {
+        flex-direction: column;
+    }
+
+    div.resumen {
+        align-self: center;
+        width: 85%;
+    }
 }
