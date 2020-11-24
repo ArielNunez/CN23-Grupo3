@@ -9,25 +9,7 @@
 </head>
 <body>
     <header>
-        <div class="menu1">
-            <a href="/"><img src="/design/logo/championes-logo.svg" alt="logo del sitio"></a>
-            <nav class="nav1">
-                <ul>
-                    <li><a href="#">Calzado urbano</a></li>
-                    <li><a href="#">Calzado deportivo</a></li>
-                    <li><a href="#">Ofertas</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="menu2">
-            <nav class="nav2">
-                <ul>
-                    <li><a href="/productos/carrito-de-compras"><img src="/img/carrito.svg" alt=""></a></li>
-                    <li><a href="/usuario/ingresar">Ingreso / Log in</a></li>
-                </ul>
-            </nav>
-        </div>
+        <%- include("../partials/header") %>
     </header>
 
     <main>
@@ -100,26 +82,7 @@
     </main>
 
     <footer>
-        <div class="info">
-            <img src="/design/logo/championes-logo.svg" alt="logo">
-            <div class="menu3">
-                <ul>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="#">FAQS</a></li>
-                    <li><a href="#">Quiénes somos</a></li>
-                    <li><a href="#">Políticas de privacidad</a></li>
-                </ul>
-            </div>
-            <div class="menu4">
-                <p>Seguinos en las redes!</p>
-                <ul>
-                    <li><a href="#"><img src="/img/logo-facebook.svg" alt="logo de facebook"></a></li>
-                    <li><a href="#"><img src="/img/logo-instagram.svg" alt=""></a></li>
-                    <li><a href="#"><img src="/img/logo-twitter.svg" alt=""></a></li>
-                </ul>
-            </div>
-        </div>
-        <small>© 2020 CHAMPIONES</small>
+        <%- include("../partials/footer") %>
     </footer>
 </body>
 </html>
