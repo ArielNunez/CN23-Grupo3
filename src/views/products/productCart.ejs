@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de compras</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <title>Carrito de compras</title>    
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/productCart.css">
 </head>
@@ -14,53 +13,49 @@
     </header>
 
     <main>
-        <h1>Carrito de compras</h1>
+        <h2>MI CARRITO</h2>
         <div class="container">
             <div class="carrito">
-                <div class="producto">
-                    <h3>Producto</h3>
-                    <div class="detalle">
+                <div class="sin-sub">
+                    <div class="imagen">
                         <img src="https://www.dressinn.com/f/125/1252953/vans-old-skool.jpg" alt="producto">
-                        <div>
-                            <p>Zapatillas Vans Original</p>
-                            <p class="talle">Talle:38</p>
-                        </div>
                     </div>
-                </div>
-                <div class="precio">
-                    <h3>Precio</h3>
-                    <p>$7.999</p>
-                </div>
-                <div class="cantidad">
-                    <h3>Cant.</h3>
-                    <select name="cantidad" id="cantidad">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div>
-                <div class="subtotal">
-                    <h3>Subtotal</h3>
-                    <p>$7.999</p>
-                </div>
-                <div class="eliminar">
-                    <h3>Eliminar</h3>
-                    <form action="">
-                        <button><img src="/img/tacho-de-basura.svg" alt=""></button>
-                    </form>
-                </div>
+                    <div class="detalle">
+                        <h3>Zapatillas Vans Original</h3>
+                        <div class="talle">
+                            <h6>Talle:</h6>
+                            <p>38</p>
+                        </div>
+                        <div class="cantidad">
+                            <h6>Cantidad:</h6>
+                            <select name="cantidad" id="cantidad">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="precio">
+                            <h6>Precio:</h6>
+                            <p>$10.000</p>
+                        </div>
+                        <form action="">
+                                <button><i class="fas fa-trash-alt"></i></button>
+                        </form>                    
+                    </div>
+                </div>   
+                <p class="subtotal">$10.000</p>                
             </div>
             <div class="resumen">
                 <h3>Resumen</h3>
                 <div class="datosProducto">
-                    <p>1x</p>
+                    <p class="num">1x</p>
                     <div>
                         <p>Zapatillas Vans Original</p>
                         <p class="talle">Talle:38</p>
                     </div>
-                    <p>$7.999</p>
+                    <p>$10.000</p>
                 </div>
                 <p>¿Tenés un cupón de descuento?</p>
                 <form>
@@ -68,16 +63,16 @@
                     <button type="submit">Aplicar Cupón</button>
                     <div>
                         <p>Subtotal</p>
-                        <p>$7.999</p>
+                        <p>$10.000</p>
                         <p>Total</p>
-                        <p>$7.999</p>
+                        <p>$10.000</p>
                     </div>
                     <button type="submit">Comprar</button>
                 </form>
             </div>
         </div>
-        
     </main>
+
     <footer>
         <%- include("../partials/footer") %>
     </footer>
