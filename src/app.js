@@ -18,5 +18,7 @@ app.use('/', mainRouter);
 app.use('/productos', productsRouter);
 app.use('/usuario', usersRouter);
 
-app.listen(3000, function() {console.log('El servidor está corriendo en el puerto 3000')
-console.log('http://localhost:3000/')});
+app.listen(process.env.PORT || 3000, function() {
+    console.log(`Servidor corriendo en el puerto 3000`) 
+
+})
