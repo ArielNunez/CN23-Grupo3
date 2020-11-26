@@ -6,6 +6,9 @@ const mainRouter = require('./routes/main');
 const productsRouter = require('./routes/products');
 const usersRouter = require('./routes/users');
 
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './views'));
 
