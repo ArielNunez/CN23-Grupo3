@@ -13,18 +13,27 @@
     </header>
     <main>
     <section class="principal">
-    <div><h1>Creación de Producto</h1></div>
+    <div>
+        <h1>Creación de Producto</h1>
+    </div>
     <div class="formulario">
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
+            <div class="nombreProducto">
+                <label for="idproducto">Id del producto</label>
+                <input type="number" name="idproducto" id="idproducto">
+            </div>
             <div class="nombreProducto">
                 <label for="nombre">Nombre del Producto</label>
-                <input type="text" name="nombre" id="nombre"></div>
+                <input type="text" name="producto" id="nombre">
+            </div>
             <div class="descripcionProducto">
                     <label for="descripcion">Descripcion del Producto</label>
-                    <input type="text" name="descripcion" id="descripcion"></div>
+                    <input type="text" name="descripcion" id="descripcion">
+            </div>
             <div class="imagen">
                         <label for="">Imagen del producto</label>
-                        <input type="file" name="imagen" id="imagen"></div>
+                        <input type="file" name="imagen" id="imagen">
+            </div>
             <div class="categoria">
                             <label for="categoria">Categoría</label>
                             <select name="categoria" id="categoria">
@@ -33,10 +42,12 @@
                                 <option value="Calzado Mujer">Calzado Mujer</option>
                                 <option value="Calzado Hombre">Calzado Hombre</option>
                                 <option value="Calzado Niño">Calzado Niño</option>
-                        </select></div>
+                        </select>
+                    
+            </div>
             <div class="talles">
                             <label for="talles">Talle</label>
-                            <select name="talles" id="talles">
+                            <select name="talle" id="talles">
                                 <option value="34">34</option>
                                 <option value="35">35</option>
                                 <option value="36">36</option>
@@ -47,16 +58,16 @@
                                 <option value="41">41</option>
                                 <option value="42">42</option>
                             </select>
-                        </div>
+            </div>
             <div class="precio">
                             <label for="precio">Precio del Producto</label>
                             <input type="number" name="precio" id="precio">
-                    </div>
-            <button type="submit">Crear Producto</button>
-                </div>
             </div>
+            <div class="button">
+                <a href=""><button id="button" type="submit">Crear Producto</button></a>
+            </div>
+                </div>
         </form>
-    </div>
 </section>
 </main>
     <footer>

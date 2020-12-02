@@ -15,9 +15,19 @@ module.exports = {
         res.render('../views/products/productCreation');
     },
     crearProducto: function(req, res) {
-        productosGuardados.push(req.body);
+        let nuevoProducto = {
+            id: req.body.idproducto,
+            producto: req.body.producto,
+            descripcion: req.body.descripcion,
+            imagen: req.file,
+            categoria: req.body.categoria,
+            talle: req.body.talle,
+            precio: req.body.precio,
+
+        }
+        productosGuardados.push(nuevoProducto);
         fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productosGuardados, null, 4));
-        return res.send("Producto cargado con éxito");
+        return res.redirect("/productos/crear");
     }
     
 }

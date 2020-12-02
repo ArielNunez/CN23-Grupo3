@@ -37,6 +37,31 @@ section.principal div.formulario  form div{
     padding: 5px
 }
 
+.button {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#button {
+    background-color: #BF488D;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    width: 100%;
+    
+}
+
+#button:hover {
+    filter: brightness(110%);
+}
+
 @media (max-width: 500px) {
 
     * {
@@ -50,3 +75,4 @@ section.principal div.formulario  form div{
         justify-content: center;
         margin: 20px;
     }
+}
