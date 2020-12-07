@@ -5,11 +5,11 @@
     - Deportistas amateurs o personas que aunque no practiquen deportes prefieren este tipo de calzado para uso urbano.
 
 - Listado de páginas referentes:
-    - [Converse Argentina] (https://www.converse.com.ar/ "Converse Home Page")
-    - [Dr. Martens Argentina] (https://www.drmartens.com/ar/es_ar/ "Dr. Martens Home Page")
-    - [Stock Center Argentina] (https://www.stockcenter.com.ar/home "Stock Center Home Page")
-    - [Solo Deportes] (https://www.solodeportes.com.ar/ "Solo Deportes Home Page")
-    - [JD Sports España] (https://www.jdsports.es/ "JD Sports Home Page")
+    - Converse Argentina (https://www.converse.com.ar/ "Converse Home Page")
+    - Dr. Martens Argentina (https://www.drmartens.com/ar/es_ar/ "Dr. Martens Home Page")
+    - Stock Center Argentina (https://www.stockcenter.com.ar/home "Stock Center Home Page")
+    - Solo Deportes (https://www.solodeportes.com.ar/ "Solo Deportes Home Page")
+    - JD Sports España (https://www.jdsports.es/ "JD Sports Home Page")
 
 - Listado del grupo con una breve descripción de cada uno:
     - Santiago Bullrich: Apasionado por la música, el diseño y el marketing digital.
