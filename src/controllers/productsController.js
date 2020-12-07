@@ -19,11 +19,10 @@ module.exports = {
             id: req.body.idproducto,
             producto: req.body.producto,
             descripcion: req.body.descripcion,
-            imagen: req.file,
+            imagen: req.file.filename,
             categoria: req.body.categoria,
-            talle: req.body.talle,
+            talles: req.body.talle,
             precio: req.body.precio,
-
         }
         productosGuardados.push(nuevoProducto);
         fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productosGuardados, null, 4));
