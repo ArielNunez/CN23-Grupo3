@@ -18,13 +18,18 @@
             <% for (let i = 0; i < productos.length; i++) { %>
                         <div class="product">
                             <a href="/productos/detalle" id="link"></a>
-                            <img src="/img/uploads/productimage/1-1607172935643" alt="">
+                            <img src="/img/uploads/productimage/<%= productos[i].imagen %>" alt="">
                             <h5><%= productos[i].producto %></h5>
                             <p>$<%= productos[i].precio %></p>
                         </div>
+                        
             <% } %>
         </div>
     </main>
+    <footer>
+        <%- include("../partials/footer") %>
+    </footer>
+
     
 </body>
 </html>
