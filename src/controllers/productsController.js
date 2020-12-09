@@ -6,7 +6,12 @@ let productosGuardados = JSON.parse(productos);
 
 module.exports = {
     detalle: function(req,res) {
-        res.render('../views/products/productDetail');
+        for(let i=0; i<productosGuardados.length;i++) {
+            if(req.params.id == productosGuardados[i].id) {
+                return res.render('../views/products/productDetail', {producto: productosGuardados[i]});
+            }
+        }
+        return res.send('Error, producto no encontrado');
     },
     carrito: function(req,res) {
         res.render('../views/products/productCart');

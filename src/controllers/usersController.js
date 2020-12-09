@@ -14,10 +14,10 @@ for(i= 0; i < users.length; i++) {
 
 module.exports = {
     ingresar: function(req,res) {
-        res.render('login');
+        res.render('../views/users/login');
     },
     registro: function(req,res) {
-        res.render('register');
+        res.render('../views/users/register');
     },
     guardar: function(req, res) {
         let newUser = {   
@@ -28,6 +28,7 @@ module.exports = {
             dni: req.body.dni,
             email: req.body.email,
             pass: bcrypt.hashSync(req.body.pass, 10),
+            category: 'user'
         }
 
         users.push(newUser);
