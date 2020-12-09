@@ -37,6 +37,19 @@ section.principal div.formulario  form div{
     padding: 5px
 }
 
+section.principal div.formulario form div.talles div.talles {
+    flex-direction: row;
+}
+
+section.principal div.formulario form div.talles div.talles div {
+    flex-direction: row;
+    align-items: center;
+}
+
+section.principal div.formulario form div.talles div.talles div label {
+    padding-left: 3px;
+}
+
 .button {
     margin-top: 20px;
     display: flex;
