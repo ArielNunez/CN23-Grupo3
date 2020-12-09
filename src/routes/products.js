@@ -21,4 +21,6 @@ router.get('/carrito-de-compras', productsController.carrito);
 router.get('/crear', productsController.crear);
 router.post('/crear', upload.single("imagen"), productsController.crearProducto);
 
+router.get('/all', productsController.allProducts)
+
 module.exports = router;

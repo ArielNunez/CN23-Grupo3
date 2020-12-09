@@ -1,3 +1,56 @@
 [
-    
+    {
+        "id": "1",
+        "producto": "Nike Air Jordan",
+        "descripcion": "El Air Jordan 1 es una de las zapatillas más vendidas de Nike en relación con la practica del baloncesto, desde sus orígenes siempre ha destacado por su gran versatilidad sobre la pista de basket. Adaptándose a diversos estilos de juegos y deslumbrando por su calidad.",
+        "imagen": {
+            "fieldname": "imagen",
+            "originalname": "nikeairjordan.jpeg",
+            "encoding": "7bit",
+            "mimetype": "image/jpeg",
+            "destination": "/Users/Ministro/Desktop/CN23-Grupo3/public/uploads/productimage",
+            "filename": "1-1607172935643.jpeg",
+            "path": "/Users/Ministro/Desktop/CN23-Grupo3/public/uploads/productimage/1-1607172935643.jpeg",
+            "size": 199529
+        },
+        "categoria": "Calzado Urbano",
+        "talle": "40",
+        "precio": "12499"
+    },
+    {
+        "id": "2",
+        "producto": "Dc Crisis",
+        "descripcion": "Características Parte superior de piel, nubuck, ante y/o lona Logo estampado en serigrafía en cuarto Collarín y lengueta acolchonad os con espuma para confort y soporte Forro Spandex para confort adicional Orificios de ventilación para transpirabilidad Plantilla curva de rendimiento Huella cóncava de Patrón Pill de marca registrada DC",
+        "imagen": {
+            "fieldname": "imagen",
+            "originalname": "dccrisis.jpg",
+            "encoding": "7bit",
+            "mimetype": "image/jpeg",
+            "destination": "/Users/Ministro/Desktop/CN23-Grupo3/public/uploads/productimage",
+            "filename": "2-1607173095101.jpg",
+            "path": "/Users/Ministro/Desktop/CN23-Grupo3/public/uploads/productimage/2-1607173095101.jpg",
+            "size": 67640
+        },
+        "categoria": "Calzado Urbano",
+        "talle": "38",
+        "precio": "8999"
+    },
+    {
+        "id": "3",
+        "producto": "Vans Original",
+        "descripcion": "Las Old Skool son las zapatillas clásicas de Vans y el primer modelo en lucir el icónico sidestripe de la marca. Nacieron como un calzado para skaters de los años 70´y con el correr de las décadas se transformó en un modelo básico de lifestyle. Son zapatillas de corte bajo confeccionadas con capellada de canvas, tiene punteras reforzadas para añadir durabilidad, la suela de caucho original Vans Wafflesole y cuello acolchado para ofrecer sujeción y confort.",
+        "imagen": {
+            "fieldname": "imagen",
+            "originalname": "vansoriginal.jpg",
+            "encoding": "7bit",
+            "mimetype": "image/jpeg",
+            "destination": "/Users/Ministro/Desktop/CN23-Grupo3/public/uploads/productimage",
+            "filename": "3-1607173158622.jpg",
+            "path": "/Users/Ministro/Desktop/CN23-Grupo3/public/uploads/productimage/3-1607173158622.jpg",
+            "size": 45346
+        },
+        "categoria": "Calzado Urbano",
+        "talle": "34",
+        "precio": "9999"
+    }
 ]

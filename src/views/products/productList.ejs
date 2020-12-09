@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/allProducts.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="http://use.fontawesome.com/releases/v5.15.1/css/all.css">
+    <title>Championes</title>
+</head>
+<body>
+    <header>
+        <%- include("../partials/header") %>
+    </header>
+    <main>
+        <h1 class="allproductsh1">Todos los Productos</h1>
+        <div class="listado-todoslosproductos">
+            <% for (let i = 0; i < productos.length; i++) { %>
+                        <div class="product">
+                            <a href="/productos/detalle" id="link"></a>
+                            <img src="/img/uploads/productimage/1-1607172935643" alt="">
+                            <h5><%= productos[i].producto %></h5>
+                            <p>$<%= productos[i].precio %></p>
+                        </div>
+            <% } %>
+        </div>
+    </main>
+    
+</body>
+</html>

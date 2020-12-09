@@ -28,6 +28,9 @@ module.exports = {
         productosGuardados.push(nuevoProducto);
         fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productosGuardados, null, 4));
         return res.redirect("/productos/crear");
+    },
+    allProducts: function(req, res) {
+        res.render('../views/products/productList', {productos: productosGuardados})
     }
     
 }
