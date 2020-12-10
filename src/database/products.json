@@ -44,5 +44,62 @@
             "44"
         ],
         "precio": "15999"
+    },
+    {
+        "id": "4",
+        "producto": "Nike Air Zoom Pegasus 37",
+        "descripcion": "Las zapatillas Nike Air Zoom Pegasus 37 no son otra cosa que una de las zapatillas más destacadas del mundo del running en 2020. Su mediasuela Nike React y la unidad Zoom Air para cubrir gran parte del antepié te brindan mejores transiciones y suavidad para tu pie. Sus avances en transpirabilidad y ligereza gracias a un patrón de costura similar a las Zoom Fly 3 las vuelven fundamentales para runners amateurs que quieran hacer de sus jornadas de entrenamiento, una de placer.",
+        "imagen": "4-1607622472512.jpeg",
+        "categoria": "CalzadoDeportivo",
+        "talles": [
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44"
+        ],
+        "precio": "15000"
+    },
+    {
+        "id": "5",
+        "producto": "Zapatillas Adidas Lite Racer CLN",
+        "descripcion": "Las zapatillas Adidas Lite Racer CLN poseen un estilo elegante y minimalista con una parte superior de malla transpirable y ligera. Su suela y mediasuela con tecnología Cloudfoam ofrecen una pisada más cómoda. La plantilla OrthoLite® expulsa el sudor y la humedad y mantiene los pies secos.",
+        "imagen": "5-1607622725020.jpeg",
+        "categoria": "CalzadoDeportivo",
+        "talles": [
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44"
+        ],
+        "precio": "8999"
+    },
+    {
+        "id": "6",
+        "producto": "Asics Gel-Kayano 26",
+        "descripcion": "Las zapatillas Asics Gel-Kayano 26 están compuestas por una malla técnica que mantendrá tus pies frescos, mientras que la suela flexible potencia una transición natural entre cada una de las fases de la pisada. La entresuela con tecnología Space Trusstic proporciona estabilidad y reduce el peso total de la zapatilla para fomentar una transición más fluida desde la fase de contacto hasta la de impulsión. Esto se complementa con un patrón de surcos flexibles y profundos en la parte delantera de la suela que hace que el calzado acompañe el movimiento natural del pie. Las Gel-Kayano 26 son una opción ideal para profesionales como también aquellos amateurs que busquen un modelo que fusione comodidad con una excelente sujeción.",
+        "imagen": "6-1607622798603.jpeg",
+        "categoria": "Calzado Urbano",
+        "talles": [
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44"
+        ],
+        "precio": "16499"
     }
 ]
