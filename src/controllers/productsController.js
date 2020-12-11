@@ -28,6 +28,7 @@ module.exports = {
             categoria: req.body.categoria,
             talles: req.body.talle,
             precio: req.body.precio,
+            descuento: req.body.descuento,
         }
         productosGuardados.push(nuevoProducto);
         fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productosGuardados, null, 4));
