@@ -36,27 +36,24 @@
         <div class="descripcion">
             <div class="envios">
                 <h1><%= producto.producto %></h1>
-                <h3>$<%= producto.precio %></h3>
+                <% if(producto.descuento == "") { %>
+                    <h3>$<%= producto.precio %></h3>
+                <% } else { %>
+                    <h3 class="precioTachado">$<%= producto.precio %></h3>
+                    <h3 class="precioConDescuento">$<%= (producto.precio / 100 * (100-producto.descuento)) - (producto.precio / 100 * (100-producto.descuento))%1 %></h3>
+                    <h3 class="porcentajeDescuento"><%= producto.descuento %>% OFF</h3>
+                <% } %> 
                 <p>12 cuotas sin interés con cualquier tarjeta</p>
                 <p><i class="fas fa-truck"></i>      Envíos a todo el país</p>
             </div>
-            <form method="POST" action="productCart.ejs"></form>
+            <form method="POST" action="">
         <div>
             <div class="talles">Talle: 38</div>
-            <div>
-                <ul class="talles34al44">
-                    <li>34</li>
-                    <li>35</li>
-                    <li>36</li>
-                    <li>37</li>
-                    <li>38</li>
-                    <li>39</li>
-                    <li>40</li>
-                    <li>41</li>
-                    <li>42</li>
-                    <li>43</li>
-                    <li>44</li>
-                </ul>
+            <div class="talles34al44">
+                <% for(let i=0;i<producto.talles.length; i++) { %>
+                    <input type="radio" name="talle" value="<%= producto.talles[i] %>" id="<%= producto.talles[i] %>">
+                    <label for="<%= producto.talles[i] %>"><%= producto.talles[i] %></label>
+                <% } %>
             </div>
         </div>
     
