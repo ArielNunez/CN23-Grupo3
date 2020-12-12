@@ -19,4 +19,6 @@ var upload = multer({ storage: storage })
 router.get('/productos/crear', productsController.crear);
 router.post('/productos/crear', upload.single("imagen"), productsController.crearProducto);
 
+router.get('/productos/:id/editar', productsController.editar);
+
 module.exports = router;

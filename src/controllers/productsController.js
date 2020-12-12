@@ -34,8 +34,15 @@ module.exports = {
         fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productosGuardados, null, 4));
         return res.redirect("/admin/productos/crear");
     },
+    editar: function(req,res) {
+        for(let i=0; i<productosGuardados.length;i++) {
+            if(req.params.id == productosGuardados[i].id) {
+                return res.render('products/productEdit', {producto: productosGuardados[i]})
+            }
+        }
+        return res.send('Error, producto no encontrado');
+    },
     allProducts: function(req, res) {
         res.render('../views/products/productList', {productos: productosGuardados})
     }
-    
 }
