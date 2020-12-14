@@ -84,30 +84,48 @@ div.descripcion div.envios {
 
 }
 
+
+div.descripcion div.envios h3.precioTachado {
+    text-decoration: line-through;
+    color: #cccccc;
+    font-weight: lighter;
+    font-size: 1em;
+}
+
 div div.talles {
     font-family: "Roboto";
     font-size: 19px;
     color: #00182C;
     ;
 }
- div ul.talles34al44 li {
-     font-family: "Roboto";
-     font-weight: 400;
-     font-size: 16px;
-     line-height: 19px;
-     color: #00182C;
-     border: 3px solid #CCCCCC;
-     display: inline-block;
-     margin-top: 32px;
-     margin-right: 10px;
-     margin-bottom: 42px;
 
- }
+div div.talles34al44 input {
+    opacity: 0;
+    position: absolute;
+}
 
- div.agregarCarrito div div {
-     font-weight: bold;
-     margin-bottom: 13px;
- }
+div div.talles34al44 label {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #00182C;
+    border: 3px solid #CCCCCC;
+    display: inline-block;
+    margin-top: 32px;
+    margin-bottom: 42px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+div div.talles34al44 input:checked + label {
+    border: 3px solid #BF488D;
+}
+
+div.agregarCarrito div div {
+    font-weight: bold;
+    margin-bottom: 13px;
+}
 
  div.agregarCarrito div div select {
     font-weight: 700;
@@ -129,6 +147,8 @@ div.agregarCarrito div div div {
     color: #BF488D;
     padding: 2px 20px 0px 20px;
     margin: 0px 12px 0px 12px;
+    background-color: white;
+    cursor: pointer;
 }
 
 div.agregarCarrito div div div button:hover {

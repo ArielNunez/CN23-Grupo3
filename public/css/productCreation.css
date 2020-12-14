@@ -20,6 +20,7 @@ section.principal {
     border: 1px solid #e9e9e9;
     border-radius: 2px;
     margin: 40px 300px 80px 300px;
+    padding: 20px;
 }
 
 section.principal div h1 {
@@ -35,6 +36,44 @@ section.principal div.formulario  form div{
     justify-content: space-around;
     margin-bottom: 10px;
     padding: 5px
+}
+
+section.principal div.formulario form div.talles div.talles {
+    flex-direction: row;
+}
+
+section.principal div.formulario form div.talles div.talles div {
+    flex-direction: row;
+    align-items: center;
+}
+
+section.principal div.formulario form div.talles div.talles div label {
+    padding-left: 3px;
+}
+
+.button {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#button {
+    background-color: #BF488D;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    width: 100%;
+    
+}
+
+#button:hover {
+    filter: brightness(110%);
 }
 
 @media (max-width: 500px) {

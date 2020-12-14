@@ -15,45 +15,42 @@
        <ul>
         <li><a href="/">Home ></a></li>
         <li><a href="#">Calzado Urbano ></a></li>
-        <li><a href="#">Vans Original ></a></li>
+        <li><a href="#"><%= producto.producto %></a></li>
         </ul>
     </nav>
     <div class="zapaydescripcion">
         <div class="imagenesZapas">
-        <div><img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras"></div>
+        <div><img src="/img/uploads/productimage/<%= producto.imagen %>" alt="<%= producto.producto %>"></div>
         <div>
             <ul>
-                 <li><img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras"></li>
-                 <li><img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras"></li>
-                 <li><img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras"></li>
-                 <li><img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras"></li>
+                 <li><img src="/img/uploads/productimage/<%= producto.imagen %>" alt="<%= producto.producto %>"></li>
+                 <li><img src="/img/uploads/productimage/<%= producto.imagen %>" alt="<%= producto.producto %>"></li>
+                 <li><img src="/img/uploads/productimage/<%= producto.imagen %>" alt="<%= producto.producto %>"></li>
+                 <li><img src="/img/uploads/productimage/<%= producto.imagen %>" alt="<%= producto.producto %>"></li>
             </ul>
         </div>
         </div>
         <div class="descripcion">
             <div class="envios">
-                <h1>Vans Original</h1>
-                <h3>$7.999</h3>
+                <h1><%= producto.producto %></h1>
+                <% if(producto.descuento == "") { %>
+                    <h3>$<%= producto.precio %></h3>
+                <% } else { %>
+                    <h3 class="precioTachado">$<%= producto.precio %></h3>
+                    <h3 class="precioConDescuento">$<%= (producto.precio / 100 * (100-producto.descuento)) - (producto.precio / 100 * (100-producto.descuento))%1 %></h3>
+                    <h3 class="porcentajeDescuento"><%= producto.descuento %>% OFF</h3>
+                <% } %> 
                 <p>12 cuotas sin interés con cualquier tarjeta</p>
                 <p><i class="fas fa-truck"></i>      Envíos a todo el país</p>
             </div>
             <form method="POST" action=""></form>
         <div>
             <div class="talles">Talle: 38</div>
-            <div>
-                <ul class="talles34al44">
-                    <li>34</li>
-                    <li>35</li>
-                    <li>36</li>
-                    <li>37</li>
-                    <li>38</li>
-                    <li>39</li>
-                    <li>40</li>
-                    <li>41</li>
-                    <li>42</li>
-                    <li>43</li>
-                    <li>44</li>
-                </ul>
+            <div class="talles34al44">
+                <% for(let i=0;i<producto.talles.length; i++) { %>
+                    <input type="radio" name="talle" value="<%= producto.talles[i] %>" id="<%= producto.talles[i] %>">
+                    <label for="<%= producto.talles[i] %>"><%= producto.talles[i] %></label>
+                <% } %>
             </div>
         </div>
     
@@ -80,7 +77,7 @@
         <div>
         <div class="lorem">
         <H2>Descripción</H2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque vel, incidunt vitae laboriosam cupiditate, ducimus exercitationem error voluptate ad ipsa consequuntur accusantium eaque beatae libero mollitia quasi culpa numquam. Laboriosam excepturi provident vitae officia temporibus tempore magnam placeat veniam iure ipsa cum culpa tempora, minima praesentium aspernatur! Laudantium repellendus error explicabo facilis quos nihil, veniam vel voluptatibus inventore. Ab, nostrum corrupti! Corrupti excepturi sunt libero porro aut veniam debitis ipsum eveniet nobis, itaque perferendis. Accusamus dicta quisquam quae sit enim, obcaecati molestiae at? Maxime rerum eveniet suscipit, animi eum voluptatem a hic cupiditate nostrum aspernatur unde dignissimos atque, eos facere consequuntur odit cumque deleniti minus sapiente soluta aut mollitia? Quia rem cupiditate autem aliquid itaque ab ad numquam doloribus aut nulla. Consectetur nostrum eveniet aliquid cumque, enim voluptates. Pariatur modi neque amet quaerat accusantium libero eius? Quo maxime iste impedit est exercitationem voluptas dignissimos vero, id culpa magnam animi ea?</p>
+        <p><%= producto.descripcion %></p>
         </div>
         <div class="similaresgrande">
                 <h2>Productos similares que tal vez te gusten</h2>

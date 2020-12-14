@@ -1,1 +1,111 @@
-[]
+[
+    {
+        "id": "1",
+        "producto": "Vans Original Old School Pro",
+        "descripcion": "Las Old Skool Pro son un clásico de Vans actualizado para un mejor rendimiento, cuenta con lienzo, forros de cuero, cinta de foxing de una sola envoltura, plantillas ULTRACUSH de alta definición para mantener el pie cerca de la tabla mientras que proporciona el más alto nivel de amortiguación, suelas Waffle originales de Vans para un mejor agarre y control. Incluyen DuraCap, es un revestimiento de goma para reforzar áreas de alto desgaste para una durabilidad inigualable.",
+        "imagen": "1-1607531432123.jpg",
+        "categoria": "CalzadoUrbano",
+        "talles": [
+            "38",
+            "40",
+            "42"
+        ],
+        "precio": "9999",
+        "descuento": "15"
+    },
+    {
+        "id": "2",
+        "producto": "Dc Crisis",
+        "descripcion": "Material de la parte superior: cuero, nobuk o loneta Sin puntera de goma Logo serigrafiado repujado en el panel lateral Lengüeta y cuello acolchados con espuma, para mayor confort y sujeción Forro de malla para mayor comodidad Orificios de ventilación para mayor transpirabilidad Suela de copa de alto rendimiento Suela DC con dibujo Pill Pattern de marca registrada",
+        "imagen": "2-1607531503018.jpg",
+        "categoria": "CalzadoUrbano",
+        "talles": [
+            "38",
+            "39",
+            "40",
+            "41",
+            "42"
+        ],
+        "precio": "12000",
+        "descuento": ""
+    },
+    {
+        "id": "3",
+        "producto": "Nike Air Jordan",
+        "descripcion": "El Air Jordan 1 es una de las zapatillas más vendidas de Nike en relación con la practica del baloncesto, desde sus orígenes siempre ha destacado por su gran versatilidad sobre la pista de basket. Adaptándose a diversos estilos de juegos y deslumbrando por su calidad.",
+        "imagen": "3-1607531531704.jpeg",
+        "categoria": "CalzadoUrbano",
+        "talles": [
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44"
+        ],
+        "precio": "15999",
+        "descuento": "10"
+    },
+    {
+        "id": "4",
+        "producto": "Nike Air Zoom Pegasus 37",
+        "descripcion": "Las zapatillas Nike Air Zoom Pegasus 37 no son otra cosa que una de las zapatillas más destacadas del mundo del running en 2020. Su mediasuela Nike React y la unidad Zoom Air para cubrir gran parte del antepié te brindan mejores transiciones y suavidad para tu pie. Sus avances en transpirabilidad y ligereza gracias a un patrón de costura similar a las Zoom Fly 3 las vuelven fundamentales para runners amateurs que quieran hacer de sus jornadas de entrenamiento, una de placer.",
+        "imagen": "4-1607622472512.jpeg",
+        "categoria": "CalzadoDeportivo",
+        "talles": [
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44"
+        ],
+        "precio": "15000",
+        "descuento": ""
+    },
+    {
+        "id": "5",
+        "producto": "Zapatillas Adidas Lite Racer CLN",
+        "descripcion": "Las zapatillas Adidas Lite Racer CLN poseen un estilo elegante y minimalista con una parte superior de malla transpirable y ligera. Su suela y mediasuela con tecnología Cloudfoam ofrecen una pisada más cómoda. La plantilla OrthoLite® expulsa el sudor y la humedad y mantiene los pies secos.",
+        "imagen": "5-1607622725020.jpeg",
+        "categoria": "CalzadoDeportivo",
+        "talles": [
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44"
+        ],
+        "precio": "8999",
+        "descuento": ""
+    },
+    {
+        "id": "6",
+        "producto": "Asics Gel-Kayano 26",
+        "descripcion": "Las zapatillas Asics Gel-Kayano 26 están compuestas por una malla técnica que mantendrá tus pies frescos, mientras que la suela flexible potencia una transición natural entre cada una de las fases de la pisada. La entresuela con tecnología Space Trusstic proporciona estabilidad y reduce el peso total de la zapatilla para fomentar una transición más fluida desde la fase de contacto hasta la de impulsión. Esto se complementa con un patrón de surcos flexibles y profundos en la parte delantera de la suela que hace que el calzado acompañe el movimiento natural del pie. Las Gel-Kayano 26 son una opción ideal para profesionales como también aquellos amateurs que busquen un modelo que fusione comodidad con una excelente sujeción.",
+        "imagen": "6-1607622798603.jpeg",
+        "categoria": "CalzadoUrbano",
+        "talles": [
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44"
+        ],
+        "precio": "16499",
+        "descuento": ""
+    }
+]

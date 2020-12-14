@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+    <%- include("../partials/header") %>
+</header>
+<main>
+    <section class="principal">
+        <div>
+            <h1>Edición de Producto</h1>
+        </div>
+        <div class="formulario">
+            <form action="" method="POST" enctype="multipart/form-data">
+                <div class="nombreProducto">
+                    <label for="idproducto">Id del producto</label>
+                    <input type="number" name="idproducto" id="idproducto" value="<%= producto.id %>">
+                </div>
+                <div class="nombreProducto">
+                    <label for="nombre">Nombre del Producto</label>
+                    <input type="text" name="producto" id="nombre" value="<%= producto.producto %>">
+                </div>
+                <div class="descripcionProducto">
+                    <label for="descripcion">Descripcion del Producto</label>
+                    <input type="text" name="descripcion" id="descripcion" value="<%= producto.descripcion %>">
+                </div>
+                <div class="imagen">
+                    <label for="">Imagen del producto</label>
+                    <input type="file" name="imagen" id="imagen" value="<%= producto.imagen %>">
+                </div>
+                <div class="categoria">
+                    <label for="categoria">Categoría</label>
+                    <select name="categoria" id="categoria">
+                        <% if(producto.categoria == "CalzadoUrbano") { %>
+                            <option value="CalzadoUrbano" selected>Calzado Urbano</option>
+                            <option value="CalzadoDeportivo">Calzado Deportivo</option>
+                        <% } else { %>
+                            <option value="CalzadoUrbano">Calzado Urbano</option>
+                            <option value="CalzadoDeportivo" selected>Calzado Deportivo</option>
+                        <% } %>
+                    </select>
+                </div>
+                <div class="talles">
+                    <p>Talles</p>
+                    <div class="talles">
+                        <% let encontrado = false %> 
+                        <% for(let i=35; i<=44; i++) { %>
+                            <% for(let j=0; j<producto.talles.length; j++) { %>
+                                <% if(i == producto.talles[j]) { %>
+                                    <div>
+                                        <input type="checkbox" name="talle" value="<%= i %>" id="<%= i %>" checked>
+                                        <label for="<%= i %>"><%= i %></label>
+                                    </div>
+                                    <% encontrado = true %> 
+                                <% } %>
+                            <% } %>
+                            <% if(encontrado == false) { %>
+                                <div>
+                                    <input type="checkbox" name="talle" value="<%= i %>" id="<%= i %>">
+                                    <label for="<%= i %>"><%= i %></label>
+                                </div>
+                            <% } %>
+                            <% encontrado = false %> 
+                        <% } %>
+                    </div>
+                </div>
+                <div class="precio">
+                    <label for="precio">Precio del Producto</label>
+                    <input type="number" name="precio" id="precio" value="<%= producto.precio %>">
+                </div>
+                <div class="precio">
+                    <label for="descuento">Descuento</label>
+                    <input type="number" name="descuento" id="descuento" value="<%= producto.descuento %>">
+                </div>
+                <div class="button">
+                    <button id="button" type="submit">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+<footer>
+    <%- include("../partials/footer") %>
+</footer>
+</body>
+</html>
