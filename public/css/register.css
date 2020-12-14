@@ -5,10 +5,10 @@
     margin: 0;
     font-family: 'Roboto';
 }
-
+/*
 main {
     margin: 90px 190px 90px 190px;    
-}
+} */
 
 section {
     display: flex;
@@ -93,6 +93,7 @@ form div.fila-cinco {
     flex-direction: column;
     margin: auto;
     font-size: 14px;
+    margin-bottom: 30px;
 }
 
 form div.fila-cinco div {
@@ -123,7 +124,6 @@ form button {
     font-size: 18px;
     border: none;
     margin: auto;
-    margin-top: 30px;
     margin-bottom: 15px;
 }
 

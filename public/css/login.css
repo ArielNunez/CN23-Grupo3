@@ -2,13 +2,14 @@
 
 * {
     box-sizing: border-box;
-    margin: 0;
+    margin: 0px;
+    padding: 0px;
     font-family: 'Roboto';
 }
-
+/*
 main {
     margin: 90px 190px 90px 190px;
-}
+} */
 
 section {
     display: flex;
@@ -123,8 +124,8 @@ form button {
     font-size: 18px;
     border: none;
     margin: auto;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 @media(max-width: 426px) {
