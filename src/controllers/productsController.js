@@ -8,6 +8,9 @@ module.exports = {
     detalle: function(req,res) {
         res.render('../views/products/productDetail');
     },
+    agregarACarrito: function(req, res) {
+        res.send("../views/products/productCart");
+    },
     carrito: function(req,res) {
         res.render('../views/products/productCart');
     },
