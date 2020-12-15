@@ -1,8 +1,8 @@
 const fs= require("fs");
 const path= require("path");
 
-let productos= fs.readFileSync(path.join(__dirname, "../database/products.json"), "utf-8");
-let productosGuardados = JSON.parse(productos);
+var productos= fs.readFileSync(path.join(__dirname, "../database/products.json"), "utf-8");
+var productosGuardados = JSON.parse(productos);
 
 module.exports = {
     detalle: function(req,res) {
@@ -23,7 +23,7 @@ module.exports = {
         res.render('../views/products/productCreation');
     },
     crearProducto: function(req, res) {
-        let nuevoProducto = {
+        var nuevoProducto = {
             id: req.body.idproducto,
             producto: req.body.producto,
             descripcion: req.body.descripcion,
@@ -44,6 +44,22 @@ module.exports = {
             }
         }
         return res.send('Error, producto no encontrado');
+    },
+    editarPUT: function (req, res) {
+        for(let i=0; i<productosGuardados.length;i++) {
+            if(req.params.id == productosGuardados[i].id) { 
+                
+                productosGuardados[i].id= req.body.idproducto;
+                productosGuardados[i].producto= req.body.producto;
+                productosGuardados[i].descripcion= req.body.descripcion;
+                productosGuardados[i].imagen= req.file.filename;
+                productosGuardados[i].categoria= req.body.categoria;
+                productosGuardados[i].talles= req.body.talle;
+                productosGuardados[i].precio= req.body.precio;
+                productosGuardados[i].descuento= req.body.descuento }   
+                }
+                    fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productosGuardados, null, 4));
+                    return res.redirect("/detalle/:id")
     },
     allProducts: function(req, res) {
         res.render('../views/products/productList', {productos: productosGuardados})

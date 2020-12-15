@@ -1,17 +1,6 @@
 [
     {
-        "id": "1",
-        "producto": "Vans Original Old School Pro",
-        "descripcion": "Las Old Skool Pro son un clásico de Vans actualizado para un mejor rendimiento, cuenta con lienzo, forros de cuero, cinta de foxing de una sola envoltura, plantillas ULTRACUSH de alta definición para mantener el pie cerca de la tabla mientras que proporciona el más alto nivel de amortiguación, suelas Waffle originales de Vans para un mejor agarre y control. Incluyen DuraCap, es un revestimiento de goma para reforzar áreas de alto desgaste para una durabilidad inigualable.",
-        "imagen": "1-1607531432123.jpg",
-        "categoria": "CalzadoUrbano",
-        "talles": [
-            "38",
-            "40",
-            "42"
-        ],
-        "precio": "9999",
-        "descuento": "15"
+        "imagen": "1-1607531432123.jpg"
     },
     {
         "id": "2",
