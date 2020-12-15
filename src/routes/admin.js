@@ -20,7 +20,7 @@ router.get('/productos/crear', productsController.crear);
 router.post('/productos/crear', upload.single("imagen"), productsController.crearProducto);
 
 router.get('/productos/:id/editar', productsController.editar);
-router.put('/productos/:id/editar', productsController.editarPUT);
+router.put('/productos/:id/editar', upload.single("imagen"), productsController.editarPUT);
 
 router.delete('/productos/:id/eliminar', productsController.eliminar);
 
