@@ -20,7 +20,16 @@
                             <a href="/productos/detalle/<%= productos[i].id %>" id="link"></a>
                             <img src="/img/uploads/productimage/<%= productos[i].imagen %>" alt="">
                             <h5><%= productos[i].producto %></h5>
-                            <p>$<%= productos[i].precio %></p>
+                            <% if(productos[i].descuento == "") { %>
+                                <h3 class="sinDescuento">$<%= productos[i].precio %></h3>
+                            <% } else { %>
+                                <div class="descuento">
+                                    <h3 class="tachado">$<%= productos[i].precio %></h3>
+                                    <h3 class="descuentoPrecio">$<%= (productos[i].precio / 100 * (100-productos[i].descuento)) - (productos[i].precio / 100 * (100-productos[i].descuento))%1 %></h3>
+                                    <h3 class="porcentaje"><%= productos[i].descuento %>% OFF</h3>
+                                    <div class="circle"></div>
+                                </div>
+                            <% } %> 
                         </div>
                         
             <% } %>
