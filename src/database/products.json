@@ -1,6 +1,19 @@
 [
     {
-        "imagen": "1-1607531432123.jpg"
+        "id":"1",
+        "producto": "Vans Old School",
+        "descripcion": "Las Old Skool son las zapatillas clásicas de Vans y el primer modelo en lucir el icónico sidestripe de la marca. Nacieron como un calzado para skaters de los años 70´y con el correr de las décadas se transformó en un modelo básico de lifestyle. Son zapatillas de corte bajo confeccionadas con capellada de canvas y cuero suede resistente, tiene punteras reforzadas para añadir durabilidad, la suela de caucho original Vans Wafflesole y cuello acolchado para ofrecer sujeción y confort.",
+        "imagen": "1-1607531432123.jpg",
+        "categoria":"CalzadoUrbano",
+        "talles": [
+            "38",
+            "39",
+            "40",
+            "41",
+            "42"
+        ],
+        "precio":"7999",
+        "descuento":"15"
     },
     {
         "id": "2",

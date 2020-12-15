@@ -48,8 +48,44 @@ body {
     font-weight: bold;
 }
 
-.product p {
+.sinDescuento {
     margin-top: 10px;
     color: #BF488D;
 
+}
+
+.descuento {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.tachado {
+    text-decoration: line-through;
+    font-weight: 400;
+}
+
+.descuentoPrecio {
+    color: #BF488D;
+    margin-left: 10px;
+}
+
+.porcentaje {
+    position: absolute;
+    right: 32px;
+    top: 50px;
+    font-size: 14px;
+    z-index: 10;
+    color: white;
+
+}
+
+.circle {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: #BF488D;
 }
