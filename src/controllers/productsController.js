@@ -49,19 +49,23 @@ module.exports = {
         for(let i=0; i<productosGuardados.length;i++) {
             if(req.params.id == productosGuardados[i].id) { 
                 
-                productosGuardados[i].id= req.body.idproducto;
-                productosGuardados[i].producto= req.body.producto;
-                productosGuardados[i].descripcion= req.body.descripcion;
-                productosGuardados[i].imagen= req.file.filename;
-                productosGuardados[i].categoria= req.body.categoria;
-                productosGuardados[i].talles= req.body.talle;
-                productosGuardados[i].precio= req.body.precio;
-                productosGuardados[i].descuento= req.body.descuento }   
+                productosGuardados[i].producto = req.body.producto;
+                productosGuardados[i].descripcion = req.body.descripcion;
+                productosGuardados[i].imagen = req.file.filename;
+                productosGuardados[i].categoria = req.body.categoria;
+                productosGuardados[i].talles = req.body.talle;
+                productosGuardados[i].precio = req.body.precio;
+                productosGuardados[i].descuento = req.body.descuento; }   
                 }
                     fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productosGuardados, null, 4));
                     return res.redirect("/detalle/:id")
     },
+    eliminar: function(req, res) {
+        productosGuardados = productosGuardados.filter(producto => producto.id != req.params.id)
+        fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productosGuardados, null, 4))
+        res.send('prodcuto eliminado')
+    },
     allProducts: function(req, res) {
-        res.render('../views/products/productList', {productos: productosGuardados})
+        res.render('products/productList', {productos: productosGuardados})
     }
 }

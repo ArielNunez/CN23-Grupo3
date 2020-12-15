@@ -18,10 +18,6 @@
         <div class="formulario">
             <form action="?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="nombreProducto">
-                    <label for="idproducto">Id del producto</label>
-                    <input type="number" name="idproducto" id="idproducto" value="<%= producto.id %>">
-                </div>
-                <div class="nombreProducto">
                     <label for="nombre">Nombre del Producto</label>
                     <input type="text" name="producto" id="nombre" value="<%= producto.producto %>">
                 </div>
@@ -78,9 +74,17 @@
                     <input type="number" name="descuento" id="descuento" value="<%= producto.descuento %>">
                 </div>
                 <div class="button">
-                    <button id="button" type="submit">Guardar Cambios</button>
+                    <button id="button" type="submit">Guardar Cambios</button>                    
+                </div>                
+            </form>
+
+            
+            <form action="/admin/productos/<%= producto.id %>/eliminar?_method=DELETE" method="POST">
+                 <div class="button delete"></div>
+                    <button id="button" type="submit">Eliminar Producto</button>
                 </div>
             </form>
+            
         </div>
     </section>
 </main>
