@@ -56,10 +56,10 @@ module.exports = {
                 productosGuardados[i].categoria = req.body.categoria;
                 productosGuardados[i].talles = req.body.talle;
                 productosGuardados[i].precio = req.body.precio;
-                productosGuardados[i].descuento = req.body.descuento;   
+                productosGuardados[i].descuento = req.body.descuento;
+                fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productosGuardados, null, 4));
+                return res.redirect("/productos/detalle/" + req.params.id);   
             }
-            fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productosGuardados, null, 4));
-            return res.redirect("/productos/detalle/" + req.params.id);
         }
     },
     eliminar: function(req, res) {
