@@ -48,17 +48,19 @@ module.exports = {
     editarPUT: function (req, res) {
         for(let i=0; i<productosGuardados.length;i++) {
             if(req.params.id == productosGuardados[i].id) { 
-                
+                if(req.file != undefined) {
+                    productosGuardados[i].imagen = req.file.filename;
+                }
                 productosGuardados[i].producto = req.body.producto;
                 productosGuardados[i].descripcion = req.body.descripcion;
-                productosGuardados[i].imagen = req.file.filename;
                 productosGuardados[i].categoria = req.body.categoria;
                 productosGuardados[i].talles = req.body.talle;
                 productosGuardados[i].precio = req.body.precio;
-                productosGuardados[i].descuento = req.body.descuento; }   
-                }
-                    fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productosGuardados, null, 4));
-                    return res.redirect("/detalle/:id")
+                productosGuardados[i].descuento = req.body.descuento;   
+            }
+            fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productosGuardados, null, 4));
+            return res.redirect("/productos/detalle/" + req.params.id);
+        }
     },
     eliminar: function(req, res) {
         productosGuardados = productosGuardados.filter(producto => producto.id != req.params.id)
