@@ -2,13 +2,13 @@
 @import url("http://use.fontawesome.com/releases/v5.15.1/css/all.css");
 @import url('https://use.fontawesome.com/releases/v5.15.1/css/all.css');
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400&display=swap");
-@import "home.css";
+@import "index.css";
 @import "login.css";
+@import "register.css";
 @import "productCart.css";
 @import "productCreation.css";
 @import "productDetail.css";
-@import "register.css";
-@import "allProducts";
+@import "productList.css";
 
 /* =============== 
 - General
@@ -51,7 +51,7 @@ header div {
     justify-content: space-between;
 }
 
-nav {
+header nav {
     padding: 0;
 }
 
@@ -95,6 +95,10 @@ header div nav ul li a {
 header div nav ul li a:hover {
     color: #BF488D;
 }
+
+/* =============== 
+- Main
+================= */
 
 main {
     min-height: 100%;
@@ -148,12 +152,15 @@ footer .footerright {
     flex-direction: column;
     align-items: center;
 }
+
 footer .footerright div p {
     color:white;
 }
+
 footer .footerright .socialmedia {
     margin-top: 10px;
 }
+
 footer .footerright .socialmedia img {
     width: 30px;
 }
@@ -173,25 +180,30 @@ footer .copyright small {
 /* RESPONSIVE */
 
 @media (max-width: 500px) {
+
+    /* =============== 
+    - Header
+    ================= */
+
     header {
         padding-right: 20px;
         padding-left: 10px;
         width: 100%;
     }
-    body {
-        padding-top: 75px;
-        max-width: 100%;
-    }
+
     header div nav.nav1 ul {
         display: none;
     }
-    .nav2 #registrarse {
+
+    header .nav2 #registrarse {
         font-size: 10px;
         margin-left: 5px;
     }
-    .menu1 img {
+
+    header .menu1 img {
         height: 50px;
     }
+
     header div nav.nav2 ul {
         display: flex;
         justify-content: flex-end;
@@ -199,7 +211,8 @@ footer .copyright small {
         width: auto;
         padding: 0;
     }
-    .burger {
+
+    header .burger {
         margin-left: 70px;
         color: white;
         background-color: black;
@@ -207,10 +220,23 @@ footer .copyright small {
         border-radius: 3px;
         font-size: 18px;
     }
+
+    /* =============== 
+    - Body
+    ================= */
+
+    body {
+        padding-top: 75px;
+        max-width: 100%;
+    }
+
+    /* =============== 
+    - Footer
+    ================= */
+
     footer {
         height: 100%;
     }
-
     
     footer .containerfooter div img {
         width: 60px;
@@ -233,8 +259,9 @@ footer .copyright small {
     }
     
 }
+
 @media (min-width: 501px) {
-    .burger {
+    header .burger {
         display: none;
     }
 }

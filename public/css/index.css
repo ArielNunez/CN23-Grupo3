@@ -1,18 +1,8 @@
-* {
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-}
-
-body {
-    font-family: "Roboto";
-}
-
 /* ============
     BANNER
 ===============*/
 
-.banner {
+main.index .banner {
     background-image: url(https://cdn.shopify.com/s/files/1/1342/3335/files/vans_image_banner_02.jpg?v=1485461227);
     background-position: center center;
     background-repeat: no-repeat;
@@ -23,7 +13,7 @@ body {
     align-items: center;
 }
 
-.banner h1 {
+main.index .banner h1 {
     color: white;
     font-size: 46px;
     text-shadow: 3px 3px 6px black; 
@@ -32,7 +22,8 @@ body {
 /* ============
     BANNER 2
 ===============*/
-.cuotas-envio {
+
+main.index .cuotas-envio {
     height: 54px;
     background-color: #BF488D;
     color: white;
@@ -43,35 +34,32 @@ body {
 
 }
 
-#textoenvio {
+main.index .cuotas-envio p {
     margin-left: 20px;
-}
-
-#textotarjeta {
-    margin-right: 20px;
 }
 
 /* ============
     NOVEDADES
 ===============*/
-.novedades h2 {
+
+main.index .novedades h2 {
     padding-top: 40px;
     text-align: center;
     font-size: 32px;
 }
 
-.listado-novedades {
+main.index .novedades .listado-novedades {
     margin-top: 60px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-}
+} 
 
 /* =================
     CAJA PRODUCTO
 ===================*/
 
-.producto {
+main.index .producto {
     padding: 15px;
     -webkit-box-shadow: 4px 3px 5px 0px rgba(153,153,153,1);
     -moz-box-shadow: 4px 3px 5px 0px rgba(153,153,153,1);
@@ -80,7 +68,7 @@ body {
     position: relative;
 }
 
-#enlace {
+main.index #enlace {
   position: absolute;  
   top: 0;
   left: 0;
@@ -88,17 +76,18 @@ body {
   height: 100%;
   z-index: 10;
 }
-.producto img {
+
+main.index .producto img {
     height:160px;
     max-width: 100%;
 }
 
-.producto h5 {
+main.index .producto h5 {
     font-size: 16px;
     font-weight: bold;
 }
 
-.producto p {
+main.index .producto p {
     margin-top: 10px;
     color: #BF488D;
 
@@ -108,13 +97,13 @@ body {
     BUTTONS
 ===============*/
 
-.button {
+main.index .button {
     margin-top: 80px;
     display: flex;
     justify-content: center;
 }
 
-#button {
+main.index #button {
     background-color: #BF488D;
     color: white;
     border: none;
@@ -127,7 +116,7 @@ body {
     
 }
 
-#button:hover {
+main.index #button:hover {
     filter: brightness(110%);
 }
 
@@ -135,17 +124,17 @@ body {
     OFERTAS
 ===============*/
 
-.ofertas {
+main.index .ofertas {
     background-color:#E8E8E8;
 }
 
-.ofertas h2 {
+main.index .ofertas h2 {
     padding-top: 40px;
     text-align: center;
     font-size: 32px;
 }
 
-.listado-ofertas {
+main.index .ofertas .listado-ofertas {
     margin-top: 60px;
     display: flex;
     justify-content: space-around;
@@ -156,7 +145,7 @@ body {
     BANNER LOGOS
 ===================*/
 
-.marcas {
+main.index .marcas {
     height: 100px;
     background-color: #BF488D;
     color: white;
@@ -167,12 +156,12 @@ body {
 
 }
 
-.logos {
+main.index .logos {
     display: flex;
     justify-content: center;
 }
 
-.logos img {
+main.index .logos img {
     height: 40px;
     padding: 0px 20px 0px 20px;
 }
@@ -181,7 +170,7 @@ body {
     TODOS LOS PRODUCTOS
 ========================*/
 
-.todoslosproductos h2 {
+main.index .todoslosproductos h2 {
     margin-top: 40px;
     text-align: center;
     font-size: 32px;
@@ -192,52 +181,66 @@ body {
 ========================*/
 
 @media (max-width: 500px) {
-    .banner {
+    main.index .banner {
         height: 145px;
     }
-    .banner h1 {
+    
+    main.index .banner h1 {
         font-size: 34px;
         margin-left: 35px;
     }
-    .cuotas-envio {
+
+    main.index .cuotas-envio {
         font-size: 12px;
         height: 35px;
     }
-    #textotarjeta {
+
+    main.index #textotarjeta {
         margin-right: 5px;
     }
-    #textoenvio {
+
+    main.index #textoenvio {
         margin-left: 5px;
     }
-    .listado-novedades {
+
+    main.index .listado-novedades {
         margin-top: 30px;
     }
-    .listado-ofertas {
+
+    main.index .listado-ofertas {
         margin-top: 30px;
     }
-    .producto {
+
+    main.index .producto {
         width: 40%;
         margin-top: 20px;
     }
-    .button {
+
+    main.index .button {
         margin-top: 50px;
     }
-    #button {
+
+    main.index #button {
         font-size: 14px;
     }
-    .novedades h2 {
+
+    main.index .novedades h2 {
         font-size: 30px;
     }
-    .ofertas h2 {
+
+    main.index .ofertas h2 {
         font-size: 30px;
     }
-    .todoslosproductos h2 {
+
+    main.index .todoslosproductos h2 {
         font-size: 30px;
     }
-    .marcas {
+
+    main.index .marcas {
         height: 70px;
     }
-    .logos img {
+
+    main.index .logos img {
         height: 30px;
     }
 }

@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Detalle del producto</title>
+    <%- include('../partials/head', {title: "Detalle de producto"}) %>
 </head>
 <body>
     <header>
         <%- include("../partials/header") %>
     </header>
-    <main>
-   <nav class="ruta"> 
+    <main class="productDetail">
+        <nav class="ruta"> 
        <ul>
         <li><a href="/">Home ></a></li>
         <li><a href="#">Calzado Urbano ></a></li>
         <li><a href="#"><%= producto.producto %></a></li>
         </ul>
-    </nav>
-    <div class="zapaydescripcion">
+        </nav>
+        <div class="zapaydescripcion">
         <div class="imagenesZapas">
         <div><img src="/img/uploads/productimage/<%= producto.imagen %>" alt="<%= producto.producto %>"></div>
         <div>

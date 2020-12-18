@@ -1,17 +1,9 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-}
-
-body {
-    font-family: "Roboto";
-}
-
-.allproductsh1 {
+main.listaProductos .allproductsh1 {
     margin-top: 30px;
     text-align: center;
 }
-.listado-todoslosproductos {
+
+main.listaProductos .listado-todoslosproductos {
     margin-top: 40px;
     display: flex;
     justify-content: space-around;
@@ -20,7 +12,7 @@ body {
     margin-bottom: 60px;
 }
 
-.product {
+main.listaProductos .product {
     padding: 15px;
     -webkit-box-shadow: 4px 3px 5px 0px rgba(153,153,153,1);
     -moz-box-shadow: 4px 3px 5px 0px rgba(153,153,153,1);
@@ -31,7 +23,7 @@ body {
     margin-top: 20px;
 }
 
-#link {
+main.listaProductos #link {
   position: absolute;  
   top: 0;
   left: 0;
@@ -39,38 +31,39 @@ body {
   height: 100%;
   z-index: 10;
 }
-.product img {
+
+main.listaProductos .product img {
     width: 100%;
 }
 
-.product h5 {
+main.listaProductos .product h5 {
     font-size: 20px;
     font-weight: bold;
 }
 
-.sinDescuento {
+main.listaProductos .sinDescuento {
     margin-top: 10px;
     color: #BF488D;
 
 }
 
-.descuento {
+main.listaProductos .descuento {
     display: flex;
     flex-direction: row;
     margin-top: 10px;
 }
 
-.tachado {
+main.listaProductos .tachado {
     text-decoration: line-through;
     font-weight: 400;
 }
 
-.descuentoPrecio {
+main.listaProductos .descuentoPrecio {
     color: #BF488D;
     margin-left: 10px;
 }
 
-.porcentaje {
+main.listaProductos .porcentaje {
     position: absolute;
     right: 32px;
     top: 50px;
@@ -80,7 +73,7 @@ body {
 
 }
 
-.circle {
+main.listaProductos .circle {
     position: absolute;
     right: 20px;
     top: 20px;

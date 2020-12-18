@@ -2,17 +2,7 @@
 - General
 ================= */
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-}
-
-body {
-    font-family: "Roboto";
-    font-weight: 400;
-}
-
-section.principal {
+main.productCreation section.principal {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -23,14 +13,14 @@ section.principal {
     padding: 20px;
 }
 
-section.principal div h1 {
+main.productCreation section.principal div h1 {
     text-align: center;
     font-size: 30px;
     font-weight: 600;
     padding-top: 20px;
 }
 
-section.principal div.formulario  form div{
+main.productCreation section.principal div.formulario  form div{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -38,27 +28,27 @@ section.principal div.formulario  form div{
     padding: 5px
 }
 
-section.principal div.formulario form div.talles div.talles {
+main.productCreation section.principal div.formulario form div.talles div.talles {
     flex-direction: row;
 }
 
-section.principal div.formulario form div.talles div.talles div {
+main.productCreation section.principal div.formulario form div.talles div.talles div {
     flex-direction: row;
     align-items: center;
 }
 
-section.principal div.formulario form div.talles div.talles div label {
+main.productCreation section.principal div.formulario form div.talles div.talles div label {
     padding-left: 3px;
 }
 
-.button {
+main.productCreation .button {
     margin-top: 20px;
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
-#button {
+main.productCreation #button {
     background-color: #BF488D;
     color: white;
     border: none;
@@ -72,19 +62,13 @@ section.principal div.formulario form div.talles div.talles div label {
     
 }
 
-#button:hover {
+main.productCreation #button:hover {
     filter: brightness(110%);
 }
 
 @media (max-width: 500px) {
 
-    * {
-        box-sizing: border-box;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    section.principal {
+    main.productCreation section.principal {
         display: flex;
         justify-content: center;
         margin: 20px;

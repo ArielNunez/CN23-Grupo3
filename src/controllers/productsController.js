@@ -2,13 +2,13 @@ const fs= require("fs");
 const path= require("path");
 
 var productos= fs.readFileSync(path.join(__dirname, "../database/products.json"), "utf-8");
-var productosGuardados = JSON.parse(productos);
+var productos = JSON.parse(productos);
 
 module.exports = {
     detalle: function(req,res) {
-        for(let i=0; i<productosGuardados.length;i++) {
-            if(req.params.id == productosGuardados[i].id) {
-                return res.render('../views/products/productDetail', {producto: productosGuardados[i]});
+        for(let i=0; i<productos.length;i++) {
+            if(req.params.id == productos[i].id) {
+                return res.render('../views/products/productDetail', {producto: productos[i]});
             }
         }
         return res.send('Error, producto no encontrado');
@@ -33,41 +33,41 @@ module.exports = {
             precio: req.body.precio,
             descuento: req.body.descuento,
         }
-        productosGuardados.push(nuevoProducto);
-        fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productosGuardados, null, 4));
+        productos.push(nuevoProducto);
+        fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productos, null, 4));
         return res.redirect("/admin/productos/crear");
     },
     editar: function(req,res) {
-        for(let i=0; i<productosGuardados.length;i++) {
-            if(req.params.id == productosGuardados[i].id) {
-                return res.render('products/productEdit', {producto: productosGuardados[i]})
+        for(let i=0; i<productos.length;i++) {
+            if(req.params.id == productos[i].id) {
+                return res.render('products/productEdit', {producto: productos[i]})
             }
         }
         return res.send('Error, producto no encontrado');
     },
     editarPUT: function (req, res) {
-        for(let i=0; i<productosGuardados.length;i++) {
-            if(req.params.id == productosGuardados[i].id) { 
+        for(let i=0; i<productos.length;i++) {
+            if(req.params.id == productos[i].id) { 
                 if(req.file != undefined) {
-                    productosGuardados[i].imagen = req.file.filename;
+                    productos[i].imagen = req.file.filename;
                 }
-                productosGuardados[i].producto = req.body.producto;
-                productosGuardados[i].descripcion = req.body.descripcion;
-                productosGuardados[i].categoria = req.body.categoria;
-                productosGuardados[i].talles = req.body.talle;
-                productosGuardados[i].precio = req.body.precio;
-                productosGuardados[i].descuento = req.body.descuento;
-                fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productosGuardados, null, 4));
+                productos[i].producto = req.body.producto;
+                productos[i].descripcion = req.body.descripcion;
+                productos[i].categoria = req.body.categoria;
+                productos[i].talles = req.body.talle;
+                productos[i].precio = req.body.precio;
+                productos[i].descuento = req.body.descuento;
+                fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productos, null, 4));
                 return res.redirect("/productos/detalle/" + req.params.id);   
             }
         }
     },
     eliminar: function(req, res) {
-        productosGuardados = productosGuardados.filter(producto => producto.id != req.params.id)
-        fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productosGuardados, null, 4))
+        productos = productos.filter(producto => producto.id != req.params.id)
+        fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productos, null, 4))
         res.send('prodcuto eliminado')
     },
     allProducts: function(req, res) {
-        res.render('products/productList', {productos: productosGuardados})
+        res.render('products/productList', {productos: productos})
     }
 }

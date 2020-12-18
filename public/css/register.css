@@ -1,16 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    font-family: 'Roboto';
-}
-/*
-main {
-    margin: 90px 190px 90px 190px;    
-} */
-
-section {
+section.register {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -19,7 +9,7 @@ section {
     padding: 20px;
 }
 
-h2 {
+section.register h2 {
     text-align: center;
     font-size: 30px;
     font-weight: 600;
@@ -27,7 +17,7 @@ h2 {
     padding-bottom: 20px;
 }
 
-div.row ul{
+section.register div.row ul{
     display: flex;
     font-size: 18px;
     font-weight: 600;
@@ -38,57 +28,57 @@ div.row ul{
     padding-left: 0px;
 }
 
-div.row ul li {
+section.register div.row ul li {
     list-style-type: none; 
 }
 
-div.row ul li.registro {
+section.register div.row ul li.registro {
     border-bottom: 3px solid #BF488D;
 }
 
-div.row ul li a {
+section.register div.row ul li a {
     color: black;    
     text-decoration: none;
 }
 
-form {
+section.register form {
     font-size: 16px;  
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;   
 }
 
-form div.datos {
+section.register form div.datos {
     display: flex;  
     flex-direction: column;
     width: 80%;
     margin: auto;  
 }
 
-form div.datos div {
+section.register form div.datos div {
     display: flex;
     justify-content: space-evenly;
 }
 
-form div.datos div div {
+section.register form div.datos div div {
     width: 40%;
     padding-bottom: 15px;
     display: flex;
     flex-direction: column;
 }
 
-form div.datos div div label {    
+section.register form div.datos div div label {    
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
-form div.datos div div input {
+section.register form div.datos div div input {
     width: 100%;
     padding: 5px;
     height: 6.5vh;
 }
 
-form div.fila-cinco {
+section.register form div.fila-cinco {
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -96,26 +86,26 @@ form div.fila-cinco {
     margin-bottom: 30px;
 }
 
-form div.fila-cinco div {
+section.register form div.fila-cinco div {
     display: flex;
     padding-top: 15px;
 }
 
-form div.fila-cinco div input {
+section.register form div.fila-cinco div input {
     height: 15px;
     width: 15px;
     align-self: center;
 }
 
-form div.fila-cinco div label {
+section.register form div.fila-cinco div label {
     padding-left: 5px;
 }
 
-form div.fila-cinco div.tyc label a {
+section.register form div.fila-cinco div.tyc label a {
     color: black;
 }
 
-form button {
+section.register form button {
     background-color: #BF488D;
     color: white;
     border-radius: 5px;
@@ -128,30 +118,30 @@ form button {
 }
 
 @media(max-width: 426px) {
-    main {
+    main.register {
         margin: 35px 0px;
     }
     
-    form div.datos div {
+    section.register form div.datos div {
         flex-direction: column;
     }
 
-    form div.datos div div {
+    section.register form div.datos div div {
         width: auto;
     }
 
-    form div.fila-cinco {
+    section.register form div.fila-cinco {
         width: 80%;
     }
 
-    form div.fila-cinco div input {
+    section.register form div.fila-cinco div input {
         height: auto;
         width: auto;
         margin: 2px;
         align-self: auto;
     }
 
-    form button {
+    section.register form button {
         width: 80%;
     }
 }

@@ -1,13 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-* {
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Roboto';
-}
-
-section {
+section.login {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -16,7 +9,7 @@ section {
     padding: 20px;
 }
 
-h2 {
+section.login h2 {
     text-align: center;
     font-size: 30px;
     font-weight: 600;
@@ -24,7 +17,7 @@ h2 {
     padding-bottom: 20px;
 }
 
-div.row ul{
+section.login div.row ul{
     display: flex;
     font-size: 18px;
     font-weight: 600;
@@ -35,27 +28,27 @@ div.row ul{
     padding-left: 0px;
 }
 
-div.row ul li {
+section.login div.row ul li {
     list-style-type: none; 
 }
 
-div.row ul li.inicio {
+section.login div.row ul li.inicio {
     border-bottom: 3px solid #BF488D;
 }
 
-div.row ul li a {
+section.login div.row ul li a {
     color: black;    
     text-decoration: none;
 }
 
-form {
+section.login form {
     font-size: 16px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-form div.datos {
+section.login form div.datos {
     display: flex;  
     flex-direction: column;
     flex-wrap: wrap;
@@ -64,7 +57,7 @@ form div.datos {
     margin: auto;  
 }
 
-form div.datos div {
+section.login form div.datos div {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -72,18 +65,18 @@ form div.datos div {
 }
 
 
-form div.datos div label {
+section.login form div.datos div label {
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
-form div.datos div input{
+section.login form div.datos div input{
     width: 100%;
     height: 6.5vh;
     padding: 5px;
 }
 
-form div.check {      
+section.login form div.check {      
     width: 50%;
     margin: auto;
     display: flex;
@@ -92,26 +85,26 @@ form div.check {
     padding-bottom: 15px;
 }
 
-form div.check div.recordarme {
+section.login form div.check div.recordarme {
     display: flex;
 }
 
-form div.check div.recordarme input {
+section.login form div.check div.recordarme input {
     height: 15px;
     width: 15px;
     align-self: center;
 }
 
-form div.check div.recordarme label{
+section.login form div.check div.recordarme label{
     padding-left: 5px;
 }
 
-form div.check a {
+section.login form div.check a {
     color: black;
     font-weight: bold;
 }
 
-form button {
+section.login form button {
     background-color: #BF488D;
     color: white;
     border-radius: 5px;
@@ -125,26 +118,26 @@ form button {
 }
 
 @media(max-width: 426px) {
-    main {
+    main.login {
         margin: 35px 0px;
     }
 
-    form div.datos {
+    section.login form div.datos {
         width: 80%;
     }
 
-    form div.check {
+    section.login form div.check {
         width: 80%;
         flex-direction: column;
         align-items: center;
         padding: 0px;
     }
 
-    form div.check div.recordarme {
+    section.login form div.check div.recordarme {
         padding-bottom: 10px;
     }
 
-    form button {
+    section.login form button {
         width: 80%;
     }
 }

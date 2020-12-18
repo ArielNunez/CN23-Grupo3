@@ -1,22 +1,20 @@
-
-
-main.mainCarrito {
+main.Carrito {
     padding: 60px;
 }
 
-h2 {
+main.Carrito h2 {
     padding-bottom: 15px;
     font-size: 30px;
 }
 
-div.container {
+main.Carrito div.container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-div.carrito {
+main.Carrito div.carrito {
     display: flex;  
     width: 65%;  
     height: min-content;
@@ -25,62 +23,62 @@ div.carrito {
     border-top: solid 1px #CCCCCC;
 }
 
-div.carrito div.sin-sub {
+main.Carrito div.carrito div.sin-sub {
     display: flex;
 }
 
-div.carrito div.sin-sub  div.imagen {
+main.Carrito div.carrito div.sin-sub  div.imagen {
     width: 20%;
 }
 
-div.carrito div.sin-sub div.imagen img {
+main.Carrito div.carrito div.sin-sub div.imagen img {
     max-width: 100%;
 }
 
-div.carrito div.sin-sub div.detalle {
+main.Carrito div.carrito div.sin-sub div.detalle {
     padding-left: 15px;
     width: 80%;
 }
 
-div.carrito div.sin-sub div.detalle h3 {
+main.Carrito div.carrito div.sin-sub div.detalle h3 {
     text-transform: uppercase;
     padding-bottom: 7px;
 }
 
-div.carrito div.sin-sub div.detalle div {
+main.Carrito div.carrito div.sin-sub div.detalle div {
     display: flex;
     padding-bottom: 5px;
 }
 
-div.carrito div.sin-sub div.detalle div h6 {
+main.Carrito div.carrito div.sin-sub div.detalle div h6 {
     font-size: 14px;
     font-weight: 500;
     padding-right: 8px;
 }
 
-div.carrito div.sin-sub div.detalle div p {
+main.Carrito div.carrito div.sin-sub div.detalle div p {
     font-size: 14px;
 }
 
-div.carrito div.sin-sub div.detalle form button {
+main.Carrito div.carrito div.sin-sub div.detalle form button {
     border: none;
     background: none;
     padding-top: 5px;
     padding-left: 5px;
 }
 
-div.carrito div.sin-sub div.detalle form button i {
+main.Carrito div.carrito div.sin-sub div.detalle form button i {
     font-size: 16px;
     opacity: 0.5;
 }
 
-div.carrito p.subtotal {
+main.Carrito div.carrito p.subtotal {
     font-size: 18px;
     font-weight: 500;
     align-self: flex-end;
 }
 
-div.resumen {
+main.Carrito div.resumen {
     border: solid 1px #CCCCCC;
     width: 28%;
     display: flex;
@@ -89,24 +87,24 @@ div.resumen {
     align-items: center;
 }
 
-div.resumen h3 {
+main.Carrito div.resumen h3 {
     padding-bottom: 48px;
     padding-top: 23px;
     text-transform: uppercase;
 }
 
-div.resumen .datosProducto {
+main.Carrito div.resumen .datosProducto {
     display: flex;
     justify-content: space-between;
     width: 85%;
     padding-bottom: 30px;
 }
 
-div.resumen .datosProducto p.num {    
+main.Carrito div.resumen .datosProducto p.num {    
     padding-right: 10px;
 }
 
-div.resumen form {
+main.Carrito div.resumen form {
     padding-top: 28px;
     padding-bottom: 25px;
     display: flex;
@@ -118,12 +116,12 @@ div.resumen form {
     height: 280px;
 }
 
-div.resumen form input {
+main.Carrito div.resumen form input {
     width: 70%;
     height: 22.5px;
 }
 
-div.resumen form button:nth-child(2) {
+main.Carrito div.resumen form button:nth-child(2) {
     width: 50%;
     height: 22px;
     background: none;
@@ -134,24 +132,24 @@ div.resumen form button:nth-child(2) {
     font-weight: 700;
 }
 
-div.resumen form div {
+main.Carrito div.resumen form div {
     display: flex;
     flex-wrap: wrap;
     width: 55%;
     justify-content: space-between;
 }
 
-div.resumen form div p {
+main.Carrito div.resumen form div p {
     width: 50%;
     text-transform: uppercase;
     padding-bottom: 20px;
 }
 
-div.resumen form div p:nth-child(even) {
+main.Carrito div.resumen form div p:nth-child(even) {
     text-align: right;
 }
 
-div.resumen form button:nth-child(4) {
+main.Carrito div.resumen form button:nth-child(4) {
     width: 72%;
     height: 30px;
     background: #BF488D;
@@ -164,30 +162,30 @@ div.resumen form button:nth-child(4) {
 
 @media(max-width: 426px) {
 
-    main {
+    main.Carrito  {
         padding: 60px 0px;
     }
 
-    h2 {
+    main.Carrito h2 {
         text-align: center;
     }
 
-    div.container {
+    main.Carrito div.container {
         flex-direction: column;
         flex-wrap: nowrap;
         align-items: center;
     }
 
-    div.carrito {
+    main.Carrito div.carrito {
         width: 85%;
         flex-direction: column;
     }
     
-    div.carrito div.sin-sub div.detalle h3 {
+    main.Carrito div.carrito div.sin-sub div.detalle h3 {
         font-size: 16px;
     }
 
-    div.resumen {
+    main.Carrito div.resumen {
         width: 85%;
         margin-top: 25px;
     }
