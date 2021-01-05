@@ -28,7 +28,7 @@ app.set('views', path.join(__dirname, './views'));
 app.use(express.static(path.join(__dirname, '../public')));
 app.use('/', mainRouter);
 app.use('/productos', productsRouter);
-app.use('/usuario', usersRouter);
+app.use('/usuarios', usersRouter);
 app.use('/admin', adminRouter);
 
 

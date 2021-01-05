@@ -67,5 +67,8 @@ module.exports = {
     salir: function(req,res) {
         req.session.destroy();
         return res.redirect('/');
+    },
+    listado: function(req, res) {
+        res.render('../views/users/usersList', {users: users})
     }
 }
