@@ -2,15 +2,20 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
+const session = require('express-session');
 
 const mainRouter = require('./routes/main');
 const productsRouter = require('./routes/products');
 const usersRouter = require('./routes/users');
 const adminRouter = require('./routes/admin')
 
+const loggedMiddelware = require('./middlewares/loggedMiddelware');
+
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(methodOverride('_method'));
+app.use(session({secret: 'ChampionesSecreto'}));
+app.use(loggedMiddelware);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './views'));

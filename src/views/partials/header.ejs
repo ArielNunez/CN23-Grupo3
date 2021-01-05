@@ -14,7 +14,12 @@
     <nav class="nav2">
         <ul>
             <li><a href="/productos/carrito-de-compras"><img src="/img/carrito.svg" alt=""></a></li>
-            <li><a href="/usuario/ingresar">Ingreso / Registro</a></li>
+            <% if(typeof usuario == 'undefined') { %>
+                <li><a href="/usuario/ingresar">Ingreso / Registro</a></li>
+            <% } else { %>
+                <li class="datosUsuario">HOLA, <a href="#"><%= usuario.name %></a></li>
+                <li><a href="/usuario/salir"><i class="fas fa-sign-out-alt"></i></a></li>
+            <% } %>
         </ul>
     </nav>
 </div>

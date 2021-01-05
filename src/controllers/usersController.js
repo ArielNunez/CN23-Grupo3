@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcrypt');
 const {validationResult} = require('express-validator');
+const session = require('express-session');
 
 let users = fs.readFileSync(path.join(__dirname, '../database/users.json'), 'utf-8');
 users = JSON.parse(users);
@@ -32,7 +33,7 @@ module.exports = {
         users.push(newUser);
         fs.writeFileSync(path.join(__dirname, '../database/users.json'), JSON.stringify(users, null, 4));
 
-        res.redirect('login')
+        res.redirect('/usuario/ingresar');
     },    
     ingresar: function(req,res) {
         res.render('../views/users/login');
@@ -43,17 +44,25 @@ module.exports = {
         if (errors.isEmpty()) {
             let usuarioALoguearse;
 
-            usuarios.forEach(user => {
+            users.forEach(user => {
                 if (user.email === email && bcrypt.compareSync(pass, user.pass)) {
                      usuarioALoguearse = user;
                 }
             });
 
             if (usuarioALoguearse == undefined) {
-                return res.render('login', {errors: 'Dirección de correo o contraeña inválidos'});
-            } 
+                return res.render('../views/users/login', {errors: 'Dirección de correo o contraeña inválidos'});
+            }
+
+            req.session.usuario = usuarioALoguearse;
+            return res.redirect('/');
 
         } else {
-            return res.render('login', {errors: errors.mapped()});        
+            return res.render('../views/users/login', {errors: errors.mapped()});
+        }      
+    },
+    salir: function(req,res) {
+        req.session.destroy();
+        return res.redirect('/');
     }
 }

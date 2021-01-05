@@ -96,6 +96,14 @@ header div nav ul li a:hover {
     color: #BF488D;
 }
 
+header div.menu2 nav.nav2 ul li.datosUsuario {
+    color: #fff;
+}
+
+header div.menu2 nav.nav2 ul li i {
+    font-size: 20px;
+}
+
 /* =============== 
 - Main
 ================= */

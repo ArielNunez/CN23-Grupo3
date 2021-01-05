@@ -10,4 +10,6 @@ router.post('/registro', usersController.guardar)
 router.get('/ingresar', usersController.ingresar);
 router.post('/ingresar', loginValidator, usersController.loggeado)
 
+router.get('/salir', usersController.salir);
+
 module.exports = router;
