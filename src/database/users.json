@@ -208,5 +208,15 @@
         "email": "usuario@prueba.com",
         "pass": "$2b$10$0r/vbZAk9gfY3rDT7zn/Pe9UShG9QE5IvNY7fRg/vTver57RSrX/2",
         "category": "user"
+    },
+    {
+        "id": 22,
+        "name": "santiago",
+        "lastName": "bullrich",
+        "birth": "1991-03-26",
+        "dni": "35971495",
+        "email": "santibullrich@gmail.com",
+        "pass": "$2b$10$yr0dBuwtKfA6HlYWRpNP.u9MeRmw16em0vLGSrsbizu0EJKbHCpvm",
+        "category": "user"
     }
 ]

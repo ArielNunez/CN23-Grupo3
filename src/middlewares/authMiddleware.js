@@ -2,5 +2,5 @@ module.exports = (req, res, next) => {
     if (req.session.user != undefined) {
         next();
     }
-    return res.redirect('/usuarios/login');
+    return res.render('users/login');
 };

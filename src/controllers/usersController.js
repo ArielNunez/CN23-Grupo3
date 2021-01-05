@@ -3,6 +3,7 @@ const fs = require('fs');
 const bcrypt = require('bcrypt');
 const {validationResult} = require('express-validator');
 const session = require('express-session');
+var cookieParser = require('cookie-parser');
 
 let users = fs.readFileSync(path.join(__dirname, '../database/users.json'), 'utf-8');
 users = JSON.parse(users);
@@ -40,7 +41,7 @@ module.exports = {
     },
     loggeado: function(req, res) {
         let errors = validationResult(req);
-        let { email, pass} = req.body;
+        let { email, pass, recordarme} = req.body;
         if (errors.isEmpty()) {
             let usuarioALoguearse;
 
@@ -54,7 +55,10 @@ module.exports = {
                 return res.render('../views/users/login', {errors: 'Dirección de correo o contraeña inválidos'});
             }
 
-            req.session.usuario = usuarioALoguearse;
+            req.session.user = usuarioALoguearse;
+            if (recordarme != undefined) {
+                res.cookie('recordarme', usuarioALoguearse.email, { maxAge: 60000 });
+            }
             return res.redirect('/');
 
         } else {

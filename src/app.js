@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
+var cookieParser = require('cookie-parser');
 
 const mainRouter = require('./routes/main');
 const productsRouter = require('./routes/products');
@@ -10,12 +11,16 @@ const usersRouter = require('./routes/users');
 const adminRouter = require('./routes/admin')
 
 const loggedMiddelware = require('./middlewares/loggedMiddelware');
+const rememberMiddleware = require('./middlewares/rememberMiddleware');
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(cookieParser())
 app.use(methodOverride('_method'));
 app.use(session({secret: 'ChampionesSecreto'}));
 app.use(loggedMiddelware);
+app.use(rememberMiddleware);
+
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, './views'));
