@@ -20,15 +20,21 @@
             </div>
 
             <form action="/usuario/ingresar" method="POST">
-                <div class="datos">
+                <div class="datos">                    
                     <div class="mail">
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email">
+                        <input type="email" name="email" id="email"> 
                     </div>
                     <div class="pass">
                         <label for="pass">Contraseña</label>
-                        <input type="password" name="pass" id="pass">
+                        <input type="password" name="pass" id="pass">                        
+                        <% if (typeof errors != 'undefined') { %>
+                            <small> * <%= errors.pass.msg %> </small>
+                        <% } %>   
                     </div>
+                    <% if (typeof errores != 'undefined') { %>
+                        <small> * <%= errores %> </small>
+                    <% } %>  
                 </div>
                 <div class="check">
                     <div class="recordarme">

@@ -218,5 +218,15 @@
         "email": "santibullrich@gmail.com",
         "pass": "$2b$10$yr0dBuwtKfA6HlYWRpNP.u9MeRmw16em0vLGSrsbizu0EJKbHCpvm",
         "category": "user"
+    },
+    {
+        "id": 23,
+        "name": "Eugenia",
+        "lastName": "Porretti",
+        "birth": "1996-04-15",
+        "dni": "123126123",
+        "email": "eugeprobando@gmail.com",
+        "pass": "$2b$10$jXrEK636LQ2xW5lHJvb1TuBCUAlhmu56/ByGfUgvlG/Q6MjPC9HU2",
+        "category": "user"
     }
 ]

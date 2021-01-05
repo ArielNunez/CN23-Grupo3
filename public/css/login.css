@@ -76,6 +76,11 @@ section.login form div.datos div input{
     padding: 5px;
 }
 
+section.login form div.datos small {
+    padding-top: 10px;
+    color: red;
+}
+
 section.login form div.check {      
     width: 50%;
     margin: auto;

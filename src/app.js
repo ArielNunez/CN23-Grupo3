@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
-var cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 
 const mainRouter = require('./routes/main');
 const productsRouter = require('./routes/products');

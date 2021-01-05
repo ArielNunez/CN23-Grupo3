@@ -2,8 +2,6 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcrypt');
 const {validationResult} = require('express-validator');
-const session = require('express-session');
-var cookieParser = require('cookie-parser');
 
 let users = fs.readFileSync(path.join(__dirname, '../database/users.json'), 'utf-8');
 users = JSON.parse(users);
@@ -52,10 +50,11 @@ module.exports = {
             });
 
             if (usuarioALoguearse == undefined) {
-                return res.render('../views/users/login', {errors: 'Dirección de correo o contraeña inválidos'});
+                return res.render('../views/users/login', {errores: 'Dirección de correo o contraseña inválidos'});
             }
 
             req.session.user = usuarioALoguearse;
+
             if (recordarme != undefined) {
                 res.cookie('recordarme', usuarioALoguearse.email, { maxAge: 60000 });
             }
