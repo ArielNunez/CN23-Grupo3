@@ -13,9 +13,6 @@ module.exports = {
         }
         return res.send('Error, producto no encontrado');
     },
-    agregarACarrito: function(req, res) {
-        res.send("../views/products/productCart");
-    },
     carrito: function(req,res) {
         res.render('../views/products/productCart');
     },

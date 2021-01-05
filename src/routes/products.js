@@ -8,9 +8,8 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 
 
 router.get('/detalle', guestMiddleware, productsController.detalle);
-router.get('/detalle/:id', guestMiddleware, productsController.detalle);
+router.get('/detalle/:id', productsController.detalle);
 router.get('/carrito-de-compras', authMiddleware, productsController.carrito);
-router.post("/carrito-de-compras", productsController.agregarACarrito);
-router.get('/all', guestMiddleware, productsController.allProducts)
+router.get('/all', productsController.allProducts)
 
 module.exports = router;    

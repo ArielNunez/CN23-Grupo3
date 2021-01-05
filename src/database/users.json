@@ -228,5 +228,15 @@
         "email": "eugeprobando@gmail.com",
         "pass": "$2b$10$jXrEK636LQ2xW5lHJvb1TuBCUAlhmu56/ByGfUgvlG/Q6MjPC9HU2",
         "category": "user"
+    },
+    {
+        "id": 24,
+        "name": "Nina",
+        "lastName": "Samartin",
+        "birth": "2001-04-23",
+        "dni": "12345678",
+        "email": "nina@gmail.com",
+        "pass": "$2b$10$kDKnsTAILaTMj6lHy1BsPOB9XSc8pWImyhKmdmSkFL.gMqdSLJB6O",
+        "category": "user"
     }
 ]
