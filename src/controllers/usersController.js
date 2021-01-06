@@ -32,7 +32,7 @@ module.exports = {
         users.push(newUser);
         fs.writeFileSync(path.join(__dirname, '../database/users.json'), JSON.stringify(users, null, 4));
 
-        res.redirect('/usuario/ingresar');
+        res.redirect('/usuarios/ingresar');
     },    
     ingresar: function(req,res) {
         res.render('../views/users/login');

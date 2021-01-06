@@ -15,10 +15,10 @@
         <ul>
             <li><a href="/productos/carrito-de-compras"><img src="/img/carrito.svg" alt=""></a></li>
             <% if(typeof user == 'undefined') { %>
-                <li><a href="/usuario/ingresar">Ingreso / Registro</a></li>
+                <li><a href="/usuarios/ingresar">Ingreso / Registro</a></li>
             <% } else { %>
                 <li class="datosUsuario">HOLA, <a href="#"><%= user.name %></a></li>
-                <li><a href="/usuario/salir"><i class="fas fa-sign-out-alt"></i></a></li>
+                <li><a href="/usuarios/salir"><i class="fas fa-sign-out-alt"></i></a></li>
             <% } %>
         </ul>
     </nav>

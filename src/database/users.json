@@ -238,5 +238,25 @@
         "email": "nina@gmail.com",
         "pass": "$2b$10$kDKnsTAILaTMj6lHy1BsPOB9XSc8pWImyhKmdmSkFL.gMqdSLJB6O",
         "category": "user"
+    },
+    {
+        "id": 25,
+        "name": "",
+        "lastName": "",
+        "birth": "",
+        "dni": "",
+        "email": "",
+        "pass": "$2b$10$jH..S0M.EMRvGHHyIkauCuQf.JlDejD2hmN0JuPdyFz9jfVJokLUG",
+        "category": "user"
+    },
+    {
+        "id": 26,
+        "name": "",
+        "lastName": "",
+        "birth": "",
+        "dni": "",
+        "email": "",
+        "pass": "$2b$10$s/RW8RNCJ9aBaeDZ0U48juDd3c/h.yOg3IiGnF.iiy35Nsch8U8XO",
+        "category": "user"
     }
 ]
