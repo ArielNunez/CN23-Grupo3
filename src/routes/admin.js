@@ -2,9 +2,13 @@ const express = require('express');
 const router = express.Router();
 const path = require("path")
 const multer = require("multer")
+const fs = require('fs');
 const productsController = require('../controllers/productsController');
 const usersController = require('../controllers/usersController');
 const authMiddleware = require('../middlewares/authMiddleware');
+
+var productos= fs.readFileSync(path.join(__dirname, "../database/products.json"), "utf-8");
+productos = JSON.parse(productos);
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -12,7 +16,7 @@ var storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
         console.log()
-        cb(null, req.body.idproducto + '-' + Date.now() + path.extname(file.originalname))
+        cb(null, parseInt(productos[productos.length-1].id)+1 + '-' + Date.now() + path.extname(file.originalname))
     }
 })
 

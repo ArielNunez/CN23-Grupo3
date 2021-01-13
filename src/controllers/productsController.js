@@ -2,7 +2,7 @@ const fs= require("fs");
 const path= require("path");
 
 var productos= fs.readFileSync(path.join(__dirname, "../database/products.json"), "utf-8");
-var productos = JSON.parse(productos);
+productos = JSON.parse(productos);
 
 module.exports = {
     detalle: function(req,res) {
@@ -21,7 +21,7 @@ module.exports = {
     },
     crearProducto: function(req, res) {
         var nuevoProducto = {
-            id: req.body.idproducto,
+            id: parseInt(productos[productos.length-1].id)+1,
             producto: req.body.producto,
             descripcion: req.body.descripcion,
             imagen: req.file.filename,
@@ -32,7 +32,7 @@ module.exports = {
         }
         productos.push(nuevoProducto);
         fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productos, null, 4));
-        return res.redirect("/admin/productos/crear");
+        return res.redirect("/productos/detalle/" + nuevoProducto.id);
     },
     editar: function(req,res) {
         for(let i=0; i<productos.length;i++) {
