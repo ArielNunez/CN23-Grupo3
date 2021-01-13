@@ -78,7 +78,7 @@ section.login form div.datos div input{
 
 section.login form div.datos small {
     padding-top: 10px;
-    color: red;
+    color: #ce0000;
 }
 
 section.login form div.check {      

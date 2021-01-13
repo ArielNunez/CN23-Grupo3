@@ -18,21 +18,39 @@ module.exports = {
         res.render('../views/users/register');
     },
     guardar: function(req, res) {
-        let newUser = {   
-            id: lastId + 1,
-            name: req.body.nombre,
-            lastName: req.body.apellido,
-            birth: req.body.nacimiento,
-            dni: req.body.dni,
-            email: req.body.email,
-            pass: bcrypt.hashSync(req.body.pass, 10),
-            category: 'user'
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+
+            let newUser = {   
+                id: lastId + 1,
+                name: req.body.nombre,
+                lastName: req.body.apellido,
+                birth: req.body.nacimiento,
+                dni: req.body.dni,
+                email: req.body.email,
+                pass: bcrypt.hashSync(req.body.pass, 10),
+                category: 'user'
+            }
+    
+            users.push(newUser);
+            fs.writeFileSync(path.join(__dirname, '../database/users.json'), JSON.stringify(users, null, 4));
+    
+            res.redirect('/usuarios/ingresar');
+        } else {
+            let errores = errors.mapped();
+            return res.render('../views/users/register', {
+                errorNombre: errores.nombre,
+                errorApellido: errores.apellido,
+                errorNacimiento: errores.nacimiento,
+                errorDni: errores.dni, 
+                errorEmail: errores.email,
+                errorConfmail: errores.confmail,
+                errorPass: errores.pass,
+                errorConfpass: errores.confpass,
+                errorTyC: errores.TyC
+            })
+           //res.send(errors.mapped())
         }
-
-        users.push(newUser);
-        fs.writeFileSync(path.join(__dirname, '../database/users.json'), JSON.stringify(users, null, 4));
-
-        res.redirect('/usuario/ingresar');
     },    
     ingresar: function(req,res) {
         res.render('../views/users/login');
