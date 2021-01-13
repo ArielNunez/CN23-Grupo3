@@ -18,6 +18,18 @@ module.exports = {
         res.render('../views/users/register');
     },
     guardar: function(req, res) {
+        let errors = validationResult(req);
+        if(!errors.isEmpty()) {
+            let user = {
+                name: req.body.nombre,
+                lastName: req.body.apellido,
+                birth: req.body.nacimiento,
+                dni: req.body.dni,
+                email: req.body.email,
+                confEmail: req.body.confEmail
+            }
+            return res.render('../views/users/register', {errors: errors.mapped(), user: user});
+        } else {
             let newUser = {   
                 id: lastId + 1,
                 name: req.body.nombre,
@@ -28,11 +40,12 @@ module.exports = {
                 pass: bcrypt.hashSync(req.body.pass, 10),
                 category: 'user'
             }
-    
+
             users.push(newUser);
             fs.writeFileSync(path.join(__dirname, '../database/users.json'), JSON.stringify(users, null, 4));
-    
-            res.redirect('/usuario/ingresar');        
+
+            res.redirect('/usuarios/ingresar');
+        }
     },    
     ingresar: function(req,res) {
         res.render('../views/users/login');

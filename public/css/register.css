@@ -130,6 +130,25 @@ section.register form button {
     margin-bottom: 15px;
 }
 
+div.datos div.fila-uno div.nombre,
+div.datos div.fila-uno div.apellido,
+div.datos div.fila-dos div.nacimiento,
+div.datos div.fila-dos div.dni,
+div.datos div.fila-tres div.email,
+div.datos div.fila-tres div.confmail,
+div.datos div.fila-cuatro div.pass,
+div.datos div.fila-cuatro div.confpass {
+    position: relative;
+}
+
+
+
+div div small.registerValidation {
+    color: red;
+    position: absolute;
+    top: 70px;
+}
+
 @media(max-width: 426px) {
     main.register {
         margin: 35px 0px;
