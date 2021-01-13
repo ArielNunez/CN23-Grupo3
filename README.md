@@ -4,7 +4,7 @@
 
 Página web de E-Comerce para un emprendimiento de venta de calzado multimarca.
 
-## Páginas referente
+## Páginas de referencia
 
 - Converse Argentina - [https://www.converse.com.ar/](https://www.converse.com.ar/)
 - Dr. Martens Argentina - [https://www.drmartens.com/ar/es_ar/](https://www.drmartens.com/ar/es_ar/)
