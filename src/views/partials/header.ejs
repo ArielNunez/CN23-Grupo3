@@ -1,25 +1,23 @@
-<div class="menu1">
-    <a href="/"><img src="/design/logo/championes-logo.svg" alt="logo del sitio"></a>
+    <a href="/"><img src="/design/logo/championes-logo.svg" alt="logo del sitio"></a>   
     <nav class="nav1">
         <button class="burger"><i class="fas fa-bars"></i></button>
         <ul>
-            <li><a href="#">Calzado urbano</a></li>
-            <li><a href="#">Calzado deportivo</a></li>
+            <li><a href="#">Urbano</a></li>
+            <li><a href="#">Deportivo</a></li>
+            <li><a href="#">Marcas</a></li>
+            <li><a href="#">Explorar</a></li>            
             <li><a href="#">Ofertas</a></li>
-            <li><a href="#">Contacto</a></li>
         </ul>
     </nav>
-</div>
-<div class="menu2">
     <nav class="nav2">
         <ul>
-            <li><a href="/productos/carrito-de-compras"><img src="/img/carrito.svg" alt=""></a></li>
+            <li><a href="#"><i class="fas fa-search"></i></a></li>
+            <li><a href="/productos/carrito-de-compras"><i class="fas fa-shopping-cart"></i></a></li>
             <% if(typeof user == 'undefined') { %>
-                <li><a href="/usuarios/ingresar">Ingreso / Registro</a></li>
+                <li><a href="/usuarios/ingresar"><i class="fas fa-user"></i></a></li>
             <% } else { %>
                 <li class="datosUsuario">HOLA, <a href="#"><%= user.name %></a></li>
                 <li><a href="/usuarios/salir"><i class="fas fa-sign-out-alt"></i></a></li>
             <% } %>
         </ul>
     </nav>
-</div>
