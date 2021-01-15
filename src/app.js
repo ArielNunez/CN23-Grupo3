@@ -10,7 +10,7 @@ const productsRouter = require('./routes/products');
 const usersRouter = require('./routes/users');
 const adminRouter = require('./routes/admin')
 
-const loggedMiddelware = require('./middlewares/loggedMiddelware');
+const loggedMiddleware = require('./middlewares/loggedMiddleware');
 const rememberMiddleware = require('./middlewares/rememberMiddleware');
 
 app.use(express.urlencoded({extended: false}));
@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cookieParser())
 app.use(methodOverride('_method'));
 app.use(session({secret: 'ChampionesSecreto'}));
-app.use(loggedMiddelware);
+app.use(loggedMiddleware);
 app.use(rememberMiddleware);
 
 

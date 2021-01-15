@@ -217,7 +217,7 @@
         "dni": "35971495",
         "email": "santibullrich@gmail.com",
         "pass": "$2b$10$yr0dBuwtKfA6HlYWRpNP.u9MeRmw16em0vLGSrsbizu0EJKbHCpvm",
-        "category": "user"
+        "category": "admin"
     },
     {
         "id": 23,
@@ -227,7 +227,7 @@
         "dni": "123126123",
         "email": "eugeprobando@gmail.com",
         "pass": "$2b$10$jXrEK636LQ2xW5lHJvb1TuBCUAlhmu56/ByGfUgvlG/Q6MjPC9HU2",
-        "category": "user"
+        "category": "admin"
     },
     {
         "id": 24,
@@ -237,6 +237,6 @@
         "dni": "12345678",
         "email": "nina@gmail.com",
         "pass": "$2b$10$kDKnsTAILaTMj6lHy1BsPOB9XSc8pWImyhKmdmSkFL.gMqdSLJB6O",
-        "category": "user"
+        "category": "admin"
     }
 ]
