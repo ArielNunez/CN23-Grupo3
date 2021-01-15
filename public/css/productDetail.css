@@ -1,211 +1,231 @@
+@import url("http://use.fontawesome.com/releases/v5.15.1/css/all.css");
+
 /* ======================================
 -----------------General-----------------
 =======================================*/
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-main.productDetail .ruta {
-    padding-top: 35px;
-    padding-left: 27.5px;
+main.productDetail {
+    margin: 60px 160px;
 }
 
-main.productDetail nav.ruta ul li {
-    display: inline-block
+main.productDetail li {
+    list-style: none;
 }
 
-main.productDetail nav.ruta ul li a {
-    font-family: "Roboto";
-    font-weight: 400;
-    color: #9E9E9E;
+main.productDetail a {
     text-decoration: none;
+    color: black;
 }
 
-main.productDetail div.zapaydescripcion {
-    display: flex;  
-    margin: 92px 99px 92px 92px;
+main.productDetail a:hover {    
+    color: #BF488D;
 }
 
-main.productDetail div.imagenesZapas div img {
-    width: 397px;
+main.productDetail i:hover {    
+    color: #BF488D;
 }
 
-main.productDetail div.imagenesZapas{
+main.productDetail img {
+    width: 100px;
+}
+
+main.productDetail div.ruta ul {
     display: flex;
-    flex-direction: column;
 }
 
-main.productDetail div.imagenesZapas div ul li {
-    display: inline-block;
+main.productDetail div.ruta ul li {
+    padding-left: 5px;
+    font-size: 15px;
+}
+
+main.productDetail section.producto {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+main.productDetail section.producto article.imagen {
+    width: 50%;
+}
+
+main.productDetail section.producto article.imagen div {
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+}
+
+main.productDetail section.producto article.imagen div a.flechas {
+    align-self: center;
+    font-size: 25px;
+    color: grey;
+}
+
+main.productDetail section.producto article.imagen div img {
+    width: 75%;
+}
+
+main.productDetail section.producto article.imagen div.puntos {
+    width: 35%;
+}
+
+main.productDetail section.producto article.imagen div.puntos a {
+    color: grey;
+    font-size: 13px;
+    align-self: center;
+}
+
+main.productDetail section.producto article.imagen div.puntos a.negro {
+    color: #BF488D;
+    font-size: 15px;
+}
+
+main.productDetail section.producto article.detalle {    
+    margin: auto;
+    height: 55vh;
+    width: 40%;
+}
+
+main.productDetail section.producto article.detalle div.nombrePrecio {
+    display: flex;
     justify-content: space-between;
 }
 
-main.productDetail div.imagenesZapas div ul li img {
-    width: 73px;
-    margin-top: 10px;
-    margin-right: 25px;
+main.productDetail section.producto article.detalle div.nombrePrecio h2 {
+    text-transform: uppercase;
 }
 
-main.productDetail div.descripcion {
+main.productDetail section.producto article.detalle div.nombrePrecio h3 {
+    align-self: center;
+}
+
+main.productDetail section.producto article.detalle div.talle { 
     display: flex;
-    flex-direction: column;
-    margin-left: 60px;
+    flex-direction: column;   
+    border-top: 1px solid rgba(128, 128, 128, 0.527);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.527);
+    margin: 20px 0px;
+    padding: 15px 0px;
 }
 
-main.productDetail div.descripcion h3 {
-    color: #BF488D;
-    margin-top: 10px;
+main.productDetail section.producto article.detalle div.talle div {
+    display: flex;
+    justify-content: space-between;
 }
 
-main.productDetail div.descripcion p {
-        font-weight: bold;
-        font-size: 18px;
-        margin-top: 40px;
-        margin-bottom: 31.25px;
+main.productDetail section.producto article.detalle div.talle div.talleP a {
+    text-decoration: underline;
+    font-size: 15px;
+    padding-bottom: 20px;
 }
 
-main.productDetail div.descripcion div.envios {
-    border-bottom: solid 0.5px #9E9E9E;
-    margin-bottom: 18px;
-
+main.productDetail section.producto article.detalle div.talle div.tallesNum {
+    justify-content: flex-start;
 }
 
-main.productDetail div.descripcion div.envios h3.precioTachado {
-    text-decoration: line-through;
-    color: #cccccc;
-    font-weight: lighter;
-    font-size: 1em;
-}
-
-main.productDetail div div.talles {
-    font-family: "Roboto";
-    font-size: 19px;
-    color: #00182C;
-    ;
-}
-
-main.productDetail div div.talles34al44 input {
+main.productDetail section.producto article.detalle div.talle div.tallesNum input {
     opacity: 0;
     position: absolute;
 }
 
-main.productDetail div div.talles34al44 label {
-    font-family: "Roboto";
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: #00182C;
-    border: 3px solid #CCCCCC;
-    display: inline-block;
-    margin-top: 32px;
-    margin-bottom: 42px;
-    margin-right: 20px;
+main.productDetail section.producto article.detalle div.talle div.tallesNum label {
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 14px;
+    padding: 5px;
     cursor: pointer;
+    margin-right: 15px;
 }
 
-main.productDetail div div.talles34al44 input:checked + label {
-    border: 3px solid #BF488D;
-}
-
-main.productDetail div.agregarCarrito div div {
-    font-weight: bold;
-    margin-bottom: 13px;
-}
-
-main.productDetail div.agregarCarrito div div select {
-    font-weight: 700;
-    border: 3px solid #CCCCCC;
-    width: 76px;
-    height: 31px;
-}
-
-main.productDetail div.agregarCarrito div div div {
-    display: inline-block;
-}
- 
-main.productDetail div.agregarCarrito div div div button {
-    width: 251px;
-    height: 31px; 
-    text-align: center;
-    font-size: 17px;
-    font-weight: bold;
-    border: 3px solid #BF488D;
-    color: #BF488D;
-    padding: 2px 20px 0px 20px;
-    margin: 0px 12px 0px 12px;
-    background-color: white;
-    cursor: pointer;
-}
-
-main.productDetail div.agregarCarrito div div div button:hover {
+main.productDetail section.producto article.detalle div.talle div.tallesNum input:checked + label {
     background-color: #BF488D;
-    color: #FFF;
+    color: white;    
+    border-color: white;
+    font-size: 16px;
 }
 
-main.productDetail div div.lorem {
-    margin: 0px 92px 92px 92px;
+main.productDetail section.producto article.detalle div.talle div.tallesNum input:hover + label {
+    background-color: #BF488D;
+    color: white;    
+    border-color: white;
+    font-size: 16px;
 }
 
-main.productDetail div div.lorem h2 {
-    margin-bottom: 32px;
+main.productDetail section.producto article.detalle button {
+    background-color: #BF488D;
+    color: white;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: none;
+    margin-top: 10px;    
+    cursor: pointer;
 }
 
-
-/* =======================
-    PRODUCTOS SIMILARES
-========================*/
-
-
-main.productDetail div div.similaresgrande {
-    margin: 0px 92px 0px 92px;
+main.productDetail section.producto article.detalle button:hover {
+    color: #BF488D;
+    background-color: #FFF;
+    border: 1px solid #BF488D;
 }
 
-main.productDetail div div.similaresgrande h2 {
-    margin-bottom: 80px;
+main.productDetail section.descripcion {
+    margin-top: 100px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.527);
+    border-top: 1px solid rgba(128, 128, 128, 0.527);
+    padding: 50px 0px;
 }
 
-main.productDetail div.similaresgrande div {
+main.productDetail section.descripcion h3 {
+    text-transform: uppercase;
+    padding-bottom: 15px;
+}
+
+main.productDetail section.similares h3 {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 50px 0px 40px 0px;
+}
+
+main.productDetail section.similares div {
     display: flex;
     justify-content: space-between;
-}   
-
-main.productDetail div img.flechas {
-    width: 17.49px;
-    padding-bottom: 100px;
+    height: 50vh;
 }
 
-main.productDetail ul.similares li div{
-    display: inline-block;
-    font-family: "Roboto";
-    font-weight: 400;
-    font-size: 16px;
-    color: #00182C;
-    padding: 0px 12px 0px 12px;
-    border: 1px solid #CCCCCC;
-    padding-top: 8px;
-    padding-bottom: 8px;
+main.productDetail section.similares div a {
+    align-self: center;
 }
 
-main.productDetail ul.similares li {
-    display: inline-block;
-    margin-bottom: 86.5px;
+main.productDetail section.similares div ul {
+    display: flex;    
+    width: 85%;
+    justify-content: space-between;
 }
 
-main.productDetail ul.similares li div img {
+main.productDetail section.similares div ul li {
+
+}
+
+main.productDetail section.similares div ul li div {    
     display: flex;
-    justify-content: flex-start;
-    width: 234px;
-    margin-bottom: 20px;
-}  
-
-main.productDetail ul.similares li p {
-    font-family: "Roboto";
-    font-size: 16px;
-    font-weight: 700;
-    color: #BF488D;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    flex-direction: column;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0px 10px;
 }
 
+main.productDetail section.similares div ul li div img {
+    width: 80%;
+}
+
+main.productDetail section.similares div ul li div p {
+    font-size: 18px;
+}
+
+main.productDetail section.similares div ul li div p.precio {
+    font-size: 15px;
+}
 
 
 /* =======================

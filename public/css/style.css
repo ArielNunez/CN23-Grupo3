@@ -41,6 +41,7 @@ header {
     position: fixed;
     top:0;
     width: 100%;
+    z-index: 99;
 }
 
 header img {
@@ -74,7 +75,7 @@ header nav.nav1 ul li a {
 }
 
 header nav.nav2 {
-    width: 10%;    
+    width: 12%;    
     align-self: center;
 }
 
@@ -82,6 +83,10 @@ header nav.nav2 ul {
     display: flex;
     justify-content: space-between;
 }
+
+header nav.nav2 ul li.datosUsuario a {
+    padding-left: 15px;
+} 
 
 header nav ul li a:hover {
     color: #BF488D;
@@ -193,6 +198,10 @@ footer a:hover{
     header nav ul li a {
         font-size: 25px;
     }
+
+    header nav.nav2 ul li.datosUsuario a {
+        display: none;
+    } 
 
     header .burger {
         color: white; 

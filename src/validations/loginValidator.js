@@ -6,7 +6,7 @@ let users = fs.readFileSync(path.join(__dirname, '../database/users.json'), 'utf
 users = JSON.parse(users);
 
 module.exports = [
-    //Quise hacer una validación en caso de que un usario no esté registrado pero cuando lo pongo a correr no importa si pongo un mail existente o no salta el error asi que por ahora lo dejo comentado para consultarlo en clase
+    //Quise hacer una validación en caso de que un usario no esté registrado pero cuando lo pongo a correr no importa si pongo un mail existente, o no, salta el error asi que por ahora lo dejo comentado para consultarlo en clase
     /*check('email')
         .custom(value => {
             users.forEach(user => {

@@ -8,93 +8,91 @@
         <%- include("../partials/header") %>
     </header>
     <main class="productDetail">
-        <nav class="ruta"> 
-       <ul>
-        <li><a href="/">Home ></a></li>
-        <li><a href="#">Calzado Urbano ></a></li>
-        <li><a href="#"><%= producto.producto %></a></li>
-        </ul>
-        </nav>
-        <div class="zapaydescripcion">
-        <div class="imagenesZapas">
-        <div><img src="/img/uploads/productimage/<%= producto.imagen %>" alt="<%= producto.producto %>"></div>
-        <div>
+        <div class="ruta">
             <ul>
-                 <li><img src="/img/uploads/productimage/<%= producto.imagen %>" alt="<%= producto.producto %>"></li>
-                 <li><img src="/img/uploads/productimage/<%= producto.imagen %>" alt="<%= producto.producto %>"></li>
-                 <li><img src="/img/uploads/productimage/<%= producto.imagen %>" alt="<%= producto.producto %>"></li>
-                 <li><img src="/img/uploads/productimage/<%= producto.imagen %>" alt="<%= producto.producto %>"></li>
+                <li><a href="#">Urbano /</a></li>
+                <li><a href="#">Marca /</a></li>
+                <li><a href="#"><%= producto.producto %></a></li>
             </ul>
         </div>
-        </div>
-        <div class="descripcion">
-            <div class="envios">
-                <h1><%= producto.producto %></h1>
-                <% if(producto.descuento == "") { %>
-                    <h3>$<%= producto.precio %></h3>
-                <% } else { %>
-                    <h3 class="precioTachado">$<%= producto.precio %></h3>
-                    <h3 class="precioConDescuento">$<%= (producto.precio / 100 * (100-producto.descuento)) - (producto.precio / 100 * (100-producto.descuento))%1 %></h3>
-                    <h3 class="porcentajeDescuento"><%= producto.descuento %>% OFF</h3>
-                <% } %> 
-                <p>12 cuotas sin interés con cualquier tarjeta</p>
-                <p><i class="fas fa-truck"></i>      Envíos a todo el país</p>
-            </div>
-            <form method="POST" action=""></form>
-        <div>
-            <div class="talles">Talle: 38</div>
-            <div class="talles34al44">
-                <% for(let i=0;i<producto.talles.length; i++) { %>
-                    <input type="radio" name="talle" value="<%= producto.talles[i] %>" id="<%= producto.talles[i] %>">
-                    <label for="<%= producto.talles[i] %>"><%= producto.talles[i] %></label>
-                <% } %>
-            </div>
-        </div>
-    
-        <div class="agregarCarrito">
-            <div>
-                <div>Cantidad</div>
-                    <div>
-                        <select name="cantidad">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <div><button type="submit">AGREGAR AL CARRITO</button></div>
+        <section class="producto">
+            <article class="imagen">
+                <div>
+                    <a class="flechas" href="#"><i class="fas fa-arrow-left"></i></a>
+                    <img src="/img/uploads/productimage/<%= producto.imagen %>" alt="<%= producto.producto %>">
+                    <a class="flechas" href="#"><i class="fas fa-arrow-right"></i></a>
+                </div>                
+                <div class="puntos">
+                    <a href="#" class="negro"><i class="fas fa-circle"></i></a>
+                    <a href="#"><i class="fas fa-circle"></i></a>
+                    <a href="#"><i class="fas fa-circle"></i></a>
+                    <a href="#"><i class="fas fa-circle"></i></a>
+                    <a href="#"><i class="fas fa-circle"></i></a>
+                    <a href="#"><i class="fas fa-circle"></i></a>
+                </div>
+            </article>
+            <article class="detalle">
+                <div class="nombrePrecio">
+                    <h2> <%= producto.producto %> </h2>
+                    <% if(producto.descuento == "") { %>
+                        <h3>$<%= producto.precio %></h3>
+                    <% } else { %>
+                        <h3 class="precioTachado">$<%= producto.precio %></h3>
+                        <h3 class="precioConDescuento">$<%= (producto.precio / 100 * (100-producto.descuento)) - (producto.precio / 100 * (100-producto.descuento))%1 %></h3>
+                        <h3 class="porcentajeDescuento"><%= producto.descuento %>% OFF</h3>
+                    <% } %>
+                </div>
+                <div class="talle">
+                    <div class="talleP">
+                        <p>Talle</p>
+                        <a href="#">Tabla de talles</a>
+                    </div>
+                    <div class="tallesNum">
+                        <% for(let i=0;i<producto.talles.length; i++) { %>
+                            <input type="radio" name="talle" value="<%= producto.talles[i] %>" id="<%= producto.talles[i] %>">
+                            <label for="<%= producto.talles[i] %>"><%= producto.talles[i] %></label>
+                        <% } %>
                     </div>
                 </div>
-            </div>
-        </form>
-            
-        </div>
-        </div>
-        </div>
-        <div>
-        <div class="lorem">
-        <H2>Descripción</H2>
-        <p><%= producto.descripcion %></p>
-        </div>
-        <div class="similaresgrande">
-                <h2>Productos similares que tal vez te gusten</h2>
+                <button type="submit">AGREGAR AL CARRITO</button>
+            </article>
+        </section>
+        <section class="descripcion">
+            <h3>Detalle de producto</h3>
+            <p><%= producto.descripcion %></p>
+        </section>
+        <section class="similares">
+            <h3>Productos similares</h3>
             <div>
-                <div class="similaresconflechas">
-                
-                            <img class="flechas" src="/img/Vector.svg" alt="anterior"></div>
-                        <ul class="similares">
-                            <li><div><img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">Zapatillas Vans Original<p>$7.999</p></div></li>
-                            <li><div><img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">Zapatillas Vans Original<p>$7.999</p></div> </li>
-                            <li><div><img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">Zapatillas Vans Original<p>$7.999</p></div> </li>
-                            <li><div><img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">Zapatillas Vans Original<p>$7.999</p></div> </li>
-                        </ul>
-                            <div><img class="flechas" src="/img/Vector2.svg" alt="siguiente"><div></div>
-        </div>
-        </div>
-        </div>
-</main>
-<footer>
-    <%- include("../partials/footer") %>
-</footer>
+                <a href="#"><i class="fas fa-arrow-left"></i></a>
+                <ul class="similares">
+                    <li><div>
+                        <img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">
+                        <p>Zapatillas Vans Original</p>
+                        <p class="precio">$7.999</p>
+                    </div></li>
+                    <li><div>
+                        <img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">
+                        <p>Zapatillas Vans Original</p>
+                        <p class="precio">$7.999</p>
+                    </div></li>
+                    <li><div>
+                        <img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">
+                        <p>Zapatillas Vans Original</p>
+                        <p class="precio">$7.999</p>
+                    </div></li>
+                    <li><div>
+                        <img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">
+                        <p>Zapatillas Vans Original</p>
+                        <p class="precio">$7.999</p>
+                    </div></li>
+                </ul>
+                <a href="#"><i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <%- include("../partials/footer") %>
+    </footer>
 </body>
 </html>

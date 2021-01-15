@@ -12,13 +12,13 @@
             "41",
             "42"
         ],
-        "precio":"7999",
+        "precio":"7.999",
         "descuento":"15"
     },
     {
         "id": "2",
-        "producto": "Dc Crisis",
-        "descripcion": "Material de la parte superior: cuero, nobuk o loneta Sin puntera de goma Logo serigrafiado repujado en el panel lateral Lengüeta y cuello acolchados con espuma, para mayor confort y sujeción Forro de malla para mayor comodidad Orificios de ventilación para mayor transpirabilidad Suela de copa de alto rendimiento Suela DC con dibujo Pill Pattern de marca registrada",
+        "producto": "DC Crisis",
+        "descripcion": "Material de la parte superior: cuero, nobuk o loneta. Sin puntera de goma. Logo serigrafiado repujado en el panel lateral. Lengüeta y cuello acolchados con espuma, para mayor confort y sujeción. Forro de malla para mayor comodidad. Orificios de ventilación para mayor transpirabilidad. Suela de copa de alto rendimiento. Suela DC con dibujo Pill Pattern de marca registrada.",
         "imagen": "2-1607531503018.jpg",
         "categoria": "CalzadoUrbano",
         "talles": [
@@ -28,7 +28,7 @@
             "41",
             "42"
         ],
-        "precio": "12000",
+        "precio": "12.000",
         "descuento": ""
     },
     {
@@ -47,7 +47,7 @@
             "43",
             "44"
         ],
-        "precio": "15999",
+        "precio": "15.999",
         "descuento": "10"
     },
     {
@@ -68,7 +68,7 @@
             "43",
             "44"
         ],
-        "precio": "15000",
+        "precio": "15.000",
         "descuento": ""
     },
     {
@@ -87,7 +87,7 @@
             "43",
             "44"
         ],
-        "precio": "8999",
+        "precio": "8.999",
         "descuento": ""
     },
     {
@@ -107,7 +107,7 @@
             "43",
             "44"
         ],
-        "precio": "16499",
+        "precio": "16.499",
         "descuento": ""
     }
 ]
