@@ -196,7 +196,7 @@ footer a:hover{
     }
 
     header nav ul li a {
-        font-size: 25px;
+        font-size: 20px;
     }
 
     header nav.nav2 ul li.datosUsuario a {
@@ -216,8 +216,7 @@ footer a:hover{
     ================= */
 
     body {
-        padding-top: 75px;
-        max-width: 100%;
+        padding-top: 85px;
     }
 
     /* =============== 

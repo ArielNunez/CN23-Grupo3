@@ -34,13 +34,17 @@
             <article class="detalle">
                 <div class="nombrePrecio">
                     <h2> <%= producto.producto %> </h2>
-                    <% if(producto.descuento == "") { %>
-                        <h3>$<%= producto.precio %></h3>
-                    <% } else { %>
-                        <h3 class="precioTachado">$<%= producto.precio %></h3>
-                        <h3 class="precioConDescuento">$<%= (producto.precio / 100 * (100-producto.descuento)) - (producto.precio / 100 * (100-producto.descuento))%1 %></h3>
-                        <h3 class="porcentajeDescuento"><%= producto.descuento %>% OFF</h3>
-                    <% } %>
+                    <div class="precio">
+                        <% if(producto.descuento == "") { %>
+                            <h3>$<%= producto.precio %></h3>
+                        <% } else { %>                        
+                            <h4 class="precioTachado">$<%= producto.precio %></h4>
+                            <div class="descuento">
+                                <h3 class="precioConDescuento">$<%= (producto.precio / 100 * (100-producto.descuento)) - (producto.precio / 100 * (100-producto.descuento))%1 %></h3>                            
+                                <h5 class="porcentajeDescuento"><%= producto.descuento %>% OFF</h5>
+                            </div>
+                        <% } %>
+                    </div>
                 </div>
                 <div class="talle">
                     <div class="talleP">
@@ -66,26 +70,30 @@
             <div>
                 <a href="#"><i class="fas fa-arrow-left"></i></a>
                 <ul class="similares">
-                    <li><div>
-                        <img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">
-                        <p>Zapatillas Vans Original</p>
-                        <p class="precio">$7.999</p>
-                    </div></li>
-                    <li><div>
-                        <img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">
-                        <p>Zapatillas Vans Original</p>
-                        <p class="precio">$7.999</p>
-                    </div></li>
-                    <li><div>
-                        <img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">
-                        <p>Zapatillas Vans Original</p>
-                        <p class="precio">$7.999</p>
-                    </div></li>
-                    <li><div>
-                        <img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">
-                        <p>Zapatillas Vans Original</p>
-                        <p class="precio">$7.999</p>
-                    </div></li>
+                    <div class="similares1">
+                        <li><div>
+                            <img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">
+                            <p>Zapatillas Vans Original</p>
+                            <p class="precio">$7.999</p>
+                        </div></li>
+                        <li><div>
+                            <img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">
+                            <p>Zapatillas Vans Original</p>
+                            <p class="precio">$7.999</p>
+                        </div></li>
+                    </div>
+                    <div class="similares2">
+                        <li><div>
+                            <img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">
+                            <p>Zapatillas Vans Original</p>
+                            <p class="precio">$7.999</p>
+                        </div></li>
+                        <li><div>
+                            <img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">
+                            <p>Zapatillas Vans Original</p>
+                            <p class="precio">$7.999</p>
+                        </div></li>
+                    </div>
                 </ul>
                 <a href="#"><i class="fas fa-arrow-right"></i></a>
             </div>
