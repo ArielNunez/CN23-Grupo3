@@ -61,14 +61,6 @@ main.index section.arriba .cuotas-envio p {
     margin-left: 20px;
 }
 
-/* =================
-    SECCION ABAJO
-====================*/
-
-main.index section.abajo {
-    
-}
-
 /* =======================
     NOVEDADES y OFERTAS
 ==========================*/
@@ -89,6 +81,7 @@ main.index section.abajo .ofertas .listado-ofertas {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 } 
 
 main.index section.abajo .novedades .listado-novedades a,
@@ -228,6 +221,11 @@ main.index section.abajo .todoslosproductos #button:hover {
 ========================*/
 
 @media (max-width: 500px) {
+
+    /* ============
+        BANNERS
+    ===============*/
+
     main.index section.arriba .banner {
         height: 145px;
     }
@@ -235,54 +233,90 @@ main.index section.abajo .todoslosproductos #button:hover {
     main.index section.arriba .cuotas-envio {
         font-size: 12px;
         height: 35px;
+        justify-content: space-around;
     }
 
-    main.index #textotarjeta {
-        margin-right: 5px;
+    main.index section.arriba .cuotas-envio p {
+        margin-left: 0px;
     }
 
-    main.index #textoenvio {
-        margin-left: 5px;
+    main.index section.arriba div.puntos a  {
+        font-size: 13px;
     }
 
-    main.index .listado-novedades {
-        margin-top: 30px;
-    }
-
-    main.index .listado-ofertas {
-        margin-top: 30px;
-    }
-
-    main.index .producto {
-        width: 40%;
-        margin-top: 20px;
-    }
-
-    main.index .button {
-        margin-top: 50px;
-    }
-
-    main.index #button {
+    main.index section.arriba div.puntos a.negro {
         font-size: 14px;
     }
 
-    main.index .novedades h2 {
-        font-size: 30px;
+    /* =======================
+        NOVEDADES y OFERTAS
+    ==========================*/
+
+    main.index section.abajo .novedades, 
+    main.index section.abajo .ofertas {
+        padding: 30px 10px;
     }
 
-    main.index .ofertas h2 {
-        font-size: 30px;
+    main.index section.abajo .novedades h2,
+    main.index section.abajo .ofertas h2  { 
+        padding-left: 20px;
+        font-size: 24px;
     }
 
-    main.index .todoslosproductos h2 {
-        font-size: 30px;
+    main.index section.abajo .novedades .listado-novedades, 
+    main.index section.abajo .ofertas .listado-ofertas {
+        justify-content: space-around;
     }
 
-    main.index .marcas {
-        height: 70px;
+    main.index section.abajo .novedades .listado-novedades a,
+    main.index section.abajo .ofertas .listado-ofertas a {
+        padding-top: 10px;
     }
 
-    main.index .logos img {
-        height: 30px;
+    /* =================
+        CAJA PRODUCTO
+    ===================*/
+
+    main.index section.abajo .producto {
+        width: 40%;
     }
+
+    /* ===========
+        MARCAS
+    ==============*/
+
+    main.index section.abajo .marcas {
+        margin: 30px 0px;
+    }
+
+    main.index section.abajo .marcas h2 {
+        font-size: 24px;
+        padding-left: 30px;
+    }
+
+    main.index section.abajo .logos {
+        height: auto;
+        flex-wrap: wrap;
+    }
+    
+    main.index section.abajo .logos img {
+        border: none;
+    }
+
+    main.index section.abajo .logos a.flechas {
+        display: none;
+    }
+
+    /* =======================
+        TODOS LOS PRODUCTOS
+    ========================*/
+
+    main.index section.abajo .todoslosproductos {
+        padding: 30px;
+    }
+
+    main.index section.abajo .todoslosproductos h2 {
+        font-size: 24px;
+    }
+
 }
