@@ -5,33 +5,32 @@
 </head>
 <body>
     <header>
-        <%- include("../partials/header") %>
+        <%- include("../partials/adminHeader") %>
     </header>
 
-    <main class="listaUsuarios">
-        <h2>Usuarios</h2>
-        <table>
-            <tr>
-                <th class="id">Id</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th class="email">Email</th>
-            </tr>
-            <% for (i = 0; i < users.length; i++) { %>
-              <tr>
-                <td> <%= users[i].id %> </td>
-                <td> <%= users[i].name %> </td>
-                <td> <%= users[i].lastName %> </td>
-                <td> <%= users[i].email %> </td>
-              </tr>                  
-            <% } %> 
-        </table>
-    </main>
-
-    <footer>
-        <%- include("../partials/footer") %>
-    </footer>
-
-    
+    <main class="listaUsuarios">        
+        <nav>
+            <%- include("../partials/adminNav") %>
+        </nav>
+        <section>
+            <h2>Usuarios</h2>
+            <table>
+                <tr>
+                    <th class="id">Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th class="email">Email</th>
+                </tr>
+                <% for (i = 0; i < users.length; i++) { %>
+                <tr>
+                    <td> <%= users[i].id %> </td>
+                    <td> <%= users[i].name %> </td>
+                    <td> <%= users[i].lastName %> </td>
+                    <td> <%= users[i].email %> </td>
+                </tr>                  
+                <% } %> 
+            </table>
+        </section>
+    </main>    
 </body>
 </html>
