@@ -50,7 +50,7 @@ module.exports = {
     ingresar: function(req,res) {
         res.render('../views/users/login');
     },
-    loggeado: function(req, res) {
+    conectado: function(req, res) {
         let errors = validationResult(req);
         let { email, pass, recordarme} = req.body;
         if (errors.isEmpty()) {

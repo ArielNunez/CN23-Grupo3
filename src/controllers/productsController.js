@@ -64,7 +64,7 @@ module.exports = {
         fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productos, null, 4))
         res.send('prodcuto eliminado')
     },
-    allProducts: function(req, res) {
+    productosTodos: function(req, res) {
         res.render('products/productList', {productos: productos})
     }
 }
