@@ -26,7 +26,7 @@ module.exports = [
         .withMessage('* Este campo es obligatorio')
         .isEmail()
         .withMessage('* Debés ingresar un email válido.'),
-    check('confmail')
+    check('confEmail')
         .notEmpty()
         .withMessage('* Este campo es obligatorio'),
     check('pass')
@@ -34,7 +34,7 @@ module.exports = [
         .withMessage('* Este campo es obligatorio')
         .isLength({min:6, max:30})
         .withMessage('* La contraseña debe tener como mínimo 6 caracteres.'),
-    check('confpass')
+    check('confPass')
         .notEmpty()
         .withMessage('* Este campo es obligatorio'),
     check('TyC')

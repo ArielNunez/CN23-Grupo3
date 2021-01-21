@@ -25,6 +25,7 @@ DROP TABLE IF EXISTS `categoria_producto`;
 CREATE TABLE `categoria_producto` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `categoria` varchar(100) NOT NULL,
+  `estado` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -49,6 +50,7 @@ DROP TABLE IF EXISTS `categoria_usuario`;
 CREATE TABLE `categoria_usuario` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` int(11) DEFAULT NULL,
+  `estado` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -73,6 +75,7 @@ DROP TABLE IF EXISTS `marcas`;
 CREATE TABLE `marcas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `marcas` varchar(100) DEFAULT NULL,
+  `estado` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -98,6 +101,7 @@ CREATE TABLE `producto_talle` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_producto` int(11) DEFAULT NULL,
   `id_talle` int(11) DEFAULT NULL,
+  `estado` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `id_talle_idx` (`id_talle`),
@@ -132,6 +136,7 @@ CREATE TABLE `productos` (
   `precio` decimal(10,0) NOT NULL,
   `descuento` int(11) DEFAULT NULL,
   `id_marcas` int(11) DEFAULT NULL,
+  `estado` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `id_categoria_idx` (`id_categoria`),
@@ -160,6 +165,7 @@ DROP TABLE IF EXISTS `talle`;
 CREATE TABLE `talle` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `talle` int(11) DEFAULT NULL,
+  `estado` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -188,8 +194,11 @@ CREATE TABLE `usuarios` (
   `fecha_nacimiento` date DEFAULT NULL,
   `dni` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` int(11) DEFAULT NULL,
+  `password` int(11) NOT NULL,
+  `estado` int(11) DEFAULT NULL,
   `id_categoria_usuario` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `id_categoria_usuario_idx` (`id_categoria_usuario`),
@@ -215,4 +224,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-19 12:59:15
+-- Dump completed on 2021-01-20 13:20:54

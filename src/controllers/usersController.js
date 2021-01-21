@@ -2,20 +2,11 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcrypt');
 const {validationResult} = require('express-validator');
-
-let users = fs.readFileSync(path.join(__dirname, '../database/users.json'), 'utf-8');
-users = JSON.parse(users);
-
-let lastId = 0;
-for(i= 0; i < users.length; i++) {
-    if(lastId < users[i].id) {
-        lastId = users[i].id
-    }
-}
+let db = require('../database/models');
 
 module.exports = {
     registro: function(req,res) {
-        res.render('../views/users/register');
+        res.render('users/register');
     },
     guardar: function(req, res) {
         let errors = validationResult(req);
@@ -28,27 +19,29 @@ module.exports = {
                 email: req.body.email,
                 confEmail: req.body.confEmail
             }
-            return res.render('../views/users/register', {errors: errors.mapped(), user: user});
+            return res.render('users/register', {errors: errors.mapped(), user: user});
         } else {
-            let newUser = {   
-                id: lastId + 1,
-                name: req.body.nombre,
-                lastName: req.body.apellido,
-                birth: req.body.nacimiento,
+            db.Usuario.create ({   
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                fecha_nacimiento: req.body.nacimiento,
                 dni: req.body.dni,
                 email: req.body.email,
-                pass: bcrypt.hashSync(req.body.pass, 10),
-                category: 'user'
-            }
+                password: bcrypt.hashSync(req.body.pass, 10),
+            })
+            .then(function(usuario){
+                console.log(usuario)
+                return res.redirect('/usuarios/ingresar');
+            })
+            .catch(function (err) {
+                res.send("Lo sentimos, no pudimos procesar su solicitud, por favor intentelo nuevamente.")
+              });
 
-            users.push(newUser);
-            fs.writeFileSync(path.join(__dirname, '../database/users.json'), JSON.stringify(users, null, 4));
-
-            res.redirect('/usuarios/ingresar');
+            
         }
     },    
     ingresar: function(req,res) {
-        res.render('../views/users/login');
+        res.render('users/login');
     },
     loggeado: function(req, res) {
         let errors = validationResult(req);
@@ -63,7 +56,7 @@ module.exports = {
             });
 
             if (usuarioALoguearse == undefined) {
-                return res.render('../views/users/login', {errores: 'Dirección de correo o contraseña inválidos'});
+                return res.render('users/login', {errores: 'Dirección de correo o contraseña inválidos'});
             }
 
             req.session.user = usuarioALoguearse;
@@ -74,7 +67,7 @@ module.exports = {
             return res.redirect('/');
 
         } else {
-            return res.render('../views/users/login', {errors: errors.mapped()});
+            return res.render('users/login', {errors: errors.mapped()});
         }      
     },
     salir: function(req,res) {
@@ -82,6 +75,6 @@ module.exports = {
         return res.redirect('/');
     },
     listado: function(req, res) {
-        res.render('../views/users/usersList', {users: users})
+        res.render('users/usersList', {users: users})
     }
 }

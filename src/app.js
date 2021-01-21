@@ -4,6 +4,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 
 const mainRouter = require('./routes/main');
 const productsRouter = require('./routes/products');
@@ -13,6 +14,8 @@ const adminRouter = require('./routes/admin');
 const loggedMiddleware = require('./middlewares/loggedMiddleware');
 const rememberMiddleware = require('./middlewares/rememberMiddleware');
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(cookieParser());
@@ -23,7 +26,7 @@ app.use(rememberMiddleware);
 
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, './views'));
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use('/', mainRouter);
