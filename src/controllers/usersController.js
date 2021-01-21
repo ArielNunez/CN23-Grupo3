@@ -43,7 +43,7 @@ module.exports = {
     ingresar: function(req,res) {
         res.render('users/login');
     },
-    loggeado: function(req, res) {
+    logueado: function(req, res) {
         let errors = validationResult(req);
         let { email, pass, recordarme} = req.body;
         if (errors.isEmpty()) {
@@ -64,11 +64,19 @@ module.exports = {
             if (recordarme != undefined) {
                 res.cookie('recordarme', usuarioALoguearse.email, { maxAge: 60000 });
             }
-            return res.redirect('/');
+
+            if (usuarioALoguearse.category == "admin") {
+                return res.redirect('/admin/productos/crear')
+            } else {
+                return res.redirect('/');
+            }
 
         } else {
             return res.render('users/login', {errors: errors.mapped()});
         }      
+    },
+    ingresoAdmin: function(req, res) {
+        return res.redirect('/usuarios/ingresar');
     },
     salir: function(req,res) {
         req.session.destroy();

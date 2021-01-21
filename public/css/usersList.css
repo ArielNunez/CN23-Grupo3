@@ -1,5 +1,11 @@
 main.listaUsuarios {
-    margin: 40px;
+    display: flex;
+}
+
+main.listaUsuarios section {
+    width: 100%;
+    padding: 40px 0px;
+    padding-left: 245px;
 }
 
 main.listaUsuarios h2 {

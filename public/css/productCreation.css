@@ -1,6 +1,9 @@
 /* =============== 
 - General
 ================= */
+main.productCreation {
+    display: flex;
+}
 
 main.productCreation section.principal {
     display: flex;
@@ -9,8 +12,9 @@ main.productCreation section.principal {
     justify-content: space-between;
     border: 1px solid #e9e9e9;
     border-radius: 2px;
-    margin: 40px 300px 80px 300px;
-    padding: 20px;
+    width: 100%;
+    padding: 40px 200px;
+    padding-left: 445px;
 }
 
 main.productCreation section.principal div h1 {

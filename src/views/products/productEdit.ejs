@@ -5,9 +5,12 @@
 </head>
 <body>
 <header>
-    <%- include("../partials/header") %>
+    <%- include("../partials/adminHeader") %>
 </header>
-<main class="productCreation">
+<main class="productCreation">    
+    <nav>
+        <%- include("../partials/adminNav") %>
+    </nav>
     <section class="principal">
         <div>
             <h1>Edición de Producto</h1>
@@ -74,19 +77,14 @@
                     <button id="button" type="submit">Guardar Cambios</button>                    
                 </div>                
             </form>
-
             
             <form action="/admin/productos/<%= producto.id %>/eliminar?_method=DELETE" method="POST">
-                 <div class="button delete"></div>
+                 <div class="button delete">
                     <button id="button" type="submit">Eliminar Producto</button>
                 </div>
-            </form>
-            
+            </form>            
         </div>
     </section>
 </main>
-<footer>
-    <%- include("../partials/footer") %>
-</footer>
 </body>
 </html>

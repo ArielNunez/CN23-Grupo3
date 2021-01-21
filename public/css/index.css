@@ -1,29 +1,52 @@
+main.index {    
+    background-color: #ebebeb;
+}
+
 /* ============
     BANNER
 ===============*/
 
-main.index .banner {
-    background-image: url(https://cdn.shopify.com/s/files/1/1342/3335/files/vans_image_banner_02.jpg?v=1485461227);
+main.index section.arriba .banner {
+    background-image: url('../img/banner.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 340px;
+    height: 425px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-main.index .banner h1 {
-    color: white;
-    font-size: 46px;
-    text-shadow: 3px 3px 6px black; 
+main.index section.arriba .banner h1 {
+    display: none
+}
+
+main.index section.arriba div.puntos {
+    text-align: center;    
+    padding-top: 10px;
+    letter-spacing: 5px;
+}
+
+main.index section.arriba div.puntos a {
+    color: grey;
+    font-size: 15px;
+    align-self: center;
+}
+
+main.index section.arriba div.puntos a.negro {
+    color: #BF488D;
+    font-size: 16px;
+}
+
+main.index section.arriba div.puntos a:hover {
+    color: #BF488D;
 }
 
 /* ============
     BANNER 2
 ===============*/
 
-main.index .cuotas-envio {
+main.index section.arriba .cuotas-envio {
     height: 54px;
     background-color: #BF488D;
     color: white;
@@ -34,38 +57,62 @@ main.index .cuotas-envio {
 
 }
 
-main.index .cuotas-envio p {
+main.index section.arriba .cuotas-envio p {
     margin-left: 20px;
 }
 
-/* ============
-    NOVEDADES
-===============*/
+/* =======================
+    NOVEDADES y OFERTAS
+==========================*/
 
-main.index .novedades h2 {
-    padding-top: 40px;
-    text-align: center;
+main.index section.abajo .novedades, 
+main.index section.abajo .ofertas {
+    padding: 50px 150px;
+}
+
+main.index section.abajo .novedades h2,
+main.index section.abajo .ofertas h2  { 
+    padding-left: 10px;
     font-size: 32px;
 }
 
-main.index .novedades .listado-novedades {
-    margin-top: 60px;
+main.index section.abajo .novedades .listado-novedades, 
+main.index section.abajo .ofertas .listado-ofertas {
+    margin-top: 30px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
 } 
+
+main.index section.abajo .novedades .listado-novedades a,
+main.index section.abajo .ofertas .listado-ofertas a {
+    text-decoration: none;
+    color:  #BF488D;
+    align-self: center;
+}
+
+main.index section.abajo .novedades .listado-novedades a:hover,
+main.index section.abajo .ofertas .listado-ofertas a:hover {
+    text-decoration: underline;
+}
 
 /* =================
     CAJA PRODUCTO
 ===================*/
 
-main.index .producto {
-    padding: 15px;
-    -webkit-box-shadow: 4px 3px 5px 0px rgba(153,153,153,1);
-    -moz-box-shadow: 4px 3px 5px 0px rgba(153,153,153,1);
-    box-shadow: 4px 3px 5px 0px rgba(153,153,153,1);
+main.index section.abajo .producto {
+    margin: 10px;
+    padding: 10px;
+    width: 18%;
     background-color: white;
+    border-radius: 6px;
     position: relative;
+}
+
+main.index section.abajo .producto:hover {
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 main.index #enlace {
@@ -77,103 +124,96 @@ main.index #enlace {
   z-index: 10;
 }
 
-main.index .producto img {
-    height:160px;
+main.index section.abajo .producto img {
     max-width: 100%;
 }
 
-main.index .producto h5 {
+main.index section.abajo .producto h5 {
     font-size: 16px;
     font-weight: bold;
 }
 
-main.index .producto p {
+main.index section.abajo .producto p {
     margin-top: 10px;
     color: #BF488D;
 
 }
 
-/* ============
-    BUTTONS
-===============*/
+/* ===========
+    MARCAS
+==============*/
 
-main.index .button {
-    margin-top: 80px;
-    display: flex;
-    justify-content: center;
+main.index section.abajo .marcas {
+    margin: 50px 0px;
 }
 
-main.index #button {
-    background-color: #BF488D;
-    color: white;
-    border: none;
-    border-radius: 15px;
-    padding: 15px;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 40px;
-    
-}
-
-main.index #button:hover {
-    filter: brightness(110%);
-}
-
-/* ============
-    OFERTAS
-===============*/
-
-main.index .ofertas {
-    background-color:#E8E8E8;
-}
-
-main.index .ofertas h2 {
-    padding-top: 40px;
-    text-align: center;
+main.index section.abajo .marcas h2 {
     font-size: 32px;
-}
+    padding-left: 160px;
+} 
 
-main.index .ofertas .listado-ofertas {
-    margin-top: 60px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-/* ================
-    BANNER LOGOS
-===================*/
-
-main.index .marcas {
-    height: 100px;
-    background-color: #BF488D;
-    color: white;
-    font-size: 16px;
+main.index section.abajo .logos {    
+    margin: 30px 0px; 
+    height: 120px;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
-main.index .logos {
-    display: flex;
-    justify-content: center;
+main.index section.abajo .logos img {
+    height: 100px; 
+    border-left: 1px solid #8080801c;    
 }
 
-main.index .logos img {
-    height: 40px;
-    padding: 0px 20px 0px 20px;
+main.index section.abajo .logos img.vans {    
+    height: 80px;
+    padding: 0px 30px;
+    border-left: none;
+}
+
+main.index section.abajo .logos a.flechas {    
+    padding: 0px 10px;
+}
+
+main.index section.abajo .logos a:hover {
+    color: #BF488D;
 }
 
 /* =======================
     TODOS LOS PRODUCTOS
 ========================*/
 
-main.index .todoslosproductos h2 {
-    margin-top: 40px;
+main.index section.abajo .todoslosproductos {
+    padding: 50px;
+}
+
+main.index section.abajo .todoslosproductos h2 {
     text-align: center;
     font-size: 32px;
+}
+
+main.index section.abajo .todoslosproductos .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+main.index section.abajo .todoslosproductos #button {
+    background-color: #BF488D;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    width: 200px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;    
+}
+
+main.index section.abajo .todoslosproductos #button:hover {
+    filter: brightness(110%);
 }
 
 /* =======================
@@ -181,66 +221,102 @@ main.index .todoslosproductos h2 {
 ========================*/
 
 @media (max-width: 500px) {
-    main.index .banner {
+
+    /* ============
+        BANNERS
+    ===============*/
+
+    main.index section.arriba .banner {
         height: 145px;
     }
-    
-    main.index .banner h1 {
-        font-size: 34px;
-        margin-left: 35px;
-    }
 
-    main.index .cuotas-envio {
+    main.index section.arriba .cuotas-envio {
         font-size: 12px;
         height: 35px;
+        justify-content: space-around;
     }
 
-    main.index #textotarjeta {
-        margin-right: 5px;
+    main.index section.arriba .cuotas-envio p {
+        margin-left: 0px;
     }
 
-    main.index #textoenvio {
-        margin-left: 5px;
+    main.index section.arriba div.puntos a  {
+        font-size: 13px;
     }
 
-    main.index .listado-novedades {
-        margin-top: 30px;
-    }
-
-    main.index .listado-ofertas {
-        margin-top: 30px;
-    }
-
-    main.index .producto {
-        width: 40%;
-        margin-top: 20px;
-    }
-
-    main.index .button {
-        margin-top: 50px;
-    }
-
-    main.index #button {
+    main.index section.arriba div.puntos a.negro {
         font-size: 14px;
     }
 
-    main.index .novedades h2 {
-        font-size: 30px;
+    /* =======================
+        NOVEDADES y OFERTAS
+    ==========================*/
+
+    main.index section.abajo .novedades, 
+    main.index section.abajo .ofertas {
+        padding: 30px 10px;
     }
 
-    main.index .ofertas h2 {
-        font-size: 30px;
+    main.index section.abajo .novedades h2,
+    main.index section.abajo .ofertas h2  { 
+        padding-left: 20px;
+        font-size: 24px;
     }
 
-    main.index .todoslosproductos h2 {
-        font-size: 30px;
+    main.index section.abajo .novedades .listado-novedades, 
+    main.index section.abajo .ofertas .listado-ofertas {
+        justify-content: space-around;
     }
 
-    main.index .marcas {
-        height: 70px;
+    main.index section.abajo .novedades .listado-novedades a,
+    main.index section.abajo .ofertas .listado-ofertas a {
+        padding-top: 10px;
     }
 
-    main.index .logos img {
-        height: 30px;
+    /* =================
+        CAJA PRODUCTO
+    ===================*/
+
+    main.index section.abajo .producto {
+        width: 40%;
     }
+
+    /* ===========
+        MARCAS
+    ==============*/
+
+    main.index section.abajo .marcas {
+        margin: 30px 0px;
+    }
+
+    main.index section.abajo .marcas h2 {
+        font-size: 24px;
+        padding-left: 30px;
+    }
+
+    main.index section.abajo .logos {
+        height: auto;
+        flex-wrap: wrap;
+    }
+    
+    main.index section.abajo .logos img {
+        border: none;
+    }
+
+    main.index section.abajo .logos a.flechas {
+        display: none;
+    }
+
+    /* =======================
+        TODOS LOS PRODUCTOS
+    ========================*/
+
+    main.index section.abajo .todoslosproductos {
+        padding: 30px;
+    }
+
+    main.index section.abajo .todoslosproductos h2 {
+        font-size: 24px;
+    }
+
 }

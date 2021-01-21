@@ -9,6 +9,6 @@ const guestMiddleware = require('../middlewares/guestMiddleware');
 
 router.get('/detalle/:id', productsController.detalle);
 router.get('/carrito-de-compras', authMiddleware, productsController.carrito);
-router.get('/all', productsController.allProducts)
+router.get('/explorar', productsController.productosTodos)
 
 module.exports = router;    

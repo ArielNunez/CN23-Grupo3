@@ -1,0 +1,51 @@
+.admin {
+    display: flex;
+    flex-direction: column;
+    background-color: #aeaeae;
+    height: 100%;
+    position: fixed;
+    padding: 20px;
+}
+
+.admin .productos,
+.admin .usuarios {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.admin .usuarios {
+    margin-top: 80px;
+}
+
+.admin h3 {
+    font-size: 20px;
+    color: #BF488D;    
+    padding-bottom: 10px;
+}
+
+.admin li {
+    list-style: none;
+    padding-top: 10px;
+}
+
+.admin a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+}
+
+.admin a:hover {
+    color: #527293;
+}
+
+.admin div.small {
+    height: 38%;
+    display: flex;
+    justify-content: center;
+}
+
+.admin small {
+    align-self: flex-end;
+    font-size: 14px;
+}

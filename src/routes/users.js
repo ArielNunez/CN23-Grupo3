@@ -11,7 +11,7 @@ router.get('/registro', guestMiddleware, usersController.registro);
 router.post('/registro', registerValidator, usersController.guardar);
 
 router.get('/ingresar', guestMiddleware, usersController.ingresar);
-router.post('/ingresar', loginValidator, usersController.loggeado);
+router.post('/ingresar', loginValidator, usersController.logueado);
 
 router.get('/salir', authMiddleware, usersController.salir);
 
