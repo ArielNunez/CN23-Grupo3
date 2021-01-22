@@ -19,27 +19,28 @@ module.exports = {
                 email: req.body.email,
                 confEmail: req.body.confEmail
             }
+            res.send(errors)
             return res.render('users/register', {errors: errors.mapped(), user: user});
         } else {
-            db.Usuario.create ({   
+            db.Usuario.create({
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
                 fecha_nacimiento: req.body.nacimiento,
                 dni: req.body.dni,
                 email: req.body.email,
-                password: bcrypt.hashSync(req.body.pass, 10),
+                password: bcrypt.hashSync(req.body.pass, 10)
             })
             .then(function(usuario){
-                console.log(usuario)
                 return res.redirect('/usuarios/ingresar');
             })
             .catch(function (err) {
-                res.send("Lo sentimos, no pudimos procesar su solicitud, por favor intentelo nuevamente.")
+                res.send("Lo sentimos, no pudimos procesar tu solicitud. Por favor intentalo nuevamente.")
               });
 
             
         }
-    },    
+    },
+    // },    
     ingresar: function(req,res) {
         res.render('users/login');
     },

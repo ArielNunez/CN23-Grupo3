@@ -190,20 +190,17 @@ DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) NOT NULL,
-  `apelldio` varchar(100) NOT NULL,
+  `apellido` varchar(100) NOT NULL,
   `fecha_nacimiento` date DEFAULT NULL,
   `dni` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` int(11) NOT NULL,
   `estado` int(11) DEFAULT NULL,
-  `id_categoria_usuario` int(11) DEFAULT NULL,
+  `categoria` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `id_categoria_usuario_idx` (`id_categoria_usuario`),
-  CONSTRAINT `id_categoria_usuario` FOREIGN KEY (`id_categoria_usuario`) REFERENCES `categoria_usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -212,6 +209,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (2,'santiago','bullrich','1991-03-26',35971495,'santibullrich@gmail.com',0,NULL,NULL,'2021-01-22 00:25:03','2021-01-22 00:25:03');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -224,4 +222,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-20 13:20:54
+-- Dump completed on 2021-01-22 10:38:33
