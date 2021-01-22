@@ -12,8 +12,8 @@
             <%- include("../partials/adminNav") %>
         </nav>
         <section class="principal">
-            <div>
-                <h1>Creación de Producto</h1>
+            <div class="titulo">
+                <h1>Nuevo Producto</h1>
             </div>
             <div class="formulario">
                 <form action="" method="POST" enctype="multipart/form-data">
@@ -22,24 +22,23 @@
                         <input type="text" name="producto" id="nombre">
                     </div>
                     <div class="descripcionProducto">
-                            <label for="descripcion">Descripcion del Producto</label>
-                            <input type="text" name="descripcion" id="descripcion">
+                        <label for="descripcion">Descripcion del Producto</label>
+                        <input type="text" name="descripcion" id="descripcion">
                     </div>
                     <div class="imagen">
-                                <label for="">Imagen del producto</label>
-                                <input type="file" name="imagen" id="imagen">
+                        <label for="">Imagen del producto</label>
+                        <input type="file" name="imagen" id="imagen">
                     </div>
                     <div class="categoria">
-                                    <label for="categoria">Categoría</label>
-                                    <select name="categoria" id="categoria">
-                                        <option value="CalzadoUrbano">Calzado Urbano</option>
-                                        <option value="CalzadoDeportivo">Calzado Deportivo</option>
-                                </select>
-                            
+                        <label for="categoria">Categoría</label>
+                        <select name="categoria" id="categoria">
+                            <option value="CalzadoUrbano">Calzado Urbano</option>
+                            <option value="CalzadoDeportivo">Calzado Deportivo</option>
+                        </select>                            
                     </div>
                     <div class="talles">
                         <p>Talles</p>
-                        <div class="talles">
+                        <div class="numeros">
                             <div>
                                 <input type="checkbox" name="talle" value="35" id="t35">
                                 <label for="t35">35</label>

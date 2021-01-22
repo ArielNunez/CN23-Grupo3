@@ -10,46 +10,93 @@ main.productCreation section.principal {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid #e9e9e9;
-    border-radius: 2px;
-    width: 100%;
-    padding: 40px 200px;
+    width: 80%;
+    padding: 60px 200px;
     padding-left: 445px;
+    margin: auto;
+}
+
+main.productCreation section.principal div.titulo {    
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eaeaea;
 }
 
 main.productCreation section.principal div h1 {
-    text-align: center;
+    padding: 0px 5px 20px 5px;
     font-size: 30px;
-    font-weight: 600;
-    padding-top: 20px;
 }
 
-main.productCreation section.principal div.formulario  form div{
+main.productCreation section.principal div.formulario form div {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     padding: 5px
 }
 
-main.productCreation section.principal div.formulario form div.talles div.talles {
-    flex-direction: row;
+main.productCreation section.principal div.formulario form div label {
+    margin-right: 15px;
+    align-self: center;
 }
 
-main.productCreation section.principal div.formulario form div.talles div.talles div {
-    flex-direction: row;
-    align-items: center;
+main.productCreation section.principal div.formulario form div input,
+main.productCreation section.principal div.formulario form div select {
+    width: 40%;
+    height: 30px;
+    border-radius: 5px;
 }
 
-main.productCreation section.principal div.formulario form div.talles div.talles div label {
-    padding-left: 3px;
+main.productCreation section.principal div.formulario form div input#imagen {
+    padding-top: 5px;
+}
+
+main.productCreation section.principal div.formulario form div.talles p {
+    align-self: center;
+    padding-right: 15px;
+}
+
+main.productCreation section.principal div.formulario form div.talles div.numeros {
+    margin: 0px;
+    padding: 0px;
+}
+
+main.productCreation section.principal div.formulario form div.talles div.numeros div {
+    margin: 0px;
+    padding: 0px;
+}
+
+main.productCreation section.principal div.formulario form div.talles div.numeros div input {
+    opacity: 0;
+    position: absolute;
+}
+
+main.productCreation section.principal div.formulario form div.talles div.numeros div label {
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 14px;
+    padding: 5px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+main.productCreation section.principal div.formulario form div.talles div.numeros div input:checked + label {
+    background-color: #BF488D;
+    color: white;    
+    border-color: white;
+    font-size: 16px;
+}
+
+main.productCreation section.principal div.formulario form div.talles div.numeros div input:hover + label {
+    background-color: #BF488D;
+    color: white;    
+    border-color: white;
+    font-size: 16px;
 }
 
 main.productCreation .button {
-    margin-top: 20px;
     display: flex;
-    justify-content: center;
-    width: 100%;
+    align-items: center;
+    padding: 40px;    
+    border-top: 1px solid #eaeaea;
+    margin-top: 40px;
 }
 
 main.productCreation #button {
@@ -58,12 +105,11 @@ main.productCreation #button {
     border: none;
     border-radius: 15px;
     padding: 15px;
+    width: 200px;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    width: 100%;
-    
+    font-size: 18px;
+    font-weight: bold; 
+    margin: 20px 0px; 
 }
 
 main.productCreation #button:hover {
