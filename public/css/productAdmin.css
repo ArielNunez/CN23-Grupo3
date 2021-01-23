@@ -1,0 +1,21 @@
+section.tablaProductos {
+    margin-left: 240px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+section.tablaProductos h2 {
+    padding-bottom: 15px;
+}
+
+section.tablaProductos table {
+    width: 80%;
+}
+
+section.tablaProductos table tbody form {
+    display: inline-block;
+}

@@ -4,6 +4,9 @@ const bcrypt = require('bcrypt');
 const {validationResult} = require('express-validator');
 let db = require('../database/models');
 
+var users= fs.readFileSync(path.join(__dirname, "../database/users.json"), "utf-8");
+users = JSON.parse(users);
+
 module.exports = {
     registro: function(req,res) {
         res.render('users/register');
@@ -39,8 +42,7 @@ module.exports = {
 
             
         }
-    },
-    // },    
+    },  
     ingresar: function(req,res) {
         res.render('users/login');
     },

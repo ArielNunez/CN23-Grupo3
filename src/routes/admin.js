@@ -25,6 +25,8 @@ var upload = multer({ storage: storage })
 
 router.get('/', usersController.ingresar);
 
+router.get('/productos/listado', authMiddleware, adminMiddleware, productsController.listadoAdmin);
+
 router.get('/productos/crear', authMiddleware, adminMiddleware, productsController.crear);
 router.post('/productos/crear', upload.single("imagen"), productsController.crearProducto);
 
@@ -33,5 +35,5 @@ router.put('/productos/:id/editar', upload.single("imagen"), productsController.
 
 router.delete('/productos/:id/eliminar', productsController.eliminar);
 
-router.get('/usuarios/lista', usersController.listado)
+router.get('/usuarios/listado', usersController.listado)
 module.exports = router;

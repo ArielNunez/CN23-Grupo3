@@ -6,6 +6,11 @@ main.listaUsuarios section {
     width: 100%;
     padding: 40px 0px;
     padding-left: 245px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 main.listaUsuarios h2 {
@@ -14,30 +19,5 @@ main.listaUsuarios h2 {
 }
 
 main.listaUsuarios table {
-    margin: auto;
-    border: 1px solid;
-    border-collapse: collapse;
-}
-
-main.listaUsuarios table tr {
-    border: 1px solid;
-}
-
-main.listaUsuarios table tr th {
-    border: 1px solid;
-    width: 25%;    
-    padding: 5px;
-}
-
-main.listaUsuarios table tr th.id {
-    width: 5%;
-}
-
-main.listaUsuarios table tr th.email {
-    width: 45%;
-}
-
-main.listaUsuarios table tr td {
-    border: 1px solid;
-    padding: 5px;
+    width: 80%;
 }

@@ -62,9 +62,12 @@ module.exports = {
     eliminar: function(req, res) {
         productos = productos.filter(producto => producto.id != req.params.id)
         fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productos, null, 4))
-        res.send('prodcuto eliminado')
+        res.redirect('/admin/productos/listado');
     },
     productosTodos: function(req, res) {
         res.render('products/productList', {productos: productos})
+    },
+    listadoAdmin: function(req,res) {
+        res.render('products/productAdmin', {productos: productos});
     }
 }
