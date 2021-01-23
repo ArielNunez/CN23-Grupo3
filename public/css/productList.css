@@ -19,7 +19,7 @@ main.listaProductos .product {
     box-shadow: 4px 3px 5px 0px rgba(153,153,153,1);
     background-color: white;
     position: relative;
-    width: 30%;
+    width: 22%;
     margin-top: 20px;
 }
 
@@ -37,14 +37,14 @@ main.listaProductos .product img {
 }
 
 main.listaProductos .product h5 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
 }
 
 main.listaProductos .sinDescuento {
     margin-top: 10px;
     color: #BF488D;
-
+    font-size: 18px;
 }
 
 main.listaProductos .descuento {
@@ -56,11 +56,13 @@ main.listaProductos .descuento {
 main.listaProductos .tachado {
     text-decoration: line-through;
     font-weight: 400;
+    font-size: 18px;
 }
 
 main.listaProductos .descuentoPrecio {
     color: #BF488D;
     margin-left: 10px;
+    font-size: 18px;
 }
 
 main.listaProductos .porcentaje {
@@ -81,4 +83,42 @@ main.listaProductos .circle {
     width: 80px;
     height: 80px;
     background-color: #BF488D;
+}
+
+
+/* =======================
+        RESPONSIVE
+========================*/
+
+@media(max-width: 900px) {
+    main.listaProductos .product {
+        width: 30%;
+    }
+}
+
+@media(max-width: 700px) {
+    main.listaProductos .circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    main.listaProductos .porcentaje {
+        position: absolute;
+        right: 26px;
+        top: 44px;
+        font-size: 12px;
+    }
+
+    main.listaProductos .product h5,
+    main.listaProductos .sinDescuento,
+    main.listaProductos .descuentoPrecio,
+    main.listaProductos .tachado {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    main.listaProductos .product {
+        width: 45%;
+    }    
 }

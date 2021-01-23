@@ -1,10 +1,10 @@
 [
     {
-        "id":"1",
+        "id": "1",
         "producto": "Vans Old School",
         "descripcion": "Las Old Skool son las zapatillas clásicas de Vans y el primer modelo en lucir el icónico sidestripe de la marca. Nacieron como un calzado para skaters de los años 70´y con el correr de las décadas se transformó en un modelo básico de lifestyle. Son zapatillas de corte bajo confeccionadas con capellada de canvas y cuero suede resistente, tiene punteras reforzadas para añadir durabilidad, la suela de caucho original Vans Wafflesole y cuello acolchado para ofrecer sujeción y confort.",
         "imagen": "1-1607531432123.jpg",
-        "categoria":"CalzadoUrbano",
+        "categoria": "CalzadoUrbano",
         "talles": [
             "38",
             "39",
@@ -12,8 +12,8 @@
             "41",
             "42"
         ],
-        "precio":"7999",
-        "descuento":"15"
+        "precio": "7999",
+        "descuento": "15"
     },
     {
         "id": "2",
@@ -108,6 +108,36 @@
             "44"
         ],
         "precio": "16499",
+        "descuento": ""
+    },
+    {
+        "id": 7,
+        "producto": "Zapatilla Converse Chuck Taylor All Star",
+        "descripcion": "Calzado ideal para desarrollar todas tus actividades urbanas.  Diseño de caña baja para un calce rápido.  La parte superior de la capellada esta confeccionada de algodón para un calce confortable.  La suela es de caucho, logrando con ello una pisada firme y segura.",
+        "imagen": "7-1611374345352.jpg",
+        "categoria": "CalzadoUrbano",
+        "talles": [
+            "39",
+            "43",
+            "44"
+        ],
+        "precio": "6195",
+        "descuento": "10"
+    },
+    {
+        "id": 8,
+        "producto": "Zapatilla Converse Distrito Bordó",
+        "descripcion": "Converse All Star en estilo de corte bajo te dan ese plus para marcar la diferencia. Suela sintética que da agarre fiable en diferentes superficies. Punta de goma para protección extra. Material superior de lona resistente y ligero.",
+        "imagen": "8-1611375137281.jpg",
+        "categoria": "CalzadoUrbano",
+        "talles": [
+            "36",
+            "37",
+            "38",
+            "39",
+            "42"
+        ],
+        "precio": "6999",
         "descuento": ""
     }
 ]
