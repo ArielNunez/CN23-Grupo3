@@ -46,19 +46,21 @@
                         <% } %>
                     </div>
                 </div>
-                <div class="talle">
-                    <div class="talleP">
-                        <p>Talle</p>
-                        <a href="#">Tabla de talles</a>
+                <form action="" method="POST">
+                    <div class="talle">
+                        <div class="talleP">
+                            <p>Talle</p>
+                            <a href="#">Tabla de talles</a>
+                        </div>
+                        <div class="tallesNum">
+                            <% for(let i=0;i<producto.talles.length; i++) { %>
+                                <input type="radio" name="talle" value="<%= producto.talles[i] %>" id="<%= producto.talles[i] %>">
+                                <label for="<%= producto.talles[i] %>"><%= producto.talles[i] %></label>
+                            <% } %>
+                        </div>
                     </div>
-                    <div class="tallesNum">
-                        <% for(let i=0;i<producto.talles.length; i++) { %>
-                            <input type="radio" name="talle" value="<%= producto.talles[i] %>" id="<%= producto.talles[i] %>">
-                            <label for="<%= producto.talles[i] %>"><%= producto.talles[i] %></label>
-                        <% } %>
-                    </div>
-                </div>
-                <button type="submit">AGREGAR AL CARRITO</button>
+                    <button type="submit">AGREGAR AL CARRITO</button>
+                </form>
             </article>
         </section>
         <section class="descripcion">
