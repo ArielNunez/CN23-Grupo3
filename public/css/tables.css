@@ -34,6 +34,10 @@ section.tablaProductos table tbody form {
     display: inline-block;
 }
 
+section table.table-hover tbody tr:hover {
+    background-color: #ececec;
+}
+
 section.tablaUsuarios button,
 section.tablaProductos button {
     padding: 8px;
