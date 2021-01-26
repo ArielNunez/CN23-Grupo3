@@ -1,15 +1,7 @@
 /* =============== 
 - General
 ================= */
-main.productCreation {
-    display: flex;
-}
-
 main.productCreation section.principal {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
     width: 80%;
     padding: 60px 200px;
     padding-left: 445px;

@@ -1,0 +1,52 @@
+section.tablaUsuarios,
+section.tablaProductos {
+    width: 100%;
+    padding: 60px 0px;
+    padding-left: 245px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+}
+
+section.tablaUsuarios h2,
+section.tablaProductos h2 {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+th, td {
+    padding: 10px;    
+    text-align: left;    
+    border-bottom: 1px solid #cfcfcf;
+}
+
+th.col {
+    border-color: black;
+}
+
+section.tablaProductos table tbody form {
+    display: inline-block;
+}
+
+section.tablaUsuarios button,
+section.tablaProductos button {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;    
+    color: white;
+}
+
+section.tablaProductos button.editar {
+    background-color: rgb(79, 135, 208);
+}
+
+section.tablaProductos button.eliminar {
+    background-color: rgb(249, 64, 64);
+}

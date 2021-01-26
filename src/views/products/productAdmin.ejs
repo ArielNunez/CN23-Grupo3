@@ -5,42 +5,41 @@
 </head>
 <body>
     <header>
-      <%- include("../partials/adminHeader") %>
+        <%- include("../partials/adminHeader") %>
     </header>
+
     <main>
-      <nav>
-        <%- include("../partials/adminNav") %>
-      </nav>
-      <section class="tablaProductos">
-        <h2>Productos</h2>
-        <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Precio</th>
-                <th scope="col" class="administrarProducto">Administrar</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% for(let i=0; i<productos.length;i++) { %>
-                <tr>
-                  <th scope="row"><%= productos[i].id %></th>
-                  <td><%= productos[i].producto %></td>
-                  <td>$<%= productos[i].precio %></td>
-                  <td class="administrarProducto">
-                    <a href="/admin/productos/<%= productos[i].id %>/editar" class="btn btn-info btn-sm" role="button">Editar</a>
-                    <form action="/admin/productos/<%= productos[i].id %>/eliminar?_method=DELETE" method="POST">
-                      <button type="submit" class="btn btn-danger btn-sm" role="button">Eliminar</button>
-                    </form>
-                  </td>
-                </tr>
-              <% } %>
-            </tbody>
-          </table>
-      </section>
-    </main>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <nav>
+            <%- include("../partials/adminNav") %>
+        </nav>
+        <section class="tablaProductos">
+            <h2>Productos</h2>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="col" scope="col">#</th>
+                        <th class="col" scope="col">Nombre</th>
+                        <th class="col" scope="col">Precio</th>
+                        <th class="col" scope="col" class="administrarProducto">Administrar</th>
+                    </tr>
+                </thead>            
+                <tbody>
+                    <% for(let i=0; i<productos.length;i++) { %>
+                        <tr>
+                            <th scope="row"> <%= productos[i].id %> </th>
+                            <td> <%= productos[i].producto %> </td>
+                            <td>$ <%= productos[i].precio %> </td>
+                            <td class="administrarProducto">
+                                <a href="/admin/productos/<%= productos[i].id %>/editar"><button class="editar">Editar</button></a>
+                                <form action="/admin/productos/<%= productos[i].id %>/eliminar?_method=DELETE" method="POST">
+                                    <button class="eliminar" type="submit" role="button">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </section>
+    </main>    
 </body>
 </html>

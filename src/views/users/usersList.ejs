@@ -12,25 +12,25 @@
         <nav>
             <%- include("../partials/adminNav") %>
         </nav>
-        <section>
+        <section class="tablaUsuarios">
             <h2>Usuarios</h2>
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th class="id">#</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th class="email">Email</th>
+                        <th class="col" scope="col">#</th>
+                        <th class="col" scope="col">Nombre</th>
+                        <th class="col" scope="col">Apellido</th>
+                        <th class="col" scope="col">Email</th>
                     </tr>
-                </thead>
+                </thead>                
                 <tbody>
                     <% for (i = 0; i < users.length; i++) { %>
-                    <tr>
-                        <td> <%= users[i].id %> </td>
-                        <td> <%= users[i].name %> </td>
-                        <td> <%= users[i].lastName %> </td>
-                        <td> <%= users[i].email %> </td>
-                    </tr>                  
+                        <tr>
+                            <th scope="row"> <%= users[i].id %> </th>
+                            <td> <%= users[i].name %> </td>
+                            <td> <%= users[i].lastName %> </td>
+                            <td> <%= users[i].email %> </td>
+                        </tr>                  
                     <% } %> 
                 </tbody>
             </table>
