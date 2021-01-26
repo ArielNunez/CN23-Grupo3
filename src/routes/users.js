@@ -15,4 +15,6 @@ router.post('/ingresar', loginValidator, usersController.logueado);
 
 router.get('/salir', authMiddleware, usersController.salir);
 
+router.get('/all', usersController.listado);
+
 module.exports = router;
