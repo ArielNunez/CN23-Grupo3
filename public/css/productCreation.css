@@ -32,12 +32,28 @@ main.productCreation section.principal div.formulario form div label {
 main.productCreation section.principal div.formulario form div input,
 main.productCreation section.principal div.formulario form div select {
     width: 40%;
-    height: 30px;
-    border-radius: 5px;
+    border-radius: 5px;    
+    padding: 8px;
 }
 
 main.productCreation section.principal div.formulario form div input#imagen {
     padding-top: 5px;
+}
+
+main.productCreation section.principal div.formulario form div.descripcionProducto {
+    flex-direction: column;
+} 
+
+
+main.productCreation section.principal div.formulario form div.descripcionProducto label {
+    align-self: flex-start;
+    padding-bottom: 15px;
+}
+
+main.productCreation section.principal div.formulario form div.descripcionProducto textarea {
+    width: 80%;
+    border-radius: 5px;    
+    padding: 10px;
 }
 
 main.productCreation section.principal div.formulario form div.talles p {
@@ -91,6 +107,12 @@ main.productCreation .button {
     margin-top: 40px;
 }
 
+main.productCreation .buttonEdit {        
+    padding: 40px;    
+    border-top: 1px solid #eaeaea;
+    margin-top: 40px;
+}
+
 main.productCreation #button {
     background-color: #BF488D;
     color: white;
@@ -102,6 +124,32 @@ main.productCreation #button {
     font-size: 18px;
     font-weight: bold; 
     margin: 20px 0px; 
+}
+
+main.productCreation button.eliminar,
+main.productCreation button.editar {
+    border-radius: 15px;
+    padding: 15px;
+    width: 200px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold; 
+    margin: 20px 0px; 
+    margin-right: 35px;
+}
+
+main.productCreation button.editar,
+main.productCreation button.eliminar:hover {
+    background-color: #BF488D;
+    color: white;
+    border: none;
+}
+
+main.productCreation button.eliminar,
+main.productCreation button.editar:hover {
+    background-color: white;
+    border: 1px solid  #BF488D;
+    color: #BF488D;
 }
 
 main.productCreation #button:hover {
