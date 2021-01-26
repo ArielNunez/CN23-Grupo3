@@ -31,7 +31,9 @@ module.exports = {
                 fecha_nacimiento: req.body.nacimiento,
                 dni: req.body.dni,
                 email: req.body.email,
-                password: bcrypt.hashSync(req.body.pass, 10)
+                password: bcrypt.hashSync(req.body.pass, 10),
+                id_categoria: 1,
+                estado: 1
             })
             .then(function(usuario){
                 return res.redirect('/usuarios/ingresar');

@@ -23,8 +23,7 @@
                     </div>
                     <div class="descripcionProducto">
                         <label for="descripcion">Descripcion del Producto</label>
-                        <textarea name="descripcion" id="descripcion" rows="10">
-                        </textarea>
+                        <textarea name="descripcion" id="descripcion" rows="10"></textarea>
                     </div>
                     <div class="imagen">
                         <label for="">Imagen del producto</label>
@@ -33,22 +32,17 @@
                     <div class="categoria">
                         <label for="categoria">Categoría</label>
                         <select name="categoria" id="categoria">
-                            <option value="CalzadoUrbano">Calzado Urbano</option>
-                            <option value="CalzadoDeportivo">Calzado Deportivo</option>
+                            <% for(let i=0; i<categoriasProductos.length; i++) { %>
+                                <option value="<%= categoriasProductos[i].id %>"><%= categoriasProductos[i].categoria %></option>
+                            <% } %>
                         </select>                            
                     </div>
                     <div class="marca">
                         <label for="marca">Marca</label>
                         <select name="marca" id="marca">
-                            <option value="nike">Nike</option>
-                            <option value="vans">Vans</option>
-                            <option value="adidas">Adidas</option>
-                            <option value="puma">Puma</option>
-                            <option value="topper">Topper</option>
-                            <option value="converse">Converse</option>
-                            <option value="fila">Fila</option>                            
-                            <option value="DC">DC</option>                            
-                            <option value="asics">Asics</option>
+                            <% for(let i=0; i<marcas.length; i++) { %>
+                                <option value="<%= marcas[i].id %>"><%= marcas[i].marca %></option>
+                            <% } %>
                         </select>                            
                     </div>
                     <div class="talles">

@@ -1,5 +1,6 @@
 const fs= require("fs");
 const path= require("path");
+let db = require('../database/models');
 
 var productos= fs.readFileSync(path.join(__dirname, "../database/products.json"), "utf-8");
 productos = JSON.parse(productos);
@@ -17,22 +18,42 @@ module.exports = {
         res.render('../views/products/productCart');
     },
     crear: function(req, res) {
-        res.render('../views/products/productCreation');
+        let marcas = db.Marca.findAll({
+            order: [
+                ['marca', 'ASC']
+            ]
+        });
+        let categoriasProductos = db.CategoriaProducto.findAll();
+        Promise.all([marcas, categoriasProductos]).then(function([marcas, categoriasProductos]){
+            res.render('../views/products/productCreation', {marcas: marcas, categoriasProductos: categoriasProductos});
+        })
     },
     crearProducto: function(req, res) {
-        var nuevoProducto = {
-            id: parseInt(productos[productos.length-1].id)+1,
+        db.Producto.create({
             producto: req.body.producto,
             descripcion: req.body.descripcion,
-            imagen: req.file.filename,
-            categoria: req.body.categoria,
-            talles: req.body.talle,
+            id_categoria: req.body.categoria,
+            id_marca: req.body.marca,
             precio: req.body.precio,
             descuento: req.body.descuento,
-        }
-        productos.push(nuevoProducto);
-        fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productos, null, 4));
-        return res.redirect("/productos/detalle/" + nuevoProducto.id);
+            estado: 1
+        }).then(function(){
+            return res.redirect('/admin/productos/listado');
+        });
+
+        // var nuevoProducto = {
+        //     id: parseInt(productos[productos.length-1].id)+1,
+        //     producto: req.body.producto,
+        //     descripcion: req.body.descripcion,
+        //     imagen: req.file.filename,
+        //     categoria: req.body.categoria,
+        //     talles: req.body.talle,
+        //     precio: req.body.precio,
+        //     descuento: req.body.descuento,
+        // }
+        // productos.push(nuevoProducto);
+        // fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productos, null, 4));
+        // return res.redirect("/productos/detalle/" + nuevoProducto.id);
     },
     editar: function(req,res) {
         for(let i=0; i<productos.length;i++) {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-01-2021 a las 17:31:10
+-- Tiempo de generación: 26-01-2021 a las 17:41:39
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -86,6 +86,22 @@ CREATE TABLE `marcas` (
   `estado` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `marcas`
+--
+
+INSERT INTO `marcas` (`id`, `marca`, `estado`) VALUES
+(1, 'Vans', 1),
+(2, 'Converse', 1),
+(3, 'Nike', 1),
+(4, 'Adidas', 1),
+(5, 'Vans', 1),
+(6, 'Puma', 1),
+(7, 'Topper', 1),
+(8, 'Fila', 1),
+(9, 'DC', 1),
+(10, 'Asics', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -102,6 +118,13 @@ CREATE TABLE `productos` (
   `descuento` int(11) DEFAULT NULL,
   `estado` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`id`, `producto`, `descripcion`, `id_categoria`, `id_marca`, `precio`, `descuento`, `estado`) VALUES
+(1, 'Vans Old School', 'Las Old Skool son las zapatillas clásicas de Vans y el primer modelo en lucir el icónico sidestripe de la marca. Nacieron como un calzado para skaters de los años 70´y con el correr de las décadas se transformó en un modelo básico de lifestyle. Son zapatillas de corte bajo confeccionadas con capellada de canvas y cuero suede resistente, tiene punteras reforzadas para añadir durabilidad, la suela de caucho original Vans Wafflesole y cuello acolchado para ofrecer sujeción y confort.', 1, 1, '7999', 15, 1);
 
 -- --------------------------------------------------------
 
@@ -128,6 +151,23 @@ CREATE TABLE `talles` (
   `estado` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `talles`
+--
+
+INSERT INTO `talles` (`id`, `talle`, `estado`) VALUES
+(1, 34, 1),
+(2, 35, 1),
+(3, 36, 1),
+(4, 37, 1),
+(5, 38, 1),
+(6, 39, 1),
+(7, 40, 1),
+(8, 41, 1),
+(9, 42, 1),
+(10, 43, 1),
+(11, 44, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -141,19 +181,12 @@ CREATE TABLE `usuarios` (
   `fecha_nacimiento` date DEFAULT NULL,
   `dni` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` int(11) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `id_categoria` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `estado` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `fecha_nacimiento`, `dni`, `email`, `password`, `id_categoria`, `created_at`, `updated_at`, `estado`) VALUES
-(2, 'santiago', 'bullrich', '1991-03-26', 35971495, 'santibullrich@gmail.com', 0, NULL, '2021-01-22 00:25:03', '2021-01-22 00:25:03', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -240,13 +273,13 @@ ALTER TABLE `categorias_usuarios`
 -- AUTO_INCREMENT de la tabla `marcas`
 --
 ALTER TABLE `marcas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `producto_talle`
@@ -258,13 +291,13 @@ ALTER TABLE `producto_talle`
 -- AUTO_INCREMENT de la tabla `talles`
 --
 ALTER TABLE `talles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas

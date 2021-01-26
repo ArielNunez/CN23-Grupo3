@@ -33,6 +33,9 @@ module.exports = function(sequelize, dataTypes) {
         estado: {
             type: dataTypes.INTEGER,
             allowNull: true
+        },
+        id_categoria: {
+            type: dataTypes.INTEGER
         }
 
 
