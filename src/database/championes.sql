@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-01-2021 a las 17:41:39
+-- Tiempo de generación: 26-01-2021 a las 19:49:11
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.0
 
@@ -74,6 +74,20 @@ CREATE TABLE `imagenes` (
   `estado` tinyint(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `imagenes`
+--
+
+INSERT INTO `imagenes` (`id`, `nombre`, `id_producto`, `estado`) VALUES
+(1, '1-1607531432123.jpg', 1, 1),
+(2, '2-1607531503018.jpg', 2, 1),
+(3, '3-1607531531704.jpeg', 3, 1),
+(4, '4-1607622472512.jpeg', 4, 1),
+(5, '5-1607622725020.jpeg', 5, 1),
+(6, '6-1607622798603.jpeg', 6, 1),
+(7, '7-1611374345352.jpg', 7, 1),
+(8, '8-1611375137281.jpg', 8, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -124,7 +138,14 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `producto`, `descripcion`, `id_categoria`, `id_marca`, `precio`, `descuento`, `estado`) VALUES
-(1, 'Vans Old School', 'Las Old Skool son las zapatillas clásicas de Vans y el primer modelo en lucir el icónico sidestripe de la marca. Nacieron como un calzado para skaters de los años 70´y con el correr de las décadas se transformó en un modelo básico de lifestyle. Son zapatillas de corte bajo confeccionadas con capellada de canvas y cuero suede resistente, tiene punteras reforzadas para añadir durabilidad, la suela de caucho original Vans Wafflesole y cuello acolchado para ofrecer sujeción y confort.', 1, 1, '7999', 15, 1);
+(1, 'Vans Old School', 'Las Old Skool son las zapatillas clásicas de Vans y el primer modelo en lucir el icónico sidestripe de la marca. Nacieron como un calzado para skaters de los años 70´y con el correr de las décadas se transformó en un modelo básico de lifestyle. Son zapatillas de corte bajo confeccionadas con capellada de canvas y cuero suede resistente, tiene punteras reforzadas para añadir durabilidad, la suela de caucho original Vans Wafflesole y cuello acolchado para ofrecer sujeción y confort.', 1, 1, '7999', 15, 1),
+(2, 'DC Crisis', 'Material de la parte superior: cuero, nobuk o loneta. Sin puntera de goma. Logo serigrafiado repujado en el panel lateral. Lengüeta y cuello acolchados con espuma, para mayor confort y sujeción. Forro de malla para mayor comodidad. Orificios de ventilación para mayor transpirabilidad. Suela de copa de alto rendimiento. Suela DC con dibujo Pill Pattern de marca registrada.', 1, 9, '12000', NULL, 1),
+(3, 'Nike Air Jordan', 'El Air Jordan 1 es una de las zapatillas más vendidas de Nike en relación con la practica del baloncesto, desde sus orígenes siempre ha destacado por su gran versatilidad sobre la pista de basket. Adaptándose a diversos estilos de juegos y deslumbrando por su calidad.', 1, 3, '15999', 10, 1),
+(4, 'Nike Air Zoom Pegasus 37', 'Las zapatillas Nike Air Zoom Pegasus 37 no son otra cosa que una de las zapatillas más destacadas del mundo del running en 2020. Su mediasuela Nike React y la unidad Zoom Air para cubrir gran parte del antepié te brindan mejores transiciones y suavidad para tu pie. Sus avances en transpirabilidad y ligereza gracias a un patrón de costura similar a las Zoom Fly 3 las vuelven fundamentales para runners amateurs que quieran hacer de sus jornadas de entrenamiento, una de placer.', 2, 3, '15000', NULL, 1),
+(5, 'Zapatillas Adidas Lite Racer CLN', 'Las zapatillas Adidas Lite Racer CLN poseen un estilo elegante y minimalista con una parte superior de malla transpirable y ligera. Su suela y mediasuela con tecnología Cloudfoam ofrecen una pisada más cómoda. La plantilla OrthoLite® expulsa el sudor y la humedad y mantiene los pies secos.', 2, 4, '8999', NULL, 1),
+(6, 'Asics Gel-Kayano 26', 'Las zapatillas Asics Gel-Kayano 26 están compuestas por una malla técnica que mantendrá tus pies frescos, mientras que la suela flexible potencia una transición natural entre cada una de las fases de la pisada. La entresuela con tecnología Space Trusstic proporciona estabilidad y reduce el peso total de la zapatilla para fomentar una transición más fluida desde la fase de contacto hasta la de impulsión. Esto se complementa con un patrón de surcos flexibles y profundos en la parte delantera de la suela que hace que el calzado acompañe el movimiento natural del pie. Las Gel-Kayano 26 son una opción ideal para profesionales como también aquellos amateurs que busquen un modelo que fusione comodidad con una excelente sujeción.', 1, 10, '16499', NULL, 1),
+(7, 'Zapatillas Converse Chuck Taylor All Star', 'Calzado ideal para desarrollar todas tus actividades urbanas.  Diseño de caña baja para un calce rápido.  La parte superior de la capellada esta confeccionada de algodón para un calce confortable.  La suela es de caucho, logrando con ello una pisada firme y segura.', 1, 2, '6195', 10, 1),
+(8, 'Zapatillas Converse Distrito Bordó', 'Converse All Star en estilo de corte bajo te dan ese plus para marcar la diferencia. Suela sintética que da agarre fiable en diferentes superficies. Punta de goma para protección extra. Material superior de lona resistente y ligero.', 1, 2, '6999', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -138,6 +159,60 @@ CREATE TABLE `producto_talle` (
   `id_talle` int(11) DEFAULT NULL,
   `estado` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `producto_talle`
+--
+
+INSERT INTO `producto_talle` (`id`, `id_producto`, `id_talle`, `estado`) VALUES
+(1, 2, 5, 1),
+(2, 2, 6, 1),
+(3, 2, 7, 1),
+(4, 2, 8, 1),
+(5, 1, 5, 1),
+(6, 1, 6, 1),
+(7, 1, 7, 1),
+(8, 1, 8, 1),
+(9, 1, 9, 1),
+(10, 3, 4, 1),
+(11, 3, 5, 1),
+(12, 3, 6, 1),
+(13, 3, 7, 1),
+(14, 3, 8, 1),
+(15, 3, 9, 1),
+(16, 3, 10, 1),
+(17, 3, 11, 1),
+(18, 4, 2, 1),
+(19, 4, 3, 1),
+(20, 4, 4, 1),
+(21, 4, 5, 1),
+(22, 4, 6, 1),
+(23, 4, 7, 1),
+(24, 4, 8, 1),
+(25, 4, 9, 1),
+(26, 4, 10, 1),
+(27, 4, 11, 1),
+(28, 5, 4, 1),
+(29, 5, 5, 1),
+(30, 5, 6, 1),
+(31, 5, 7, 1),
+(32, 5, 8, 1),
+(33, 5, 9, 1),
+(34, 5, 10, 1),
+(35, 6, 3, 1),
+(36, 6, 4, 1),
+(37, 6, 5, 1),
+(38, 6, 6, 1),
+(39, 6, 7, 1),
+(44, 7, 4, 1),
+(45, 7, 5, 1),
+(46, 7, 10, 1),
+(47, 7, 11, 1),
+(48, 8, 3, 1),
+(49, 8, 4, 1),
+(50, 8, 5, 1),
+(51, 8, 6, 1),
+(52, 8, 9, 1);
 
 -- --------------------------------------------------------
 
@@ -270,6 +345,12 @@ ALTER TABLE `categorias_usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT de la tabla `imagenes`
+--
+ALTER TABLE `imagenes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT de la tabla `marcas`
 --
 ALTER TABLE `marcas`
@@ -279,13 +360,13 @@ ALTER TABLE `marcas`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `producto_talle`
 --
 ALTER TABLE `producto_talle`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT de la tabla `talles`

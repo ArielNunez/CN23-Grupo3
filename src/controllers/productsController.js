@@ -7,12 +7,16 @@ productos = JSON.parse(productos);
 
 module.exports = {
     detalle: function(req,res) {
-        for(let i=0; i<productos.length;i++) {
-            if(req.params.id == productos[i].id) {
-                return res.render('../views/products/productDetail', {producto: productos[i]});
-            }
-        }
-        return res.send('Error, producto no encontrado');
+        db.Producto.findByPk(req.params.id, {
+            include: [
+                {association: 'categoriaProducto'},
+                {association: "talles"},
+                {association: "marca"},
+                {association: "imagenes"}
+            ]
+        }).then(function(producto){
+            return res.render('products/productDetail', {producto: producto});
+        });
     },
     carrito: function(req,res) {
         res.render('../views/products/productCart');

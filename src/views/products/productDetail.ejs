@@ -10,8 +10,8 @@
     <main class="productDetail">
         <div class="ruta">
             <ul>
-                <li><a href="#">Urbano /</a></li>
-                <li><a href="#">Marca /</a></li>
+                <li><a href="#"><%= producto.categoriaProducto.categoria %> /</a></li>
+                <li><a href="#"><%= producto.marca.marca %> /</a></li>
                 <li><a href="#"><%= producto.producto %></a></li>
             </ul>
         </div>
@@ -19,7 +19,7 @@
             <article class="imagen">
                 <div>
                     <a class="flechas" href="#"><i class="fas fa-arrow-left"></i></a>
-                    <img src="/img/uploads/productimage/<%= producto.imagen %>" alt="<%= producto.producto %>">
+                    <img src="/img/uploads/productimage/<%= producto.imagenes[0].nombre %>" alt="<%= producto.producto %>">
                     <a class="flechas" href="#"><i class="fas fa-arrow-right"></i></a>
                 </div>                
                 <div class="puntos">
@@ -54,8 +54,8 @@
                         </div>
                         <div class="tallesNum">
                             <% for(let i=0;i<producto.talles.length; i++) { %>
-                                <input type="radio" name="talle" value="<%= producto.talles[i] %>" id="<%= producto.talles[i] %>">
-                                <label for="<%= producto.talles[i] %>"><%= producto.talles[i] %></label>
+                                <input type="radio" name="talle" value="<%= producto.talles[i].id %>" id="<%= producto.talles[i].talle %>">
+                                <label for="<%= producto.talles[i].talle %>"><%= producto.talles[i].talle %></label>
                             <% } %>
                         </div>
                     </div>
