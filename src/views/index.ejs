@@ -30,30 +30,20 @@
             <article class="novedades">
                 <h2>Novedades</h2>
                     <div class="listado-novedades">
+                        <% for(let i=0; i<4; i++) { %>
                         <div class="producto">
-                            <a href="/productos/detalle/1" id="enlace"></a>
-                            <img src="https://www.dressinn.com/f/125/1252953/vans-old-skool.jpg" alt="">
-                            <h5>Zapatillas Vans Original</h5>
-                            <p>$7.999</p>
+                            <a href="/productos/detalle/<%= novedades[i].id %>" id="enlace"></a>
+                            <img src="/img/uploads/productimage/<%= novedades[i].imagenes[0].nombre %>" alt="">
+                            <h5><%= novedades[i].producto %></h5>
+                            <% if(novedades[i].descuento == null) { %>
+                                <p>$<%= novedades[i].precio %></p>
+                            <% } else { %>
+                                <p><span class="precioTachado">$<%= ofertas[i].precio %></span><span class="precioConDescuento">$<%= (ofertas[i].precio / 100 * (100-ofertas[i].descuento)) - (ofertas[i].precio / 100 * (100-ofertas[i].descuento))%1 %></span></p>
+                                <h3 class="porcentaje"><%= novedades[i].descuento %>% OFF</h3>
+                                <div class="circle"></div>
+                            <% } %>
                         </div>
-                        <div class="producto">
-                            <a href="/productos/detalle/1" id="enlace"></a>
-                            <img src="https://www.dressinn.com/f/125/1252953/vans-old-skool.jpg" alt="">
-                            <h5>Zapatillas Vans Original</h5>
-                            <p>$7.999</p>
-                        </div>
-                        <div class="producto">
-                            <a href="/productos/detalle/1" id="enlace"></a>
-                            <img src="https://www.dressinn.com/f/125/1252953/vans-old-skool.jpg" alt="">
-                            <h5>Zapatillas Vans Original</h5>
-                            <p>$7.999</p>
-                        </div>
-                        <div class="producto">
-                            <a href="/productos/detalle/1" id="enlace"></a>
-                            <img src="https://www.dressinn.com/f/125/1252953/vans-old-skool.jpg" alt="">
-                            <h5>Zapatillas Vans Original</h5>
-                            <p>$7.999</p>
-                        </div>
+                        <% } %>
                         <a href="/productos/explorar">Ver todas</a>
                     </div>
                     
@@ -62,30 +52,16 @@
             <article class="ofertas">
                 <h2>Ofertas</h2>
                 <div class="listado-ofertas">
+                    <% for(let i=0; i<4; i++) { %>
                     <div class="producto">
-                        <a href="/productos/detalle/1" id="enlace"></a>
-                        <img src="https://www.dressinn.com/f/125/1252953/vans-old-skool.jpg" alt="">
-                        <h5>Zapatillas Vans Original</h5>
-                        <p>$7.999</p>
+                        <a href="/productos/detalle/<%= ofertas[i].id %>" id="enlace"></a>
+                        <img src="/img/uploads/productimage/<%= ofertas[i].imagenes[0].nombre %>" alt="">
+                        <h5><%= ofertas[i].producto %></h5>
+                        <p><span class="precioTachado">$<%= ofertas[i].precio %></span><span class="precioConDescuento">$<%= (ofertas[i].precio / 100 * (100-ofertas[i].descuento)) - (ofertas[i].precio / 100 * (100-ofertas[i].descuento))%1 %></span></p>
+                        <h3 class="porcentaje"><%= ofertas[i].descuento %>% OFF</h3>
+                        <div class="circle"></div>
                     </div>
-                    <div class="producto">
-                        <a href="/productos/detalle/1" id="enlace"></a>
-                        <img src="https://www.dressinn.com/f/125/1252953/vans-old-skool.jpg" alt="">
-                        <h5>Zapatillas Vans Original</h5>
-                        <p>$7.999</p>
-                    </div>
-                    <div class="producto">
-                        <a href="/productos/detalle/1" id="enlace"></a>
-                        <img src="https://www.dressinn.com/f/125/1252953/vans-old-skool.jpg" alt="">
-                        <h5>Zapatillas Vans Original</h5>
-                        <p>$7.999</p>
-                    </div>
-                    <div class="producto">
-                        <a href="/productos/detalle/1" id="enlace"></a>
-                        <img src="https://www.dressinn.com/f/125/1252953/vans-old-skool.jpg" alt="">
-                        <h5>Zapatillas Vans Original</h5>
-                        <p>$7.999</p>
-                    </div>                    
+                    <% } %>                    
                     <a href="/productos/explorar">Ver todas</a>
                 </div>                
             </article>

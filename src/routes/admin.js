@@ -28,10 +28,10 @@ router.get('/', usersController.ingresar);
 router.get('/productos/listado', authMiddleware, adminMiddleware, productsController.listadoAdmin);
 
 router.get('/productos/crear', authMiddleware, adminMiddleware, productsController.crear);
-router.post('/productos/crear', upload.single("imagen"), productsController.crearProducto);
+router.post('/productos/crear', upload.any(), productsController.crearProducto);
 
 router.get('/productos/:id/editar', authMiddleware, adminMiddleware, productsController.editar);
-router.put('/productos/:id/editar', upload.single("imagen"), productsController.editarPUT);
+router.put('/productos/:id/editar', upload.any(), productsController.editarPUT);
 
 router.delete('/productos/:id/eliminar', productsController.eliminar);
 

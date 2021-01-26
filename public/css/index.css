@@ -139,6 +139,36 @@ main.index section.abajo .producto p {
 
 }
 
+main.index section.abajo .producto .precioTachado {
+    text-decoration: line-through;
+    color: black;
+}
+
+main.index section.abajo .producto span.precioConDescuento {
+    color: #BF488D;
+    padding-left: 10px;
+}
+
+main.index section.abajo .producto .porcentaje {
+    position: absolute;
+    right: 26px;
+    top: 44px;
+    font-size: 12px;
+    z-index: 10;
+    color: white;
+}
+
+main.index section.abajo .circle {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #BF488D;
+}
+
+
 /* ===========
     MARCAS
 ==============*/
