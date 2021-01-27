@@ -88,10 +88,17 @@ module.exports = {
         return res.redirect('/');
     },
     listado: function(req, res) {
-        db.Usuario.findAll()
+        db.Usuario.findAll({
+            where: {
+                estado: 1
+            }
+        })
         .then(function(users){
             res.render('users/usersList', {users: users})
         })
+        .catch(function (err) {
+            res.send("Lo sentimos, no pudimos procesar tu solicitud. Por favor intentalo nuevamente.")
+          });
     },
     editar: function(req, res) {
         db.Usuario.findByPk(req.params.id)
@@ -111,7 +118,7 @@ module.exports = {
                }
             })
             .then(function(){
-                res.redirect("/usuarios/all")
+                res.redirect("/admin/usuarios/listado")
             })
        
        },
@@ -122,7 +129,7 @@ module.exports = {
             }
         })
         .then(function() {
-            res.redirect("/usuarios/all")
+            res.redirect("/admin/usuarios/listado")
         })
     }
     }

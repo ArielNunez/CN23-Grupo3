@@ -60,15 +60,34 @@ module.exports = {
         // return res.redirect("/productos/detalle/" + nuevoProducto.id);
     },
     editar: function(req,res) {
-        for(let i=0; i<productos.length;i++) {
-            if(req.params.id == productos[i].id) {
-                return res.render('products/productEdit', {producto: productos[i]})
-            }
-        }
-        return res.send('Error, producto no encontrado');
+        db.Producto.findByPk(req.params.id, {
+            include: [
+                {association: 'categoriaProducto'},
+                {association: "talles"},
+                {association: "marca"},
+                {association: "imagenes"}
+            ]
+        })
+        .then(function(producto) {
+            res.render('products/productEdit', {producto: producto})
+        })
     },
     editarPUT: function (req, res) {
-        for(let i=0; i<productos.length;i++) {
+        db.Producto.update({
+            producto: req.body.producto,
+            descripcion: req.body.descripcion,
+            id_categoria: req.body.categoria,
+            id_marca: req.body.marca,
+            precio: req.body.precio,
+            descuento: req.body.descuento,
+            estado: 1
+        }, {
+            where: { id: req.params.id }
+        })
+        .then(function() {
+            return res.redirect("/productos/detalle/" + req.params.id)
+        })
+        /* (let i=0; i<productos.length;i++) {
             if(req.params.id == productos[i].id) { 
                 if(req.file != undefined) {
                     productos[i].imagen = req.file.filename;
@@ -81,18 +100,54 @@ module.exports = {
                 productos[i].descuento = req.body.descuento;
                 fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productos, null, 4));
                 return res.redirect("/productos/detalle/" + req.params.id);   
-            }
-        }
+            } 
+        } */
     },
     eliminar: function(req, res) {
-        productos = productos.filter(producto => producto.id != req.params.id)
-        fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productos, null, 4));
-        res.redirect('/admin/productos/listado');
+        let borrarTalles = db.ProductoTalle.update({
+            estado: 0
+        }, {
+            where: {
+                id_producto: req.params.id
+            }
+        });
+        let borrarImagenes = db.Imagen.update({
+            estado: 0
+        }, {
+            where: {
+                id_producto: req.params.id
+            }
+        });
+        let borrarProducto = db.Producto.update({
+            estado: 0
+        }, {
+            where: {
+                id: req.params.id
+            }
+        });
+        Promise.all([borrarImagenes, borrarTalles, borrarProducto]).then(function(){
+            res.redirect('/admin/productos/listado');
+        });
     },
     productosTodos: function(req, res) {
-        res.render('products/productList', {productos: productos})
+        db.Producto.findAll({
+            where: {
+                estado: 1
+            },
+            include: [
+                {association: "imagenes"}
+            ]
+        }).then(function(productos){
+            res.render('products/productList', {productos: productos});
+        });
     },
     listadoAdmin: function(req,res) {
-        res.render('products/productAdmin', {productos: productos});
+        db.Producto.findAll({
+            where: {
+                estado: 1
+            }
+        }).then(function(productos){
+            res.render('products/productAdmin', {productos: productos});
+        });
     }
 }

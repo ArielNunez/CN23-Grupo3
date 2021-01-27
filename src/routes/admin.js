@@ -35,5 +35,9 @@ router.put('/productos/:id/editar', upload.any(), productsController.editarPUT);
 
 router.delete('/productos/:id/eliminar', productsController.eliminar);
 
-router.get('/usuarios/listado', usersController.listado)
+router.get('/usuarios/listado', usersController.listado);
+router.get('/usuarios/editar/:id', usersController.editar);
+router.post('/usuarios/editar/:id', usersController.update);
+router.delete('/usuarios/editar/:id', usersController.delete);
+
 module.exports = router;

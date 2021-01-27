@@ -5,7 +5,7 @@
 </head>
 <body>
     <header>
-        <%- include("../partials/header") %>
+        <%- include("../partials/adminHeader") %>
     </header>
 
     <main class="listaUsuarios">        
@@ -21,8 +21,7 @@
                         <th class="col" scope="col">Nombre</th>
                         <th class="col" scope="col">Apellido</th>
                         <th class="col" scope="col">Email</th>
-                        <th class="col boton" scope="col">Editar</th>
-                        <th class="col boton" scope="col">Eliminar</th>
+                        <th class="col" scope="col" class="administrarProducto">Administrar</th>
                     </tr>
                 </thead>                
                 <tbody>
@@ -32,8 +31,8 @@
                             <td> <%= users[i].nombre %> </td>
                             <td> <%= users[i].apellido %> </td>
                             <td> <%= users[i].email %> </td>
-                            <td class="boton"> <a href="/usuarios/edit/<%= users[i].id %>"><i class="fas fa-edit"></i> </a></td>
-                            <td class="boton"><a href="/usuarios/edit/<%= users[i].id %>"> <i class="fa fa-trash" aria-hidden="true"></i></a> </td>
+                            <td class="boton"> <a href="/admin/usuarios/editar/<%= users[i].id %>"><i class="fas fa-edit"></i> </a></td>
+                            <td class="boton"><a href="/admin/usuarios/editar/<%= users[i].id %>"> <i class="fa fa-trash" aria-hidden="true"></i></a> </td>
                         </tr>                  
                     <% } %> 
                 </tbody>
