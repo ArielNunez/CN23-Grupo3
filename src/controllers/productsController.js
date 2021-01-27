@@ -60,7 +60,6 @@ module.exports = {
         // return res.redirect("/productos/detalle/" + nuevoProducto.id);
     },
     editar: function(req,res) {
-
         db.Producto.findByPk(req.params.id, {
             include: [
                 {association: 'categoriaProducto'},
@@ -74,7 +73,6 @@ module.exports = {
         })
     },
     editarPUT: function (req, res) {
-
         db.Producto.update({
             producto: req.body.producto,
             descripcion: req.body.descripcion,
@@ -106,14 +104,41 @@ module.exports = {
         } */
     },
     eliminar: function(req, res) {
-        productos = productos.filter(producto => producto.id != req.params.id)
-        fs.writeFileSync(path.join(__dirname, "../database/products.json"), JSON.stringify(productos, null, 4));
-        res.redirect('/admin/productos/listado');
+        let borrarTalles = db.ProductoTalle.update({
+            estado: 0
+        }, {
+            where: {
+                id_producto: req.params.id
+            }
+        });
+        let borrarImagenes = db.Imagen.update({
+            estado: 0
+        }, {
+            where: {
+                id_producto: req.params.id
+            }
+        });
+        let borrarProducto = db.Producto.update({
+            estado: 0
+        }, {
+            where: {
+                id: req.params.id
+            }
+        });
+        Promise.all([borrarImagenes, borrarTalles, borrarProducto]).then(function(){
+            res.redirect('/admin/productos/listado');
+        });
     },
     productosTodos: function(req, res) {
         res.render('products/productList', {productos: productos})
     },
     listadoAdmin: function(req,res) {
-        res.render('products/productAdmin', {productos: productos});
+        db.Producto.findAll({
+            where: {
+                estado: 1
+            }
+        }).then(function(productos){
+            res.render('products/productAdmin', {productos: productos});
+        })
     }
 }
