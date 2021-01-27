@@ -88,11 +88,7 @@ module.exports = {
         return res.redirect('/');
     },
     listado: function(req, res) {
-        db.Usuario.findAll({
-            where: {
-                estado: 1
-            }
-        })
+        db.Usuario.findAll()
         .then(function(users){
             res.render('users/usersList', {users: users})
         })

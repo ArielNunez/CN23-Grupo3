@@ -209,7 +209,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (2,'santiago','gonzalez','1991-03-26',35971495,'santibullrich@gmail.com',0,NULL,NULL,'2021-01-22 00:25:03','2021-01-27 16:08:24');
+INSERT INTO `usuarios` VALUES (2,'santiago','ramirez','1991-03-26',35971495,'santibullrich@gmail.com',0,NULL,NULL,'2021-01-22 00:25:03','2021-01-27 20:59:09');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -222,4 +222,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-27 16:40:03
+-- Dump completed on 2021-01-27 18:00:12
