@@ -111,7 +111,7 @@ module.exports = {
                }
             })
             .then(function(){
-                res.redirect("/usuarios/all")
+                res.redirect("/admin/usuarios/listado")
             })
        
        },
@@ -122,7 +122,7 @@ module.exports = {
             }
         })
         .then(function() {
-            res.redirect("/usuarios/all")
+            res.redirect("/admin/usuarios/listado")
         })
     }
     }
