@@ -88,6 +88,41 @@ module.exports = {
         return res.redirect('/');
     },
     listado: function(req, res) {
-        res.render('users/usersList', {users: users})
+        db.Usuario.findAll()
+        .then(function(users){
+            res.render('users/usersList', {users: users})
+        })
+    },
+    editar: function(req, res) {
+        db.Usuario.findByPk(req.params.id)
+        .then(function(usuario) {
+            res.render('users/editUser', {usuario: usuario})
+        })
+    },
+    update: function(req, res) {
+            db.Usuario.update({
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                fecha_nacimiento: req.body.nacimiento,
+                email: req.body.email
+            }, {
+               where: {
+                   id: req.params.id
+               }
+            })
+            .then(function(){
+                res.redirect("/usuarios/all")
+            })
+       
+       },
+       delete: function(req, res) {
+        db.Usuario.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function() {
+            res.redirect("/usuarios/all")
+        })
     }
-}
+    }
