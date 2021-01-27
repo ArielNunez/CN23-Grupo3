@@ -17,8 +17,8 @@ router.get('/salir', authMiddleware, usersController.salir);
 
 router.get('/all', usersController.listado);
 
-router.get('/edit/:id', usersController.editar);
-router.post('/edit/:id', usersController.update);
-router.delete('/edit/:id', usersController.delete)
+router.get('/editar/:id', usersController.editar);
+router.post('/editar/:id', usersController.update);
+router.delete('/editar/:id', usersController.delete);
 
 module.exports = router;

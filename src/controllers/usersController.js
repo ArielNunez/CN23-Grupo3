@@ -96,6 +96,9 @@ module.exports = {
         .then(function(users){
             res.render('users/usersList', {users: users})
         })
+        .catch(function (err) {
+            res.send("Lo sentimos, no pudimos procesar tu solicitud. Por favor intentalo nuevamente.")
+          });
     },
     editar: function(req, res) {
         db.Usuario.findByPk(req.params.id)
