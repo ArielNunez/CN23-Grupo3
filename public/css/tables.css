@@ -51,20 +51,20 @@ section.tablaProductos button {
     color: white;
 }
 
-section.tablaProductos button.editar {
+section button.editar {
     background-color: rgb(79, 135, 208);
 }
 
-section.tablaProductos button.editar:hover {
+section button.editar:hover {
     background-color:rgb(70, 116, 177);
     border-color: #25cff2;
 }
 
-section.tablaProductos button.eliminar {
+section button.eliminar {
     background-color: rgb(249, 64, 64);
 }
 
-section.tablaProductos button.eliminar:hover {
+section button.eliminar:hover {
     background-color: #bb2d3b;
     border-color: #b02a37;
 }

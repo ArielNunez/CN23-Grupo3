@@ -21,8 +21,7 @@
                         <th class="col" scope="col">Nombre</th>
                         <th class="col" scope="col">Apellido</th>
                         <th class="col" scope="col">Email</th>
-                        <th class="col boton" scope="col">Editar</th>
-                        <th class="col boton" scope="col">Eliminar</th>
+                        <th class="col" scope="col" class="administrarProducto">Administrar</th>
                     </tr>
                 </thead>                
                 <tbody>
@@ -32,8 +31,11 @@
                             <td> <%= users[i].name %> </td>
                             <td> <%= users[i].lastName %> </td>
                             <td> <%= users[i].email %> </td>
-                            <td class="boton"> <i class="fas fa-edit"></i> </td>
-                            <td class="boton"> <i class="fa fa-trash" aria-hidden="true"></i> </td>
+                            <td class="administrarProducto">
+                                <button class="editar">Editar</button>                                
+                                <button class="eliminar" type="submit" role="button">Eliminar</button>
+                                
+                            </td>
                         </tr>                  
                     <% } %> 
                 </tbody>

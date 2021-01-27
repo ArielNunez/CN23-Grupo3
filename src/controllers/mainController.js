@@ -23,8 +23,13 @@ module.exports = {
                 {association: "imagenes"}
             ]
         });
-        Promise.all([novedades, ofertas]).then(function([novedades,ofertas]){
+
+        Promise.all([novedades, ofertas])
+        .then(function([novedades,ofertas]){
             res.render('index', {novedades: novedades, ofertas: ofertas});
-        });
+        })
+        .catch(function (err) {
+            res.send("Lo sentimos, no pudimos procesar tu solicitud. Por favor intentalo nuevamente.")
+          });
     }
 }
