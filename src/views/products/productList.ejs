@@ -13,7 +13,7 @@
             <% for (let i = 0; i < productos.length; i++) { %>
                         <div class="product">
                             <a href="/productos/detalle/<%= productos[i].id %>" id="link"></a>
-                            <img src="/img/uploads/productimage/<%= productos[i].imagen %>" alt="">
+                            <img src="/img/uploads/productimage/<%= productos[i].imagenes[0].nombre %>" alt="">
                             <h5><%= productos[i].producto %></h5>
                             <% if(productos[i].descuento == "") { %>
                                 <h3 class="sinDescuento">$<%= productos[i].precio %></h3>

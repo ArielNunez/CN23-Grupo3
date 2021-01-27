@@ -130,7 +130,16 @@ module.exports = {
         });
     },
     productosTodos: function(req, res) {
-        res.render('products/productList', {productos: productos})
+        db.Producto.findAll({
+            where: {
+                estado: 1
+            },
+            include: [
+                {association: "imagenes"}
+            ]
+        }).then(function(productos){
+            res.render('products/productList', {productos: productos});
+        });
     },
     listadoAdmin: function(req,res) {
         db.Producto.findAll({
@@ -139,6 +148,6 @@ module.exports = {
             }
         }).then(function(productos){
             res.render('products/productAdmin', {productos: productos});
-        })
+        });
     }
 }

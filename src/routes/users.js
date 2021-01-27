@@ -15,10 +15,4 @@ router.post('/ingresar', loginValidator, usersController.logueado);
 
 router.get('/salir', authMiddleware, usersController.salir);
 
-router.get('/all', usersController.listado);
-
-router.get('/editar/:id', usersController.editar);
-router.post('/editar/:id', usersController.update);
-router.delete('/editar/:id', usersController.delete);
-
 module.exports = router;
