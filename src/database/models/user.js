@@ -34,7 +34,7 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.INTEGER,
             allowNull: true
         },
-        id_categoria: {
+        categoria: {
             type: dataTypes.INTEGER
         }
 

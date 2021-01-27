@@ -5,7 +5,7 @@
 </head>
 <body>
     <header>
-        <%- include("../partials/adminHeader") %>
+        <%- include("../partials/header") %>
     </header>
 
     <main class="listaUsuarios">        
@@ -28,14 +28,11 @@
                     <% for (i = 0; i < users.length; i++) { %>
                         <tr>
                             <th scope="row"> <%= users[i].id %> </th>
-                            <td> <%= users[i].name %> </td>
-                            <td> <%= users[i].lastName %> </td>
+                            <td> <%= users[i].nombre %> </td>
+                            <td> <%= users[i].apellido %> </td>
                             <td> <%= users[i].email %> </td>
-                            <td class="administrarProducto">
-                                <button class="editar">Editar</button>                                
-                                <button class="eliminar" type="submit" role="button">Eliminar</button>
-                                
-                            </td>
+                            <td class="boton"> <a href="/usuarios/edit/<%= users[i].id %>"><i class="fas fa-edit"></i> </a></td>
+                            <td class="boton"><a href="/usuarios/edit/<%= users[i].id %>"> <i class="fa fa-trash" aria-hidden="true"></i></a> </td>
                         </tr>                  
                     <% } %> 
                 </tbody>
