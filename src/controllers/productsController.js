@@ -15,7 +15,11 @@ module.exports = {
                 {association: "imagenes"}
             ]
         }).then(function(producto){
-            return res.render('products/productDetail', {producto: producto});
+            if(producto.estado == 1) {
+                return res.render('products/productDetail', {producto: producto});
+            } else {
+                return res.redirect('/');
+            }
         });
     },
     carrito: function(req,res) {
@@ -23,11 +27,18 @@ module.exports = {
     },
     crear: function(req, res) {
         let marcas = db.Marca.findAll({
+            where: {
+                estado: 1
+            },
             order: [
                 ['marca', 'ASC']
             ]
         });
-        let categoriasProductos = db.CategoriaProducto.findAll();
+        let categoriasProductos = db.CategoriaProducto.findAll({
+            where: {
+                estado: 1
+            }
+        });
         Promise.all([marcas, categoriasProductos]).then(function([marcas, categoriasProductos]){
             res.render('../views/products/productCreation', {marcas: marcas, categoriasProductos: categoriasProductos});
         })
@@ -70,7 +81,7 @@ module.exports = {
         })
         .then(function(producto) {
             res.render('products/productEdit', {producto: producto})
-        })
+        });
     },
     editarPUT: function (req, res) {
         db.Producto.update({

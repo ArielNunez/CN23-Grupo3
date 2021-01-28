@@ -15,7 +15,7 @@
                             <a href="/productos/detalle/<%= productos[i].id %>" id="link"></a>
                             <img src="/img/uploads/productimage/<%= productos[i].imagenes[0].nombre %>" alt="">
                             <h5><%= productos[i].producto %></h5>
-                            <% if(productos[i].descuento == "") { %>
+                            <% if(productos[i].descuento == null) { %>
                                 <h3 class="sinDescuento">$<%= productos[i].precio %></h3>
                             <% } else { %>
                                 <div class="descuento">
