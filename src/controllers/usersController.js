@@ -86,6 +86,9 @@ module.exports = {
     perfil: function(req,res) {
         return res.render('users/userProfile');
     },
+    editarPerfil: function(req,res){
+        return res.render('users/userEdit');
+    },
     salir: function(req,res) {
         req.session.destroy();
         return res.redirect('/');
