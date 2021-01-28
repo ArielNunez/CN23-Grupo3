@@ -13,6 +13,8 @@ router.post('/registro', registerValidator, usersController.guardar);
 router.get('/ingresar', guestMiddleware, usersController.ingresar);
 router.post('/ingresar', loginValidator, usersController.logueado);
 
+router.get('/perfil', authMiddleware, usersController.perfil);
+
 router.get('/salir', authMiddleware, usersController.salir);
 
 module.exports = router;

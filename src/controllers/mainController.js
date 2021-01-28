@@ -3,6 +3,9 @@ let db = require('../database/models');
 module.exports = {
     index: function(req,res) {
         let novedades = db.Producto.findAll({
+            where: {
+                estado: 1
+            },
             order: [
                 ['updated_at', 'DESC']
             ],
@@ -13,7 +16,8 @@ module.exports = {
         });
         let ofertas = db.Producto.findAll({
             where: {
-                descuento: {[db.Sequelize.Op.ne]: null}
+                descuento: {[db.Sequelize.Op.ne]: null},
+                estado: 1
             },
             order: [
                 ['descuento', 'DESC']

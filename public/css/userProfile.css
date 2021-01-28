@@ -1,0 +1,144 @@
+main.perfilDeUsuario {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 85vh;
+    padding: 60px 0px;
+}
+
+/* ==============
+    USER NAV
+=================*/
+
+main.perfilDeUsuario nav.userNav {
+    width: 22%;
+    height: 30%;
+}
+
+main.perfilDeUsuario nav.userNav div.nav2 {
+    display: none;
+}
+
+main.perfilDeUsuario nav.userNav ul {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+main.perfilDeUsuario nav.userNav ul.cerrarSesion {
+    margin-top: 10px;
+}
+
+main.perfilDeUsuario nav.userNav div.lineaDivisoria {
+    border-bottom:solid 1px grey;
+    width:90%;
+    margin-left: 20px;
+}
+
+main.perfilDeUsuario nav.userNav ul li {
+    padding: 8px 0px;
+    padding-left: 20px;
+}
+
+main.perfilDeUsuario nav.userNav ul li:hover {
+    padding-left: 16px;
+    border-left: 4px solid #000;
+}
+
+main.perfilDeUsuario nav.userNav ul li a {
+    color:#767676;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+main.perfilDeUsuario nav.userNav ul li a:hover {
+    color: black;
+}
+
+/* ==============
+    INFO USUARIO
+=================*/
+
+main.perfilDeUsuario section.infoUsuario {
+    width: 60%;
+    height: 90%;
+}
+
+main.perfilDeUsuario section.infoUsuario h1 {
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+main.perfilDeUsuario section.infoUsuario div.lineaDivisoria {
+    border-bottom:solid 1px grey;
+    width:100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+main.perfilDeUsuario section.infoUsuario div.datosPersonales h4 {
+    margin-bottom: 5px;
+}
+
+main.perfilDeUsuario section.infoUsuario p {
+    margin: 6px 0px;
+}
+
+main.perfilDeUsuario section.infoUsuario div.config p {
+    display: inline-block;
+    padding-right: 8px;
+}
+
+main.perfilDeUsuario section.infoUsuario div.config a {
+    color: #BF488D;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+main.perfilDeUsuario section.infoUsuario div.config a:hover {
+    color: #863163;
+}
+
+/* ==============
+   RESPONSIVE
+=================*/
+
+@media(max-width: 500px) {
+    main.perfilDeUsuario {
+        flex-direction: column;
+        height: auto;
+        padding: 30px 0px;
+        align-items: center;
+    }
+
+    main.perfilDeUsuario nav.userNav {
+        width: 100%;
+        border-top: 1px solid rgb(128,128,128,0.5);
+        border-bottom: 1px solid rgb(128,128,128,0.5);
+        padding: 10px 0px;
+        margin: 10px 0px;
+    }
+
+    main.perfilDeUsuario section.infoUsuario {
+        width: 95%;
+        padding: 30px 0px;
+        height: 400px;
+    }
+
+    main.perfilDeUsuario section.infoUsuario h1,
+    main.perfilDeUsuario section.infoUsuario .datosPersonales,
+    main.perfilDeUsuario section.infoUsuario .config {
+        padding-left: 10px;
+    }
+
+    main.perfilDeUsuario .userNav .userNav .nav1 {
+        display: none;
+        padding-top: 10px;
+    }
+
+    main.perfilDeUsuario .userNav .userNav .nav2 {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

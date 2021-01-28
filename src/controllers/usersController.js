@@ -83,6 +83,9 @@ module.exports = {
     ingresoAdmin: function(req, res) {
         return res.redirect('/usuarios/ingresar');
     },
+    perfil: function(req,res) {
+        return res.render('users/userProfile');
+    },
     salir: function(req,res) {
         req.session.destroy();
         return res.redirect('/');
