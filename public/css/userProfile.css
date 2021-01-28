@@ -17,6 +17,11 @@ main.perfilDeUsuario nav.userNav {
 
 main.perfilDeUsuario nav.userNav div.nav2 {
     display: none;
+    font-size: 14px;
+}
+
+main.perfilDeUsuario nav.userNav div.nav2 i {
+    color: grey;
 }
 
 main.perfilDeUsuario nav.userNav ul {
