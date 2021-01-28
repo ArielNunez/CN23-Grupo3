@@ -32,7 +32,7 @@ module.exports = {
                 dni: req.body.dni,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.pass, 10),
-                id_categoria: 1,
+                categoria: 1,
                 estado: 1
             })
             .then(function(usuario){
@@ -89,6 +89,22 @@ module.exports = {
     editarPerfil: function(req,res){
         return res.render('users/userEdit');
     },
+    guardarCambios: function(req,res) {
+        db.Usuario.update({
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            fecha_nacimiento: req.body.nacimiento,
+            dni: req.body.dni,
+            email: req.body.email
+        }, {
+            where: {
+                id: req.session.user.id
+            }
+        })
+        .then(function(){
+            res.redirect('/usuarios/perfil');
+        });
+    },
     salir: function(req,res) {
         req.session.destroy();
         return res.redirect('/');
@@ -105,7 +121,7 @@ module.exports = {
     editar: function(req, res) {
         db.Usuario.findByPk(req.params.id)
         .then(function(usuario) {
-            res.render('users/editUser', {usuario: usuario})
+            res.render('users/editUserAdmin', {usuario: usuario})
         })
     },
     update: function(req, res) {
@@ -113,7 +129,8 @@ module.exports = {
                 nombre: req.body.nombre,
                 apellido: req.body.apellido,
                 fecha_nacimiento: req.body.nacimiento,
-                email: req.body.email
+                email: req.body.email,
+                dni: req.body.dni
             }, {
                where: {
                    id: req.params.id

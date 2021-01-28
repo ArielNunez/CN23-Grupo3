@@ -111,7 +111,8 @@ section.infoUsuario form {
     font-size: 16px;  
     display: flex;
     flex-direction: column;
-    justify-content: left;   
+    justify-content: left;
+    align-items: flex-start;   
 }
 
 section.infoUsuario form div.datos {
@@ -119,11 +120,13 @@ section.infoUsuario form div.datos {
     flex-direction: column;
     width: 80%;
     justify-content: left;
+    flex-wrap: wrap;
 }
 
 section.infoUsuario form div.datos div {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
+    flex-wrap: wrap;
 }
 
 section.infoUsuario form div.datos div div {
@@ -131,30 +134,34 @@ section.infoUsuario form div.datos div div {
     padding-bottom: 15px;
     display: flex;
     flex-direction: column;
+    margin-right: 20px;
 }
 
 section.infoUsuario form div.datos div div label {    
     padding-top: 5px;
     padding-bottom: 5px;
+    font-size: 15px;
 }
 
 section.infoUsuario form div.datos div div input {
     width: 100%;
     padding: 5px;
-    height: 6.5vh;
+    height: 5.5vh;
+    border: #767676 solid 1px;
 }
 
 section.infoUsuario form button {
     background-color: #BF488D;
     color: white;
     border-radius: 5px;
-    width: 50%;
     padding: 6px 12px 6px 12px;
-    font-size: 18px;
+    font-size: 15px;
     border: none;
-    margin: auto;
     margin-bottom: 15px;
     cursor: pointer;
+    width: 40%;
+    height: 5.5vh;
+    align-self: flex-end;
 }
 
 section.infoUsuario form button:hover {
@@ -184,13 +191,17 @@ section.infoUsuario form button:hover {
     main.perfilDeUsuario section.infoUsuario {
         width: 95%;
         padding: 30px 0px;
-        height: 400px;
+        height: 550px;
     }
 
     main.perfilDeUsuario section.infoUsuario h1,
     main.perfilDeUsuario section.infoUsuario .datosPersonales,
     main.perfilDeUsuario section.infoUsuario .config {
         padding-left: 10px;
+    }
+
+    main.perfilDeUsuario section.infoUsuario h1 {
+        font-size: 26px;
     }
 
     main.perfilDeUsuario .userNav .userNav .nav1 {
@@ -203,5 +214,35 @@ section.infoUsuario form button:hover {
         justify-content: space-between;
         padding-left: 20px;
         padding-right: 20px;
+    }
+
+    section.infoUsuario form {
+        justify-content: center;
+        align-items: center;
+        width: 98%;
+        padding-left: 10px;
+    }
+
+    section.infoUsuario form div.datos {
+        width: 100%;
+    }
+
+    section.infoUsuario form div.datos div {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    section.infoUsuario form div.datos div div {
+        width: 100%;
+    }
+
+    section.infoUsuario form div.datos div div input {
+        width: 100%;
+    }
+    
+    section.infoUsuario form button {
+        font-size: 15px;
+        align-self: flex-start;
+        width: 100%;
     }
 }
