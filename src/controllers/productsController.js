@@ -9,7 +9,7 @@ module.exports = {
     detalle: function(req,res) {
         db.Producto.findByPk(req.params.id, {
             include: [
-                {association: 'categoriaProducto'},
+                {association: "categoriaProducto"},
                 {association: "talles"},
                 {association: "marca"},
                 {association: "imagenes"}
@@ -71,17 +71,35 @@ module.exports = {
         // return res.redirect("/productos/detalle/" + nuevoProducto.id);
     },
     editar: function(req,res) {
-        db.Producto.findByPk(req.params.id, {
+
+        let marcas = db.Marca.findAll({
+            where: {
+                estado: 1
+            },
+            order: [
+                ['marca', 'ASC']
+            ]
+        });
+
+        let categoriasProductos = db.CategoriaProducto.findAll({
+            where: {
+                estado: 1
+            }
+        });
+        
+        let producto = db.Producto.findByPk(req.params.id, {
             include: [
-                {association: 'categoriaProducto'},
+                {association: "categoriaProducto"},
                 {association: "talles"},
                 {association: "marca"},
                 {association: "imagenes"}
             ]
         })
-        .then(function(producto) {
-            res.render('products/productEdit', {producto: producto})
-        });
+        
+        Promise.all([marcas, categoriasProductos, producto])
+        .then(function([marcas, categoriasProductos, producto]){
+            res.render('../views/products/productEdit', {marcas: marcas, categoriasProductos: categoriasProductos, producto: producto});
+        })
     },
     editarPUT: function (req, res) {
         db.Producto.update({
@@ -158,7 +176,7 @@ module.exports = {
                 estado: 1
             }
         }).then(function(productos){
-            res.render('products/productAdmin', {productos: productos});
+            res.render('products/productListAdmin', {productos: productos});
         });
     }
 }

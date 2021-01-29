@@ -14,6 +14,10 @@ const adminRouter = require('./routes/admin');
 const loggedMiddleware = require('./middlewares/loggedMiddleware');
 const rememberMiddleware = require('./middlewares/rememberMiddleware');
 
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+app.use(express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.urlencoded({extended: false}));
@@ -24,11 +28,6 @@ app.use(session({secret: 'ChampionesSecreto'}));
 app.use(loggedMiddleware);
 app.use(rememberMiddleware);
 
-
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-
-app.use(express.static(path.join(__dirname, '../public')));
 app.use('/', mainRouter);
 app.use('/productos', productsRouter);
 app.use('/usuarios', usersRouter);

@@ -16,7 +16,8 @@ module.exports = (sequelize, dataTypes) => {
     }
     let config = {
         tableName: 'talles',
-        timestamps: false
+        timestamps: false,
+        underscored: true
     }
 
     const Talle = sequelize.define(alias, cols, config);

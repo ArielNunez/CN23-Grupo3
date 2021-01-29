@@ -42,7 +42,14 @@ section table.table-hover tbody tr:hover {
     background-color: #ececec;
 }
 
-section.tablaUsuarios button,
+section.tablaUsuarios .botones {
+    text-align: center;
+}
+
+section.tablaUsuarios .botones a {
+    color: black;
+}
+
 section.tablaProductos button {
     padding: 8px;
     border: none;
