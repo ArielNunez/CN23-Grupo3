@@ -67,7 +67,7 @@ module.exports = {
                     if (recordarme != undefined) {
                         res.cookie('recordarme', user.email, { maxAge: 60000 });
                     }
-                    if (user.categoria == "1") {
+                    if (user.categoria == "2") {
                         return res.redirect('/admin/productos/crear')
                     } else {
                         return res.redirect('/');

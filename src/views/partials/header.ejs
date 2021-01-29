@@ -16,7 +16,7 @@
             <% if(typeof user == 'undefined') { %>
                 <li><a href="/usuarios/ingresar"><i class="fas fa-user"></i></a></li>
             <% } else { %>
-                <li class="datosUsuario"><a href="/usuarios/perfil"><%= user.name %></a></li>
+                <li class="datosUsuario"><a href="/usuarios/perfil"><%= user.nombre %></a></li>
                 <li><a href="/usuarios/salir"><i class="fas fa-sign-out-alt"></i></a></li>
             <% } %>
         </ul>
