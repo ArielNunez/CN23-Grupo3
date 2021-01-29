@@ -52,33 +52,33 @@ module.exports = {
         let errors = validationResult(req);
         let { email, pass, recordarme} = req.body;
         if (errors.isEmpty()) {
-            let usuarioALoguearse;
 
-            users.forEach(user => {
-                if (user.email === email && bcrypt.compareSync(pass, user.pass)) {
-                     usuarioALoguearse = user;
+            db.Usuario.findOne({
+                where: {
+                    email: req.body.email,
                 }
-            });
-
-            if (usuarioALoguearse == undefined) {
-                return res.render('users/login', {errores: 'Dirección de correo o contraseña inválidos'});
-            }
-
-            req.session.user = usuarioALoguearse;
-
-            if (recordarme != undefined) {
-                res.cookie('recordarme', usuarioALoguearse.email, { maxAge: 60000 });
-            }
-
-            if (usuarioALoguearse.category == "admin") {
-                return res.redirect('/admin/productos/crear')
-            } else {
-                return res.redirect('/');
-            }
-
-        } else {
-            return res.render('users/login', {errors: errors.mapped()});
-        }      
+            })
+            .then(function(user){
+                if(bcrypt.compareSync(pass, user.password)){
+                    if (user == undefined) {
+                        return res.render('users/login', {errores: 'Dirección de correo o contraseña inválidos'});
+                    }
+                    req.session.user = user;
+                    if (recordarme != undefined) {
+                        res.cookie('recordarme', user.email, { maxAge: 60000 });
+                    }
+                    if (user.categoria == "1") {
+                        return res.redirect('/admin/productos/crear')
+                    } else {
+                        return res.redirect('/');
+                    }
+        
+                } else {
+                    return res.render('users/login', {errors: errors.mapped()});
+                }
+                })
+         
+        }
     },
     ingresoAdmin: function(req, res) {
         return res.redirect('/usuarios/ingresar');
