@@ -123,14 +123,16 @@ module.exports = {
         let errors = validationResult(req);
         if(errors.isEmpty()) {
             if(bcrypt.compareSync(req.body.pass, req.session.user.password)) {
+               let newPass = bcrypt.hashSync(req.body.newPass, 10);
                db.Usuario.update({
-                    password: bcrypt.hashSync(req.body.newPass, 10)
+                    password: newPass
                 }, {
                     where: {
                         id: req.session.user.id
                     }
                 })
                 .then(function() {
+                    req.session.user.password = newPass;
                     return res.redirect('/usuarios/perfil');
                 })
                 .catch(function(){

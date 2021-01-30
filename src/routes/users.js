@@ -20,7 +20,7 @@ router.get('/perfil', authMiddleware, usersController.perfil);
 router.get('/editar', authMiddleware, usersController.editarPerfil);
 router.put('/editar', editUserValidator, usersController.guardarCambios);
 
-router.get('/editar/pass', usersController.editarPass);
+router.get('/editar/pass', authMiddleware, usersController.editarPass);
 router.put('/editar/pass', changePassValidator, usersController.updatePass);
 
 router.get('/salir', authMiddleware, usersController.salir);
