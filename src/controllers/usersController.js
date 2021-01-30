@@ -40,9 +40,7 @@ module.exports = {
             })
             .catch(function (err) {
                 res.send("Lo sentimos, no pudimos procesar tu solicitud. Por favor intentalo nuevamente.")
-              });
-
-            
+            });
         }
     },  
     ingresar: function(req,res) {
@@ -90,20 +88,60 @@ module.exports = {
         return res.render('users/userEdit');
     },
     guardarCambios: function(req,res) {
-        db.Usuario.update({
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            fecha_nacimiento: req.body.nacimiento,
-            dni: req.body.dni,
-            email: req.body.email
-        }, {
-            where: {
-                id: req.session.user.id
+        let errors = validationResult(req);
+        if(!errors.isEmpty()) {
+            return res.render('users/userEdit', {errors: errors.mapped()});
+        } else {
+            db.Usuario.update({
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                fecha_nacimiento: req.body.nacimiento,
+                dni: req.body.dni,
+                email: req.body.email
+            }, {
+                where: {
+                    id: req.session.user.id
+                }
+            })
+            .then(function() {
+                req.session.user.nombre = req.body.nombre;
+                req.session.user.apellido = req.body.apellido;
+                req.session.user.fecha_nacimiento = req.body.nacimiento;
+                req.session.user.dni = req.body.dni;
+                req.session.user.email = req.body.email;
+                return res.redirect('/usuarios/perfil');
+            })
+            .catch(function(){
+                return res.redirect('/usuarios/perfil');
+            });
+        }
+    },
+    editarPass: function(req,res) {
+        return res.render('users/changePass');
+    },
+    updatePass: function(req,res) {
+        let errors = validationResult(req);
+        if(errors.isEmpty()) {
+            if(bcrypt.compareSync(req.body.pass, req.session.user.password)) {
+               db.Usuario.update({
+                    password: bcrypt.hashSync(req.body.newPass, 10)
+                }, {
+                    where: {
+                        id: req.session.user.id
+                    }
+                })
+                .then(function() {
+                    return res.redirect('/usuarios/perfil');
+                })
+                .catch(function(){
+                    return res.redirect('/usuarios/perfil');
+                });
+            } else {
+                return res.render('users/changePass', {error: '* Contraseña incorrecta, vuelva a intentarlo'});
             }
-        })
-        .then(function(){
-            res.redirect('/usuarios/perfil');
-        });
+        } else {
+            return res.render('users/changePass', {errors: errors.mapped()});
+        }
     },
     salir: function(req,res) {
         req.session.destroy();

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head', {title: "Información de mi cuenta"}) %>
+</head>
+<body>
+    <header>
+        <%- include("../partials/header") %>
+    </header>
+
+    <main class="perfilDeUsuario">
+        <nav class="userNav">
+            <%- include("../partials/userNav") %>
+        </nav>
+        <section class="infoUsuario">
+            <h1>Editar información de mi cuenta</h1>
+            <div class="lineaDivisoria"></div>
+            <form action="?_method=PUT" method="POST">
+                <div class="datos">
+                    <div class="fila-uno">   
+                        <div class="pass">
+                            <label for="pass">Contraseña actual</label>
+                            <input type="password" name="pass" id="pass">
+                            <% if(typeof errors != 'undefined' && errors.pass) { %>
+                                <small class="erroresPass"><%= errors.pass.msg %></small>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="fila-dos">
+                        <div class="newPass">
+                            <label for="newPass">Nueva contraseña</label>
+                            <input type="password" name="newPass" id="newPass">                       
+                            <% if(typeof errors != 'undefined' && errors.newPass) { %>
+                                <small class="erroresPass"><%= errors.newPass.msg %></small>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="fila-tres">
+                        <div class="confNewPass">
+                            <label for="confNewPass">Confirmar nueva contraseña</label>
+                            <input type="password" name="confNewPass" id="confNewPass">
+                            <% if(typeof errors != 'undefined' && errors.confNewPass) { %>
+                                <small class="erroresPass"><%= errors.confNewPass.msg %></small>
+                            <% } %>
+                        </div>
+                    </div>
+                    <% if(typeof error != 'undefined') { %>
+                        <small class="passIncorrecta"><%= error %></small>
+                    <% } %>
+                    <button type="submit">Guardar Cambios</button>
+                </div>
+            </form>
+            <div class="config">
+                <a href="/usuarios/perfil">Cancelar</a>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <%- include("../partials/footer") %>
+    </footer>
+</body>
+</html>

@@ -116,17 +116,14 @@ section.infoUsuario form {
 }
 
 section.infoUsuario form div.datos {
-    display: flex;  
-    flex-direction: column;
     width: 80%;
-    justify-content: left;
-    flex-wrap: wrap;
 }
 
 section.infoUsuario form div.datos div {
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
+    margin-bottom: 3px;
 }
 
 section.infoUsuario form div.datos div div {
@@ -134,7 +131,8 @@ section.infoUsuario form div.datos div div {
     padding-bottom: 15px;
     display: flex;
     flex-direction: column;
-    margin-right: 20px;
+    margin-right: 25px;
+    position: relative;
 }
 
 section.infoUsuario form div.datos div div label {    
@@ -150,6 +148,24 @@ section.infoUsuario form div.datos div div input {
     border: #767676 solid 1px;
 }
 
+section.infoUsuario form div.datos small {
+    position: absolute;
+    top: 63px;
+    color: red;
+}
+
+section.infoUsuario form div.datos small.erroresPass {
+    position: relative;
+    top: 0px;
+}
+
+section.infoUsuario form div.datos small.passIncorrecta {
+    display: block;
+    margin-bottom: 10px;
+    position: relative;
+    top: 0px;
+}
+
 section.infoUsuario form button {
     background-color: #BF488D;
     color: white;
@@ -157,7 +173,7 @@ section.infoUsuario form button {
     padding: 6px 12px 6px 12px;
     font-size: 15px;
     border: none;
-    margin-bottom: 15px;
+    margin-bottom: 19px;
     cursor: pointer;
     width: 40%;
     height: 5.5vh;
@@ -191,7 +207,7 @@ section.infoUsuario form button:hover {
     main.perfilDeUsuario section.infoUsuario {
         width: 95%;
         padding: 30px 0px;
-        height: 550px;
+        height: 600px;
     }
 
     main.perfilDeUsuario section.infoUsuario h1,
@@ -244,5 +260,6 @@ section.infoUsuario form button:hover {
         font-size: 15px;
         align-self: flex-start;
         width: 100%;
+        margin-top: 5px;
     }
 }
