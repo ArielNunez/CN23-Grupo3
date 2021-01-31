@@ -60,7 +60,7 @@
                             <% let encontrado = false %> 
                             <% for(let i=35; i<=44; i++) { %>
                                 <% for(let j=0; j<producto.talles.length; j++) { %>
-                                    <% if(i == producto.talles[j]) { %>
+                                    <% if(i == producto.talles[j].talle) { %>
                                         <div>
                                             <input type="checkbox" name="talle" value="<%= i %>" id="<%= i %>" checked>
                                             <label for="<%= i %>"><%= i %></label>
