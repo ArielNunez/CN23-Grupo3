@@ -33,28 +33,34 @@
                     <div class="categoria">
                         <label for="categoria">Categoría</label>
                         <select name="categoria" id="categoria">
-                            <% if(producto.categoriaProducto.categoria == "CalzadoUrbano") { %>
-                                <option value="CalzadoUrbano" selected>Calzado Urbano</option>
-                                <option value="CalzadoDeportivo">Calzado Deportivo</option>
-                            <% } else { %>
-                                <option value="CalzadoUrbano">Calzado Urbano</option>
-                                <option value="CalzadoDeportivo" selected>Calzado Deportivo</option>
-                            <% } %>
+                            <% for (i = 0; i < categoriasProductos.length; i++) { %>
+                                <% if (categoriasProductos[i].id == producto.id_categoria) { %>  
+                                    <option value="<%= categoriasProductos[i].id %>" selected><%= categoriasProductos[i].categoria %></option>
+                                <% } else { %>
+                                    <option value="<%= categoriasProductos[i].id %>"><%= categoriasProductos[i].categoria %></option>
+                                <% } %>
+                            <% } %> 
                         </select>
                     </div>
-                    <!-- <div class="marca">
+                    <div class="marca">
                         <label for="marca">Marca</label>
                         <select name="marca" id="marca">
-                             FALTA HACER ESTA PARTE UNA VEZ HECHO EL BREAD DE PRODUCTOS 
+                            <% for (i = 0; i < marcas.length; i++) { %>
+                                <% if (marcas[i].id == producto.id_marca) { %>  
+                                    <option value="<%= marcas[i].id %>" selected><%= marcas[i].marca %></option>
+                                <% } else { %>
+                                    <option value="<%= marcas[i].id %>"><%= marcas[i].marca %></option>
+                                <% } %>
+                            <% } %> 
                         </select>
-                    </div> -->
+                    </div> 
                     <div class="talles">
                         <p>Talles</p>
                         <div class="numeros">
                             <% let encontrado = false %> 
                             <% for(let i=35; i<=44; i++) { %>
                                 <% for(let j=0; j<producto.talles.length; j++) { %>
-                                    <% if(i == producto.talles[j]) { %>
+                                    <% if(i == producto.talles[j].talle) { %>
                                         <div>
                                             <input type="checkbox" name="talle" value="<%= i %>" id="<%= i %>" checked>
                                             <label for="<%= i %>"><%= i %></label>
