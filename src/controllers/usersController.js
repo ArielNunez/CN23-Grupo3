@@ -59,11 +59,10 @@ module.exports = {
                 }
             })
             .then(function(user){
+                if (user != null){
                 if(bcrypt.compareSync(pass, user.password)){
-                    if (user == undefined) {
-                        return res.render('users/login', {errores: 'Dirección de correo o contraseña inválidos'});
+                        req.session.user = user;
                     }
-                    req.session.user = user;
                     if (recordarme != undefined) {
                         res.cookie('recordarme', user.email, { maxAge: 60000 });
                     }
@@ -74,10 +73,12 @@ module.exports = {
                     }
         
                 } else {
-                    return res.render('users/login', {errors: errors.mapped()});
+                    return res.render('users/login', {errors: "Email o contraseña inválidos, por favor intente nuevamente."});
                 }
                 })
          
+        } else {
+            return res.render('users/login', {errors: errors.mapped()});
         }
     },
     ingresoAdmin: function(req, res) {
