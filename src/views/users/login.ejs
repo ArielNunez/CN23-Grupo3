@@ -19,11 +19,12 @@
                 </ul>            
             </div>
 
-            <form action="/usuarios/ingresar" method="POST">
+            <form action="/usuarios/ingresar" method="POST" id="login">
                 <div class="datos">                    
                     <div class="mail">
                         <label for="email">Email</label>
                         <input type="email" name="email" id="email"> 
+                        <small id="smallMail"></small>
                     </div>
                     <div class="pass">
                         <label for="pass">Contraseña</label>
@@ -31,6 +32,7 @@
                         <% if (typeof errors != 'undefined' && errors.pass) { %>
                             <small> * <%= errors.pass.msg %> </small>
                         <% } %>   
+                        <small id="smallPass"></small>
                     </div>
                     <% if (typeof errores != 'undefined') { %>
                         <small> * <%= errores %> </small>
@@ -51,5 +53,7 @@
     <footer>
         <%- include("../partials/footer") %>
     </footer>
+
+    <script src="/js/loginValidator.js"></script>
 </body>
 </html>
