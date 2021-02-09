@@ -71,7 +71,7 @@ module.exports = {
                     }
         
                 } else {
-                    return res.render('users/login', {errors: "Email o contraseña inválidos, por favor intente nuevamente."});
+                    return res.render('users/login', {errores: "Email o contraseña inválidos, por favor intente nuevamente."});
                 }
                 })
          

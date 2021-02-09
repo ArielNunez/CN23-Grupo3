@@ -6,7 +6,6 @@ const productsController = require('../controllers/productsController');
 const authMiddleware = require('../middlewares/authMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 
-
 router.get('/detalle/:id', productsController.detalle);
 router.get('/carrito-de-compras', authMiddleware, productsController.carrito);
 router.get('/explorar', productsController.productosTodos)

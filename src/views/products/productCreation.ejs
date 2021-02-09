@@ -20,14 +20,17 @@
                     <div class="nombreProducto">
                         <label for="nombre">Nombre del Producto</label>
                         <input type="text" name="producto" id="nombre">
+                        <small> <%= (typeof errors != 'undefined' && errors.producto) ? errors.producto.msg : '' %> </small>
                     </div>
                     <div class="descripcionProducto">
                         <label for="descripcion">Descripcion del Producto</label>
                         <textarea name="descripcion" id="descripcion" rows="10"></textarea>
+                        <small> <%= (typeof errors != 'undefined' && errors.descripcion) ? errors.descripcion.msg : '' %> </small>
                     </div>
                     <div class="imagen">
                         <label for="">Imagen del producto</label>
                         <input type="file" name="imagenes" id="imagen" accept=".jpg,.jpeg,.png" multiple>
+                        <small> <%= (typeof errors != 'undefined' && errors.imagen) ? errors.imagen.msg : '' %> </small>
                     </div>
                     <div class="categoria">
                         <label for="categoria">Categoría</label>
@@ -91,8 +94,9 @@
                         </div>
                     </div>
                     <div class="precio">
-                                    <label for="precio">Precio del Producto</label>
-                                    <input type="number" name="precio" id="precio">
+                        <label for="precio">Precio del Producto</label>
+                        <input type="number" name="precio" id="precio">
+                        <small> <%= (typeof errors != 'undefined' && errors.precio) ? errors.precio.msg : '' %> </small>
                     </div>
                     <div class="precio">
                         <label for="descuento">Descuento</label>

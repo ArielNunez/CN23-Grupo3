@@ -2,7 +2,7 @@
 - General
 ================= */
 main.productCreation section.principal {
-    width: 80%;
+    width: 85%;
     padding: 60px 200px;
     padding-left: 445px;
     margin: auto;
@@ -34,6 +34,13 @@ main.productCreation section.principal div.formulario form div select {
     width: 40%;
     border-radius: 5px;    
     padding: 8px;
+}
+
+main.productCreation section.principal div.formulario form small {
+    padding-top: 10px;
+    padding-left: 10px;
+    color: #ce0000;
+    font-size: 10px;
 }
 
 main.productCreation section.principal div.formulario form div input#imagen {

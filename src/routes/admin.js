@@ -7,6 +7,7 @@ const productsController = require('../controllers/productsController');
 const usersController = require('../controllers/usersController');
 const authMiddleware = require('../middlewares/authMiddleware');
 const adminMiddleware = require('../middlewares/adminMiddleware');
+const productValidator = require('../validations/productValidator');
 
 var productos= fs.readFileSync(path.join(__dirname, "../database/products.json"), "utf-8");
 productos = JSON.parse(productos);
@@ -28,7 +29,7 @@ router.get('/', usersController.ingresar);
 router.get('/productos/listado', authMiddleware, adminMiddleware, productsController.listadoAdmin);
 
 router.get('/productos/crear', authMiddleware, adminMiddleware, productsController.crear);
-router.post('/productos/crear', upload.any(), productsController.crearProducto);
+router.post('/productos/crear', upload.any(), productValidator, productsController.crearProducto);
 
 router.get('/productos/:id/editar', authMiddleware, adminMiddleware, productsController.editar);
 router.put('/productos/:id/editar', upload.any(), productsController.editarPUT);

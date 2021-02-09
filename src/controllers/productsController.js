@@ -1,5 +1,6 @@
 const fs= require("fs");
 const path= require("path");
+const {validationResult} = require('express-validator');
 let db = require('../database/models');
 
 var productos= fs.readFileSync(path.join(__dirname, "../database/products.json"), "utf-8");
@@ -44,50 +45,70 @@ module.exports = {
         })
     },
     crearProducto: function(req, res) {
-        let imagenes = [];
-        for(let i=0; i<req.files.length;i++) {
-            imagenes.push({
-                nombre: req.files[i].filename, estado: 1
+        let errors = validationResult(req);
+        if(!errors.isEmpty()) {
+            let marcas = db.Marca.findAll({
+                where: {
+                    estado: 1
+                },
+                order: [
+                    ['marca', 'ASC']
+                ]
             });
-        }
-        let talles = [];
-        for(let i=0; i<req.body.talle.length; i++) {
-            talles.push({
-                talle: parseInt(req.body.talle[i])
+            let categoriasProductos = db.CategoriaProducto.findAll({
+                where: {
+                    estado: 1
+                }
             });
-        }
-
-        let crearProducto = db.Producto.create({
-            producto: req.body.producto,
-            descripcion: req.body.descripcion,
-            id_categoria: req.body.categoria,
-            id_marca: req.body.marca,
-            precio: req.body.precio,
-            descuento: req.body.descuento,
-            estado: 1,
-            imagenes: imagenes
-        }, {
-            include: [
-                {association: 'imagenes'}
-            ]
-        });
-
-        let encontrarTalles = db.Talle.findAll({
-            where: {
-                [db.Sequelize.Op.or]: talles
+            Promise.all([marcas, categoriasProductos]).then(function([marcas, categoriasProductos]){
+                res.render('../views/products/productCreation', {marcas: marcas, categoriasProductos: categoriasProductos, errors: errors.mapped()});
+            })
+        } else {
+            let imagenes = [];
+            for(let i=0; i<req.files.length;i++) {
+                imagenes.push({
+                    nombre: req.files[i].filename, estado: 1
+                });
             }
-        });
+            let talles = [];
+            for(let i=0; i<req.body.talle.length; i++) {
+                talles.push({
+                    talle: parseInt(req.body.talle[i])
+                });
+            }
 
-        Promise.all([crearProducto, encontrarTalles])
-        .then(function([producto,tallesEncontrados]){
-            return producto.setTalles(tallesEncontrados, {save: false});
-        })
-        .then(function(){
-            res.redirect('/admin/productos/listado');
-        })
-        .catch(function(){
-            res.redirect('/admin/productos/listado');
-        });
+            let crearProducto = db.Producto.create({
+                producto: req.body.producto,
+                descripcion: req.body.descripcion,
+                id_categoria: req.body.categoria,
+                id_marca: req.body.marca,
+                precio: req.body.precio,
+                descuento: req.body.descuento,
+                estado: 1,
+                imagenes: imagenes
+            }, {
+                include: [
+                    {association: 'imagenes'}
+                ]
+            });
+
+            let encontrarTalles = db.Talle.findAll({
+                where: {
+                    [db.Sequelize.Op.or]: talles
+                }
+            });
+
+            Promise.all([crearProducto, encontrarTalles])
+            .then(function([producto,tallesEncontrados]){
+                return producto.setTalles(tallesEncontrados, {save: false});
+            })
+            .then(function(){
+                res.redirect('/admin/productos/listado');
+            })
+            .catch(function(){
+                res.redirect('/admin/productos/listado');
+            });
+        }
     },
     editar: function(req,res) {
 
@@ -118,23 +139,55 @@ module.exports = {
         Promise.all([marcas, categoriasProductos, producto])
         .then(function([marcas, categoriasProductos, producto]){
             res.render('../views/products/productEdit', {marcas: marcas, categoriasProductos: categoriasProductos, producto: producto});
-        })
+            })    
     },
     editarPUT: function (req, res) {
-        db.Producto.update({
-            producto: req.body.producto,
-            descripcion: req.body.descripcion,
-            id_categoria: req.body.categoria,
-            id_marca: req.body.marca,
-            precio: req.body.precio,
-            descuento: req.body.descuento,
-            estado: 1
-        }, {
-            where: { id: req.params.id }
-        })
-        .then(function() {
-            return res.redirect("/productos/detalle/" + req.params.id)
-        });
+        let errors = validationResult(req);
+        if(!errors.isEmpty()) {
+            let marcas = db.Marca.findAll({
+                where: {
+                    estado: 1
+                },
+                order: [
+                    ['marca', 'ASC']
+                ]
+            });
+    
+            let categoriasProductos = db.CategoriaProducto.findAll({
+                where: {
+                    estado: 1
+                }
+            });
+            
+            let producto = db.Producto.findByPk(req.params.id, {
+                include: [
+                    {association: "categoriaProducto"},
+                    {association: "talles"},
+                    {association: "marca"},
+                    {association: "imagenes"}
+                ]
+            })
+            
+            Promise.all([marcas, categoriasProductos, producto])
+            .then(function([marcas, categoriasProductos, producto]){
+                res.render('../views/products/productEdit', {marcas: marcas, categoriasProductos: categoriasProductos, producto: producto, errors: errors.mapped()});
+                })  
+        } else {
+            db.Producto.update({
+                producto: req.body.producto,
+                descripcion: req.body.descripcion,
+                id_categoria: req.body.categoria,
+                id_marca: req.body.marca,
+                precio: req.body.precio,
+                descuento: req.body.descuento,
+                estado: 1
+            }, {
+                where: { id: req.params.id }
+            })
+            .then(function() {
+                return res.redirect("/productos/detalle/" + req.params.id)
+            });
+        }
     },
     eliminar: function(req, res) {
         let borrarTalles = db.ProductoTalle.update({

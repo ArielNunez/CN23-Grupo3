@@ -13,7 +13,10 @@ window.addEventListener('load', function() {
     let regEx = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     pass.addEventListener('blur', function() {
-        if (pass.value < 6) {
+        if (pass.value == 0) {
+            smallPass.innerHTML = '* Este campo es obligatorio'
+            errores.pass = true;
+        } else if (pass.value < 6) {
             smallPass.innerHTML = '* La contraseña debe tener un mínimo de 6 caracteres';
             errores.pass = true;
         } else {
@@ -23,7 +26,10 @@ window.addEventListener('load', function() {
     });
 
     email.addEventListener('blur', function() {
-        if (!regEx.test(email.value)) {
+        if (email.value == 0) {
+            smallMail.innerHTML = '* Este campo es obligatorio'
+            errores.email = true;
+        } else if (!regEx.test(email.value)) {
             smallMail.innerHTML = '* Debes ingresar un email correcto';
             errores.email = true;
         } else {
