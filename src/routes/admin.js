@@ -32,7 +32,7 @@ router.get('/productos/crear', authMiddleware, adminMiddleware, productsControll
 router.post('/productos/crear', upload.any(), productValidator, productsController.crearProducto);
 
 router.get('/productos/:id/editar', authMiddleware, adminMiddleware, productsController.editar);
-router.put('/productos/:id/editar', upload.any(), productsController.editarPUT);
+router.put('/productos/:id/editar', upload.any(), productValidator, productsController.editarPUT);
 
 router.delete('/productos/:id/eliminar', productsController.eliminar);
 

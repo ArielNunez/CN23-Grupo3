@@ -4,7 +4,7 @@ module.exports = [
     check('producto')
         .notEmpty()
         .withMessage('* Este campo es obligatorio'),
-    check('descrpicion')
+    check('descripcion')
         .notEmpty()
         .withMessage('* Este campo es obligatorio'),
     check('precio')

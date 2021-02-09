@@ -173,20 +173,54 @@ module.exports = {
                 res.render('../views/products/productEdit', {marcas: marcas, categoriasProductos: categoriasProductos, producto: producto, errors: errors.mapped()});
                 })  
         } else {
-            db.Producto.update({
+            let imagenes = [];
+            if(req.files.length != 0) {
+                for(let i=0; i<req.files.length;i++) {
+                    imagenes.push({
+                        nombre: req.files[i].filename, estado: 1
+                    });
+                }
+            }
+            let talles = [];
+            for(let i=0; i<req.body.talle.length; i++) {
+                talles.push({
+                    talle: parseInt(req.body.talle[i])
+                });
+            }
+
+            let editarProducto = db.Producto.update({
                 producto: req.body.producto,
                 descripcion: req.body.descripcion,
                 id_categoria: req.body.categoria,
                 id_marca: req.body.marca,
                 precio: req.body.precio,
                 descuento: req.body.descuento,
-                estado: 1
+                estado: 1,
+                imagenes: imagenes
             }, {
+                include: [
+                    {association: 'imagenes'}
+                ],
                 where: { id: req.params.id }
-            })
-            .then(function() {
-                return res.redirect("/productos/detalle/" + req.params.id)
             });
+
+            let encontrarTalles = db.Talle.findAll({
+                where: {
+                    [db.Sequelize.Op.or]: talles
+                }
+            });
+
+            Promise.all([editarProducto, encontrarTalles])
+            .then(function([productoActualizado, tallesEncontrados]) {
+                db.Producto.findByPk(req.params.id)
+                .then(function(producto){
+                    return producto.setTalles(tallesEncontrados, {save: false})
+                    
+                })
+                .then(function(){
+                    res.redirect('/admin/productos/listado');
+                });
+            })
         }
     },
     eliminar: function(req, res) {
