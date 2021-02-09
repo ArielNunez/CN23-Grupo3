@@ -151,7 +151,7 @@ section.infoUsuario form div.datos div div input {
 section.infoUsuario form div.datos small {
     position: absolute;
     top: 63px;
-    color: red;
+    color: #ea1601;
 }
 
 section.infoUsuario form div.datos small.erroresPass {
@@ -187,6 +187,12 @@ section.infoUsuario form button:hover {
 /* ==============
    RESPONSIVE
 =================*/
+
+@media(max-width: 1050px) {
+    section.infoUsuario form div.datos {
+        width: 100%;
+    }
+}
 
 @media(max-width: 500px) {
     main.perfilDeUsuario {
@@ -237,10 +243,6 @@ section.infoUsuario form button:hover {
         align-items: center;
         width: 98%;
         padding-left: 10px;
-    }
-
-    section.infoUsuario form div.datos {
-        width: 100%;
     }
 
     section.infoUsuario form div.datos div {

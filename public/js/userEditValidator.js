@@ -23,7 +23,7 @@ window.addEventListener('load', function() {
     let emailRegEx = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     nombre.addEventListener('blur', function() {
-        if(nombre.value.length < 2 || nombre.value.length > 20) {
+        if(this.value.length < 2 || this.value.length > 20) {
             errorNombre.innerHTML = '* Debés ingresar un nombre válido';
             errores.nombre = true;
         } else {
@@ -33,7 +33,7 @@ window.addEventListener('load', function() {
     });
 
     apellido.addEventListener('blur', function() {
-        if(apellido.value.length < 2 || apellido.value.length > 50) {
+        if(this.value.length < 2 || this.value.length > 50) {
             errorApellido.innerHTML = '* Debés ingresar un apellido válido';
             errores.apellido = true;
         } else {
@@ -43,7 +43,7 @@ window.addEventListener('load', function() {
     });
 
     nacimiento.addEventListener('blur', function() {
-        if(!nacimientoRegEx.test(nacimiento.value)) {
+        if(!nacimientoRegEx.test(this.value)) {
             errorNacimiento.innerHTML = '* Debés ingresar una fecha válida.';
             errores.nacimiento = true;
         } else {
@@ -53,7 +53,7 @@ window.addEventListener('load', function() {
     });
 
     dni.addEventListener('blur', function() {
-        if(dni.value.length < 7 || dni.value.length > 8) {
+        if(this.value.length < 7 || this.value.length > 8) {
             errorDNI.innerHTML = '* Debés ingresar un DNI válido';
             errores.dni = true;
         } else {
@@ -63,7 +63,7 @@ window.addEventListener('load', function() {
     });
 
     email.addEventListener('blur', function() {
-        if(!emailRegEx.test(email.value)) {
+        if(!emailRegEx.test(this.value)) {
             errorEmail.innerHTML = '* Debés ingresar un email válido';
             errores.email = true;
         } else {

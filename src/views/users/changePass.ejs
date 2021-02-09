@@ -21,27 +21,21 @@
                         <div class="pass">
                             <label for="pass">Contraseña actual</label>
                             <input type="password" name="pass" id="pass">
-                            <% if(typeof errors != 'undefined' && errors.pass) { %>
-                                <small class="erroresPass"><%= errors.pass.msg %></small>
-                            <% } %>
+                            <small class="erroresPass" id="errorPass"><%= (typeof errors != 'undefined' && errors.pass) ? errors.pass.msg : '' %></small>
                         </div>
                     </div>
                     <div class="fila-dos">
                         <div class="newPass">
                             <label for="newPass">Nueva contraseña</label>
-                            <input type="password" name="newPass" id="newPass">                       
-                            <% if(typeof errors != 'undefined' && errors.newPass) { %>
-                                <small class="erroresPass"><%= errors.newPass.msg %></small>
-                            <% } %>
+                            <input type="password" name="newPass" id="newPass">
+                            <small class="erroresPass" id="errorNewPass"><%= (typeof errors != 'undefined' && errors.newPass) ? errors.newPass.msg : '' %></small>
                         </div>
                     </div>
                     <div class="fila-tres">
                         <div class="confNewPass">
                             <label for="confNewPass">Confirmar nueva contraseña</label>
                             <input type="password" name="confNewPass" id="confNewPass">
-                            <% if(typeof errors != 'undefined' && errors.confNewPass) { %>
-                                <small class="erroresPass"><%= errors.confNewPass.msg %></small>
-                            <% } %>
+                            <small class="erroresPass" id="errorConfNewPass"><%= (typeof errors != 'undefined' && errors.confNewPass) ? errors.confNewPass.msg : '' %></small>
                         </div>
                     </div>
                     <% if(typeof error != 'undefined') { %>
@@ -60,5 +54,6 @@
     <footer>
         <%- include("../partials/footer") %>
     </footer>
+    <script src="/js/changePassValidator.js"></script>
 </body>
 </html>
