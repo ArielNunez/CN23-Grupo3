@@ -19,7 +19,7 @@
                 </ul>     
             </div>
 
-            <form action="/usuarios/registro" method="POST">
+            <form id="registro" action="/usuarios/registro" method="POST">
                 <div class="datos">
                     <div class="fila-uno">
                         <div class="nombre">
@@ -29,7 +29,7 @@
                             <% } else { %>
                                 <input type="text" name="nombre" id="nombre">
                             <% } %>
-                            <small> <%= (typeof errors != 'undefined' && errors.nombre) ? errors.nombre.msg : '' %> </small>                           
+                            <small id="errorNombre"> <%= (typeof errors != 'undefined' && errors.nombre) ? errors.nombre.msg : '' %> </small>                           
                         </div>   
                         <div class="apellido">
                             <label for="apellido">Apellido</label>
@@ -38,7 +38,7 @@
                             <% } else { %>
                                 <input type="text" name="apellido" id="apellido">
                             <% } %>
-                            <small> <%= (typeof errors != 'undefined' && errors.apellido) ? errors.apellido.msg : '' %> </small>
+                            <small id="errorApellido"> <%= (typeof errors != 'undefined' && errors.apellido) ? errors.apellido.msg : '' %> </small>
                         </div>
                     </div>
                     <div class="fila-dos">
@@ -49,7 +49,7 @@
                             <% } else { %>
                                 <input type="date" name="nacimiento" id="nacimiento">
                             <% } %>
-                            <small> <%= (typeof errors != 'undefined' && errors.nacimiento) ? errors.nacimiento.msg : '' %> </small>                            
+                            <small id="errorNacimiento"> <%= (typeof errors != 'undefined' && errors.nacimiento) ? errors.nacimiento.msg : '' %> </small>                            
                         </div>
                         <div class="dni">
                             <label for="dni">DNI</label>
@@ -58,7 +58,7 @@
                             <% } else { %>
                                 <input type="number" name="dni" id="dni">
                             <% } %>
-                            <small> <%= (typeof errors != 'undefined' && errors.dni) ? errors.dni.msg : '' %> </small>
+                            <small id="errorDni"> <%= (typeof errors != 'undefined' && errors.dni) ? errors.dni.msg : '' %> </small>
                         </div>
                     </div>
                     <div class="fila-tres">
@@ -69,24 +69,24 @@
                             <% } else { %>
                                 <input type="email" name="email" id="email">
                             <% } %>
-                            <small> <%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %> </small>
+                            <small id="errorEmail"> <%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %> </small>
                         </div>
                         <div class="confmail">
                             <label for="confEmail">Confirmar email</label>
                             <input type="email" name="confEmail" id="confEmail">
-                            <small> <%= (typeof errors != 'undefined' && errors.confmail) ? errors.confmail.msg : '' %> </small>                            
+                            <small id="errorConfEmail"> <%= (typeof errors != 'undefined' && errors.confmail) ? errors.confmail.msg : '' %> </small>                            
                         </div>
                     </div>
                     <div class="fila-cuatro">
                         <div class="pass">
                             <label for="pass">Contraseña</label>
                             <input type="password" name="pass" id="pass">
-                            <small> <%= (typeof errors != 'undefined' && errors.pass) ? errors.pass.msg : '' %> </small>
+                            <small id="errorPass"> <%= (typeof errors != 'undefined' && errors.pass) ? errors.pass.msg : '' %> </small>
                         </div>
                         <div class="confpass">
                             <label for="confPass">Confirmar contraseña</label>
                             <input type="password" name="confPass" id="confPass">
-                            <small> <%= (typeof errors != 'undefined' && errors.confpass) ? errors.confpass.msg : '' %> </small>
+                            <small id="errorConfPass"> <%= (typeof errors != 'undefined' && errors.confpass) ? errors.confpass.msg : '' %> </small>
                         </div>
                     </div>
                 </div>
@@ -109,6 +109,7 @@
 
     <footer>
         <%- include("../partials/footer") %>
+        <script src="/js/registerValidator.js"></script>
     </footer>
 </body>
 </html>
