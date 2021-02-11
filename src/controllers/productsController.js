@@ -177,7 +177,9 @@ module.exports = {
             if(req.files.length != 0) {
                 for(let i=0; i<req.files.length;i++) {
                     imagenes.push({
-                        nombre: req.files[i].filename, estado: 1
+                        nombre: req.files[i].filename,
+                        id_producto: req.params.id,
+                        estado: 1
                     });
                 }
             }
@@ -210,15 +212,16 @@ module.exports = {
                 }
             });
 
-            Promise.all([editarProducto, encontrarTalles])
-            .then(function([productoActualizado, tallesEncontrados]) {
+            let cargarImagenes = db.Imagen.bulkCreate(imagenes);
+
+            Promise.all([editarProducto, encontrarTalles, cargarImagenes])
+            .then(function([productoActualizado, tallesEncontrados, imagenesCargadas]) {
                 db.Producto.findByPk(req.params.id)
                 .then(function(producto){
-                    return producto.setTalles(tallesEncontrados, {save: false})
-                    
+                    return producto.setTalles(tallesEncontrados, {save: false});
                 })
                 .then(function(){
-                    res.redirect('/admin/productos/listado');
+                    return res.redirect('/admin/productos/listado');
                 });
             })
         }
