@@ -8,27 +8,63 @@
         <%- include("../partials/header") %>
     </header>
     <main class="listaProductos">
-        <h1 class="allproductsh1">Todos los Productos</h1>
-        <div class="listado-todoslosproductos">
-            <% for (let i = 0; i < productos.length; i++) { %>
-                        <div class="product">
-                            <a href="/productos/detalle/<%= productos[i].id %>" id="link"></a>
-                            <img src="/img/uploads/productimage/<%= productos[i].imagenes[0].nombre %>" alt="">
-                            <h5><%= productos[i].producto %></h5>
-                            <% if(productos[i].descuento == null) { %>
-                                <h3 class="sinDescuento">$<%= productos[i].precio %></h3>
-                            <% } else { %>
-                                <div class="descuento">
-                                    <h3 class="tachado">$<%= productos[i].precio %></h3>
-                                    <h3 class="descuentoPrecio">$<%= (productos[i].precio / 100 * (100-productos[i].descuento)) - (productos[i].precio / 100 * (100-productos[i].descuento))%1 %></h3>
-                                    <h3 class="porcentaje"><%= productos[i].descuento %>% OFF</h3>
-                                    <div class="circle"></div>
-                                </div>
-                            <% } %> 
+        <section class="izq">
+            <div class="orden">
+                <select name="orden" id="orden">
+                    <option value="relevantes">Más relevantes</option>
+                    <option value="nodevades">Novedades</option>
+                    <option value="menorPrecio">Menor precio</option>
+                    <option value="mayorPrecio">Mayor precio</option>
+                </select>
+            </div>
+            <div class="container categoria">
+                <p>Categoria</p>
+                <div>
+                    <input type="checkbox" name="categoria" id="urbano" value="urbano">
+                    <label for="urbano">Urbano</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="categoria" id="deportivo" value="deportivo">
+                    <label for="deportivo">Deportivo</label>
+                </div>
+            </div>
+            <div class="container marca">
+                <p>Marca</p>
+                <% for (i = 0; i < marcas.length; i++) { %>
+                    <div>
+                        <input type="checkbox" name="marcas" id="<%= marcas[i].marca %>" value="<%= marcas[i].id %>">
+                        <label for="<%= marcas[i].marca %> "> <%= marcas[i].marca %> </label>
+                    </div> 
+                <% } %> 
+            </div>
+            <div class="container talle">
+                <p>Talle</p>
+                <% for (i = 0; i < talles.length; i++) { %>
+                    <div>
+                        <input type="checkbox" name="talles" id="<%= talles[i].talle %> " value="<%= talles[i].id %> ">
+                        <label for="<%= talles[i].talle %>"><%= talles[i].talle %></label>
+                    </div>
+                <% } %> 
+            </div>
+        </section>
+        <section class="der">
+            <% for(let i = 0; i < productos.length; i++) { %>
+                <div class="producto">
+                    <a href="/productos/detalle/<%= productos[i].id %>" id="enlace"></a>
+                    <img src="/img/uploads/productimage/<%= productos[i].imagenes[0].nombre %>" alt="">
+                    <h5><%= productos[i].producto %></h5>
+                    <% if(productos[i].descuento == null || productos[i].descuento == 0) { %>
+                        <p>$<%= productos[i].precio %></p>
+                    <% } else { %>
+                        <div class="descuento">
+                            <p><span class="precioTachado">$<%= productos[i].precio %></span><span class="precioConDescuento">$<%= (productos[i].precio / 100 * (100-productos[i].descuento)) - (productos[i].precio / 100 * (100-productos[i].descuento))%1 %></span></p>
+                            <h3 class="porcentaje"><%= productos[i].descuento %>% OFF</h3>
+                            <div class="circle"></div>
                         </div>
-                        
-            <% } %>
-        </div>
+                    <% } %> 
+                </div>
+            <% } %>   
+        </section>
     </main>
     <footer>
         <%- include("../partials/footer") %>

@@ -1,29 +1,72 @@
-main.listaProductos .allproductsh1 {
-    margin-top: 30px;
-    text-align: center;
-}
-
-main.listaProductos .listado-todoslosproductos {
-    margin-top: 40px;
+main.listaProductos {
     display: flex;
-    justify-content: space-around;
-    flex-direction: row;
+    justify-content: space-between;
+    padding: 60px 160px;
+}
+
+main.listaProductos section.izq {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+main.listaProductos section.izq div.container {    
+    border-bottom: 1px solid #ebebeb; 
+    padding: 15px 0px;
+}
+
+main.listaProductos section.izq select {
+    margin: 20px 0px;
+    width: 75%;
+    padding: 5px;
+}
+
+main.listaProductos section.izq div div {
+    display: flex;
+    padding: 5px;
+}
+
+main.listaProductos section.izq div p {
+    font-weight: 800;
+    padding: 10px 0px;
+}
+
+main.listaProductos section.izq div div input {
+    align-self: center;
+    border-radius: 10px;
+}
+
+main.listaProductos section.izq div div label {
+    padding-left: 5px;
+}
+
+main.listaProductos section.der {
+    width: 70%;
+    display: flex;
     flex-wrap: wrap;
-    margin-bottom: 60px;
+    padding: 25px 0px;
 }
 
-main.listaProductos .product {
-    padding: 15px;
-    -webkit-box-shadow: 4px 3px 5px 0px rgba(153,153,153,1);
-    -moz-box-shadow: 4px 3px 5px 0px rgba(153,153,153,1);
-    box-shadow: 4px 3px 5px 0px rgba(153,153,153,1);
+/* =================
+    CAJA PRODUCTO
+===================*/
+
+main.listaProductos section.der .producto {
+    margin: 10px;
+    padding: 10px;
+    width: 30%;
     background-color: white;
+    border-radius: 6px;
     position: relative;
-    width: 22%;
-    margin-top: 20px;
 }
 
-main.listaProductos #link {
+main.listaProductos section.der .producto:hover {
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+main.listaProductos #enlace {
   position: absolute;  
   top: 0;
   left: 0;
@@ -32,93 +75,46 @@ main.listaProductos #link {
   z-index: 10;
 }
 
-main.listaProductos .product img {
-    width: 100%;
+main.listaProductos section.der .producto img {
+    max-width: 100%;
 }
 
-main.listaProductos .product h5 {
-    font-size: 18px;
+main.listaProductos section.der .producto h5 {
+    font-size: 16px;
     font-weight: bold;
 }
 
-main.listaProductos .sinDescuento {
+main.listaProductos section.der .producto p {
     margin-top: 10px;
     color: #BF488D;
-    font-size: 18px;
+
 }
 
-main.listaProductos .descuento {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-}
-
-main.listaProductos .tachado {
+main.listaProductos section.der .producto .precioTachado {
     text-decoration: line-through;
-    font-weight: 400;
-    font-size: 18px;
+    color: black;
 }
 
-main.listaProductos .descuentoPrecio {
+main.listaProductos section.der .producto span.precioConDescuento {
     color: #BF488D;
-    margin-left: 10px;
-    font-size: 18px;
+    padding-left: 10px;
 }
 
-main.listaProductos .porcentaje {
+main.listaProductos section.der .producto .porcentaje {
     position: absolute;
-    right: 32px;
-    top: 50px;
-    font-size: 14px;
+    right: 26px;
+    top: 44px;
+    font-size: 12px;
     z-index: 10;
     color: white;
-
 }
 
-main.listaProductos .circle {
+main.listaProductos section.der .circle {
     position: absolute;
     right: 20px;
     top: 20px;
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background-color: #BF488D;
-}
-
-
-/* =======================
-        RESPONSIVE
-========================*/
-
-@media(max-width: 900px) {
-    main.listaProductos .product {
-        width: 30%;
-    }
-}
-
-@media(max-width: 700px) {
-    main.listaProductos .circle {
-        width: 60px;
-        height: 60px;
-    }
-
-    main.listaProductos .porcentaje {
-        position: absolute;
-        right: 26px;
-        top: 44px;
-        font-size: 12px;
-    }
-
-    main.listaProductos .product h5,
-    main.listaProductos .sinDescuento,
-    main.listaProductos .descuentoPrecio,
-    main.listaProductos .tachado {
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 500px) {
-    main.listaProductos .product {
-        width: 45%;
-    }    
 }

@@ -253,16 +253,35 @@ module.exports = {
         });
     },
     productosTodos: function(req, res) {
-        db.Producto.findAll({
+
+        let marcas = db.Marca.findAll({
+            where: {
+                estado: 1
+            },
+            order: [
+                ['marca', 'ASC']
+            ]
+        });
+
+        let talles = db.Talle.findAll({
+            where: {
+                estado: 1
+            }
+        });
+
+        let productos = db.Producto.findAll({
             where: {
                 estado: 1
             },
             include: [
                 {association: "imagenes"}
             ]
-        }).then(function(productos){
-            res.render('products/productList', {productos: productos});
-        });
+        })
+        
+        Promise.all([marcas, talles, productos])
+        .then(function([marcas, talles, productos]){
+            res.render('products/productList', {marcas: marcas, talles: talles, productos: productos});
+            }) 
     },
     listadoAdmin: function(req,res) {
         db.Producto.findAll({
