@@ -10,6 +10,10 @@ main.listaProductos section.izq {
     flex-direction: column;
 }
 
+main.listaProductos section.izq div.filtro {
+    display: none;
+} 
+
 main.listaProductos section.izq div.container {    
     border-bottom: 1px solid #ebebeb; 
     padding: 15px 0px;
@@ -117,4 +121,57 @@ main.listaProductos section.der .circle {
     width: 60px;
     height: 60px;
     background-color: #BF488D;
+}
+
+@media (max-width: 500px) {
+    main.listaProductos {
+        padding: 0px;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    main.listaProductos section.izq {
+        flex-direction: row;
+        width: auto;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    main.listaProductos section.izq div {
+        width: 40%;
+    }
+
+    main.listaProductos section.izq div.filtro {
+        display: initial;
+    }
+
+    main.listaProductos section.izq div.filtro button {
+        width: 100%;
+        margin: 20px 0px;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        background-color: #BF488D;
+        color: white;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    main.listaProductos section.izq div.container {
+        display: none;
+    }
+
+    main.listaProductos section.izq select {
+        width: 100%;
+    }
+
+    main.listaProductos section.der {
+        width: auto;
+        justify-content: center;
+    }
+
+    main.listaProductos section.der .producto {
+        width: 40%;
+    }
+
 }
