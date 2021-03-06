@@ -39,7 +39,7 @@ module.exports = {
                 return res.redirect('/usuarios/ingresar');
             })
             .catch(function (err) {
-                res.send("Lo sentimos, no pudimos procesar tu solicitud. Por favor intentalo nuevamente.")
+                return res.send("Lo sentimos, no pudimos procesar tu solicitud. Por favor intentalo nuevamente.")
             });
         }
     },  

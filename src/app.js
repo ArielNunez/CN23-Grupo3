@@ -10,6 +10,7 @@ const mainRouter = require('./routes/main');
 const productsRouter = require('./routes/products');
 const usersRouter = require('./routes/users');
 const adminRouter = require('./routes/admin');
+const apiProductsRouter = require('./routes/api/products');
 
 const loggedMiddleware = require('./middlewares/loggedMiddleware');
 const rememberMiddleware = require('./middlewares/rememberMiddleware');
@@ -32,6 +33,7 @@ app.use('/', mainRouter);
 app.use('/productos', productsRouter);
 app.use('/usuarios', usersRouter);
 app.use('/admin', adminRouter);
+app.use('/api/productos', apiProductsRouter);
 
 
 app.listen(process.env.PORT || 3000, function() {
