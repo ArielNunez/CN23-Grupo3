@@ -160,7 +160,7 @@ main.Carrito div.resumen form button:nth-child(4) {
     font-weight: 700;
 }
 
-@media(max-width: 426px) {
+@media(max-width: 500px) {
 
     main.Carrito  {
         padding: 60px 0px;

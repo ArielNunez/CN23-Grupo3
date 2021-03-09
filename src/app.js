@@ -37,9 +37,7 @@ app.use('/admin', adminRouter);
 app.use('/api/productos', apiProductsRouter);
 app.use('/api/usuarios', apiUsersRouter);
 
-
-
-app.listen(process.env.PORT || 3000, function() {
-    console.log(`Servidor corriendo en el puerto 3000`) 
-    console.log('http://localhost:3000')
+app.listen(process.env.PORT || 3001, function() {
+    console.log(`Servidor corriendo en el puerto 3001`) 
+    console.log('http://localhost:3001')
 })
