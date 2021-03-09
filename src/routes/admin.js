@@ -8,6 +8,7 @@ const usersController = require('../controllers/usersController');
 const authMiddleware = require('../middlewares/authMiddleware');
 const adminMiddleware = require('../middlewares/adminMiddleware');
 const productValidator = require('../validations/productValidator');
+const guestMiddleware = require('../middlewares/guestMiddleware');
 
 var productos= fs.readFileSync(path.join(__dirname, "../database/products.json"), "utf-8");
 productos = JSON.parse(productos);
@@ -24,7 +25,7 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage })
 
-router.get('/', usersController.ingresar);
+router.get('/', guestMiddleware, usersController.ingresar);
 
 router.get('/productos/listado', authMiddleware, adminMiddleware, productsController.listadoAdmin);
 
