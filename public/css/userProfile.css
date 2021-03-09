@@ -20,8 +20,20 @@ main.perfilDeUsuario nav.userNav div.nav2 {
     font-size: 14px;
 }
 
-main.perfilDeUsuario nav.userNav div.nav2 i {
+main.perfilDeUsuario nav.userNav div.nav2 span::before {
     color: grey;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f078";
+}
+
+main.perfilDeUsuario nav.userNav div.nav2 span.arrow-up::before {
+    content: "\f077";
 }
 
 main.perfilDeUsuario nav.userNav ul {
@@ -227,8 +239,11 @@ section.infoUsuario form button:hover {
     }
 
     main.perfilDeUsuario .userNav .userNav .nav1 {
-        display: none;
         padding-top: 10px;
+    }
+    
+    main.perfilDeUsuario .userNav .userNav .display-none {
+        display: none;
     }
 
     main.perfilDeUsuario .userNav .userNav .nav2 {

@@ -45,7 +45,7 @@ module.exports = {
             });
         })
         .catch( (error) => {
-            res.json(error);
+            return res.json(error);
         });
     }
 }
