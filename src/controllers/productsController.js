@@ -254,6 +254,20 @@ module.exports = {
     },
     productosTodos: function(req, res) {
 
+        let ofertas = db.Producto.findAll({
+            where: {
+                descuento: {[db.Sequelize.Op.ne]: null},
+                estado: 1
+            },
+            order: [
+                ['descuento', 'DESC']
+            ],
+            limit: 4,
+            include: [
+                {association: "imagenes"}
+            ]
+        });
+
         let marcas = db.Marca.findAll({
             where: {
                 estado: 1
@@ -278,9 +292,9 @@ module.exports = {
             ]
         })
         
-        Promise.all([marcas, talles, productos])
-        .then(function([marcas, talles, productos]){
-            res.render('products/productList', {marcas: marcas, talles: talles, productos: productos});
+        Promise.all([marcas, talles, productos, ofertas])
+        .then(function([marcas, talles, productos, ofertas]){
+            res.render('products/productList', {marcas: marcas, talles: talles, productos: productos, ofertas: ofertas});
             }) 
     },
     listadoAdmin: function(req,res) {
@@ -291,5 +305,50 @@ module.exports = {
         }).then(function(productos){
             res.render('products/productListAdmin', {productos: productos});
         });
+    },
+    productosOfertas: function(req, res) {
+
+            let ofertas = db.Producto.findAll({
+                where: {
+                    descuento: {[db.Sequelize.Op.ne]: null},
+                    estado: 1
+                },
+                order: [
+                    ['descuento', 'DESC']
+                ],
+                limit: 4,
+                include: [
+                    {association: "imagenes"}
+                ]
+            });
+    
+            let marcas = db.Marca.findAll({
+                where: {
+                    estado: 1
+                },
+                order: [
+                    ['marca', 'ASC']
+                ]
+            });
+    
+            let talles = db.Talle.findAll({
+                where: {
+                    estado: 1
+                }
+            });
+    
+            let productos = db.Producto.findAll({
+                where: {
+                    estado: 1
+                },
+                include: [
+                    {association: "imagenes"}
+                ]
+            })
+            
+            Promise.all([marcas, talles, productos, ofertas])
+            .then(function([marcas, talles, productos, ofertas]){
+                res.render('products/productOfertas', {marcas: marcas, talles: talles, productos: productos, ofertas: ofertas});
+                }) 
+        }
     }
-}

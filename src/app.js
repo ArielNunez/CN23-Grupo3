@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+var SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const mainRouter = require('./routes/main');
 const productsRouter = require('./routes/products');
@@ -15,6 +16,7 @@ const apiUsersRouter = require('./routes/api/users')
 
 const loggedMiddleware = require('./middlewares/loggedMiddleware');
 const rememberMiddleware = require('./middlewares/rememberMiddleware');
+const { sequelize } = require('./database/models');
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
