@@ -1,13 +1,13 @@
-window.addEventListener('load', function() {
+/*window.addEventListener('load', function() {
 
-    let form = document.querySelector('#registro');
+    let form = document.querySelector('#form');
 
     form.addEventListener('submit', function(event) {
             event.preventDefault();
 
             let inputNombre = document.querySelector('#nombre');
-                inputApellido = document.querySelector('#apellido');
-                inputNacimiento = document.querySelector('#nacimiento');
+                inputDescripcion = document.querySelector('#descripcion');
+                inputImagen = document.querySelector('#imagen');
                 inputDni = document.querySelector('#dni');
                 inputEmail = document.querySelector('#email');
                 inputConfEmail = document.querySelector('#confEmail');
@@ -27,7 +27,7 @@ window.addEventListener('load', function() {
 
             let errores = {};
             let regEx = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-            let dateRegEx = /^\d{4}[\-\/\s]?((((0[13578])|(1[02]))[\-\/\s]?(([0-2][0-9])|(3[01])))|(((0[469])|(11))[\-\/\s]?(([0-2][0-9])|(30)))|(02[\-\/\s]?[0-2][0-9]))$/;
+            let dateRegEx = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
             let numRegEx = /^[0-9]+$/;
 
 
@@ -77,7 +77,7 @@ window.addEventListener('load', function() {
 
     //VALIDACIÓN CONFIRMACIÓN EMAIL
     
-    if (inputConfEmail.value == 0) {
+    if (inputCONFEmail.value == 0) {
         errorconfEmail.innerHTML = "* Este campo es obligatorio"
         errores.confEmail = true;
     } else if (!regEx.test(inputEmail.value)) {
@@ -113,9 +113,9 @@ window.addEventListener('load', function() {
 
     // VALIDACIÓN TYC
 
-    if(!inputTyC.checked) {
+    if(!suscripcion.registro.checkbox.checked) {
         errorTyC.innerHTML = "* Debes aceptar los términos y condiciones"
-        errores.errorTyC = true;
+        errores.tyc = true;
     }
 
     if(Object.keys(errores).length == 0) {
@@ -123,3 +123,4 @@ window.addEventListener('load', function() {
     }
 }) 
 })
+*/
