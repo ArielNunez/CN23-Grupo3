@@ -50,9 +50,8 @@ window.addEventListener('load', () => {
                                 </div>
                             </div>
                         `
-                    }
-                    
-                })
-            })
+                    } 
+                });
+            });
     });
 });

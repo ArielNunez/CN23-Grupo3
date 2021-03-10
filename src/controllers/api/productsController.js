@@ -3,39 +3,34 @@ const sequelize = db.sequelize;
 
 module.exports = {
     all: (req, res) => {
+        let condicionesMarcas = [], condicionesCategoria = [], condiciones={};
+
         // contar cantidad de productos por categoria mediante un GROUP BY
         let countByCategory = db.Producto.findAll({
-            include: [
-                {association: "categoriaProducto"}
-            ],
+            include: [{association: "categoriaProducto"}],
             attributes: [[sequelize.fn('count', sequelize.col('producto')), 'cantidad']],
             group: ['id_categoria']
         });
 
-        
-        let condiciones = [];
+        // generar condiciones de busqueda en base a la req.query
         if(req.query.categoria) {
             for(let i=0; i<req.query.categoria.length; i++) {
-                condiciones.push({id_categoria: parseInt(req.query.categoria[i])});
+                condicionesCategoria.push({id_categoria: parseInt(req.query.categoria[i])});
             }
+            condicionesCategoria = {[db.Sequelize.Op.or]: condicionesCategoria}
         }
         if(req.query.marcas) {
             for(let i=0; i<req.query.marcas.length; i++) {
-                condiciones.push({id_marca: parseInt(req.query.marcas[i])});
+                condicionesMarcas.push({id_marca: parseInt(req.query.marcas[i])});
             }
+            condicionesMarcas = {[db.Sequelize.Op.or]: condicionesMarcas}
         }
-        if(condiciones.length>0) {
-            condiciones = {
-                [db.Sequelize.Op.or]: condiciones
-            }
-        }
-
-        // traer todos los productos
+        condiciones={[db.Sequelize.Op.and]: [condicionesCategoria, condicionesMarcas]}
+        
+        // traer todos los productos que cumplan las condiciones
         let products = db.Producto.findAll({
             where: condiciones,
-            include: [
-                {association: "categoriaProducto"}, {association: "imagenes"}
-            ]
+            include: [{association: "categoriaProducto"}, {association: "imagenes"}]
         });
 
         Promise.all([products, countByCategory])
