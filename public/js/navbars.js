@@ -5,12 +5,14 @@ window.addEventListener('load', () => {
     let hr = document.querySelector('header .nav1 hr.perfil');
     let perfil = document.querySelector('header .nav1 li.perfil');
 
-    burger.addEventListener('click', () => {
+    if (burger) {
+        burger.addEventListener('click', () => {
         headerNav.classList.toggle('display-none');
         burger.classList.toggle('cross');
         perfil.classList.toggle('display-none');
         hr.classList.toggle('display-none');
     });
+}
 
     /* Nav desplegable de edición de perfil */
     let userNav = document.querySelector('.perfilDeUsuario nav.userNav div.nav1');
@@ -23,4 +25,12 @@ window.addEventListener('load', () => {
         });
     }
     
+    /* Nav desplegable de admin */
+    let adminNav = document.querySelector('header .navAdmin div.admin');
+    let burgerAdmin = document.querySelector('header .navAdmin span');
+
+    burgerAdmin.addEventListener('click', () => {
+        adminNav.classList.toggle('display-none');
+        burgerAdmin.classList.toggle('cross');
+    });
 });

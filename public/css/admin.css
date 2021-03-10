@@ -3,8 +3,11 @@
     flex-direction: column;
     background-color: #aeaeae;
     height: 100%;
-    position: fixed;
     padding: 20px;
+    left: 0;
+    position: fixed;
+    top: 116px;
+    width: 17vw;
 }
 
 .admin .productos,
@@ -48,10 +51,4 @@
 .admin small {
     align-self: flex-end;
     font-size: 14px;
-}
-
-@media (max-width: 500px) {
-    .admin {
-        display: none;
-    }
 }
