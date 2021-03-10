@@ -190,6 +190,15 @@ main.productDetail section.descripcion h3 {
 -----------------Similares-----------------
 =======================================*/
 
+main.productDetail section.similares {
+    padding: 50px 0px;
+}
+
+main.productDetail section.similares h3 {
+    text-transform: uppercase;
+    padding-bottom: 25px;
+}
+
 main.productDetail div.similares {
     display: flex;
     flex-wrap: nowrap;
@@ -200,6 +209,7 @@ main.productDetail div.similares {
 
 main.productDetail div.similares i {
     align-self: center;
+    font-size: 15px;
 }
 
 main.productDetail div.similares .producto {
@@ -298,9 +308,16 @@ main.productDetail div.similares .circle {
         border-top: none;
         margin-top: 0px;
     }
-    
-    main.productDetail section.similares div ul div.similares2 {
-        display: none;
+
+    main.productDetail div.similares {
+        flex-wrap: wrap;
     }
     
+    main.productDetail div.similares .producto {
+        width: 40%;
+    }
+    
+    main.productDetail div.similares i {
+        display: none;
+    }
 }
