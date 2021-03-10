@@ -49,3 +49,9 @@
     align-self: flex-end;
     font-size: 14px;
 }
+
+@media (max-width: 500px) {
+    .admin {
+        display: none;
+    }
+}
