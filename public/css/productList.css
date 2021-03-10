@@ -20,11 +20,6 @@ main.listaProductos section.izq div.container {
     padding: 15px 0px;
 }
 
-main.listaProductos section.izq p.aplicar-filtro {
-    color: #BF488D;
-    text-decoration: underline;
-    cursor: pointer
-}
 
 main.listaProductos section.izq select {
     margin: 20px 0px;

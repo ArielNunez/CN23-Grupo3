@@ -36,7 +36,7 @@
                 <% for (i = 0; i < marcas.length; i++) { %>
                     <div>
                         <input type="checkbox" name="marcas" id="<%= marcas[i].marca %>" value="<%= marcas[i].id %>" class="marca">
-                        <label for="<%= marcas[i].marca %> "> <%= marcas[i].marca %> </label>
+                        <label for="<%= marcas[i].marca %>"> <%= marcas[i].marca %> </label>
                     </div> 
                 <% } %> 
             </div>
@@ -49,7 +49,6 @@
                     </div>
                 <% } %> 
             </div> -->
-            <p class="aplicar-filtro">Aplicar filtro</p>
         </section>
         <section class="der">
             <% for(let i = 0; i < productos.length; i++) { %>
