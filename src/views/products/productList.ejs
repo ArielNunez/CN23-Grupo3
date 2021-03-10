@@ -23,11 +23,11 @@
             <div class="container categoria">
                 <p>Categoria</p>
                 <div>
-                    <input type="checkbox" name="categoria" id="urbano" value="urbano">
+                    <input type="checkbox" name="categoria" id="urbano" value="1" class="categoria">
                     <label for="urbano">Urbano</label>
                 </div>
                 <div>
-                    <input type="checkbox" name="categoria" id="deportivo" value="deportivo">
+                    <input type="checkbox" name="categoria" id="deportivo" value="2" class="categoria">
                     <label for="deportivo">Deportivo</label>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                 <p>Marca</p>
                 <% for (i = 0; i < marcas.length; i++) { %>
                     <div>
-                        <input type="checkbox" name="marcas" id="<%= marcas[i].marca %>" value="<%= marcas[i].id %>">
+                        <input type="checkbox" name="marcas" id="<%= marcas[i].marca %>" value="<%= marcas[i].id %>" class="marca">
                         <label for="<%= marcas[i].marca %> "> <%= marcas[i].marca %> </label>
                     </div> 
                 <% } %> 
@@ -44,10 +44,13 @@
                 <p>Talle</p>
                 <% for (i = 0; i < talles.length; i++) { %>
                     <div>
-                        <input type="checkbox" name="talles" id="<%= talles[i].talle %> " value="<%= talles[i].id %> ">
+                        <input type="checkbox" name="talles" id="<%= talles[i].talle %> " value="<%= talles[i].id %>" class="talle">
                         <label for="<%= talles[i].talle %>"><%= talles[i].talle %></label>
                     </div>
                 <% } %> 
+            </div>
+            <div class="container">
+                <p class="aplicar-filtro">Aplicar filtro</p>
             </div>
         </section>
         <section class="der">
@@ -73,6 +76,6 @@
         <%- include("../partials/footer") %>
     </footer>
 
-    
+    <script src="/js/productFilter.js"></script>
 </body>
 </html>

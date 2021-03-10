@@ -29,8 +29,11 @@ window.addEventListener('load', () => {
     let adminNav = document.querySelector('header .navAdmin div.admin');
     let burgerAdmin = document.querySelector('header .navAdmin span');
 
-    burgerAdmin.addEventListener('click', () => {
-        adminNav.classList.toggle('display-none');
-        burgerAdmin.classList.toggle('cross');
-    });
+    if(burgerAdmin) {
+        burgerAdmin.addEventListener('click', () => {
+            adminNav.classList.toggle('display-none');
+            burgerAdmin.classList.toggle('cross');
+        });
+    }
+    
 });

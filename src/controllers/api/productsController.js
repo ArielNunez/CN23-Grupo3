@@ -12,10 +12,29 @@ module.exports = {
             group: ['id_categoria']
         });
 
+        
+        let condiciones = [];
+        if(req.query.categoria) {
+            for(let i=0; i<req.query.categoria.length; i++) {
+                condiciones.push({id_categoria: parseInt(req.query.categoria[i])});
+            }
+        }
+        if(req.query.marcas) {
+            for(let i=0; i<req.query.marcas.length; i++) {
+                condiciones.push({id_marca: parseInt(req.query.marcas[i])});
+            }
+        }
+        if(condiciones.length>0) {
+            condiciones = {
+                [db.Sequelize.Op.or]: condiciones
+            }
+        }
+
         // traer todos los productos
         let products = db.Producto.findAll({
+            where: condiciones,
             include: [
-                {association: "categoriaProducto"}
+                {association: "categoriaProducto"}, {association: "imagenes"}
             ]
         });
 
@@ -27,6 +46,9 @@ module.exports = {
                     producto: product.producto,
                     descripcion: product.descripcion,
                     categoria: product.categoriaProducto.categoria,
+                    precio: product.precio,
+                    descuento: product.descuento,
+                    imagen: product.imagenes[0].nombre,
                     detalle: '/api/productos/' + product.id
                 }
                 return product;
