@@ -35,5 +35,9 @@ module.exports = {
         .catch(function (err) {
             res.send("Lo sentimos, no pudimos procesar tu solicitud. Por favor intentalo nuevamente.")
           });
+    },
+
+    dashboard: function(req, res) {
+        res.redirect('http://localhost:3000')
     }
 }
