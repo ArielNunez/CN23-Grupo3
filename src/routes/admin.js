@@ -5,6 +5,7 @@ const multer = require("multer")
 const fs = require('fs');
 const productsController = require('../controllers/productsController');
 const usersController = require('../controllers/usersController');
+const maincontroller = require('../controllers/mainController');
 const authMiddleware = require('../middlewares/authMiddleware');
 const adminMiddleware = require('../middlewares/adminMiddleware');
 const productValidator = require('../validations/productValidator');
@@ -44,5 +45,7 @@ router.delete('/usuarios/editar/:id', usersController.delete);
 
 router.get('/nuevo', authMiddleware, adminMiddleware, usersController.newAdmin);
 router.post('/nuevo', usersController.saveAdmin);
+
+router.get('/dashboard', authMiddleware, adminMiddleware, maincontroller.dashboard)
 
 module.exports = router;

@@ -65,7 +65,7 @@ module.exports = {
                         res.cookie('recordarme', user.email, { maxAge: 60000 });
                     }
                     if (user.categoria == "2") {
-                        return res.redirect('/admin/productos/crear')
+                        return res.redirect('http://localhost:3000')
                     } else {
                         return res.redirect('/');
                     }
