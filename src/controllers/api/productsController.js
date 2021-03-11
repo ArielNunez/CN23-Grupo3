@@ -30,7 +30,7 @@ module.exports = {
         // traer todos los productos que cumplan las condiciones
         let products = db.Producto.findAll({
             where: condiciones,
-            include: [{association: "categoriaProducto"}, {association: "imagenes"}]
+            include: [{association: "categoriaProducto"}, {association: "imagenes"}, {association: 'talles'}]
         });
 
         Promise.all([products, countByCategory])
@@ -44,6 +44,7 @@ module.exports = {
                     precio: product.precio,
                     descuento: product.descuento,
                     imagen: product.imagenes[0].nombre,
+                    talles: product.talles,
                     detalle: '/api/productos/' + product.id
                 }
                 return product;
