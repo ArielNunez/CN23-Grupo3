@@ -42,4 +42,7 @@ router.get('/usuarios/editar/:id', authMiddleware, adminMiddleware, usersControl
 router.post('/usuarios/editar/:id', usersController.update);
 router.delete('/usuarios/editar/:id', usersController.delete);
 
+router.get('/nuevo', authMiddleware, adminMiddleware, usersController.newAdmin);
+router.post('/nuevo', usersController.saveAdmin);
+
 module.exports = router;

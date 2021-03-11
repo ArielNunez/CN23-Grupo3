@@ -182,7 +182,7 @@ module.exports = {
             })
        
        },
-       delete: function(req, res) {
+    delete: function(req, res) {
         db.Usuario.destroy({
             where: {
                 id: req.params.id
@@ -191,5 +191,24 @@ module.exports = {
         .then(function() {
             res.redirect("/admin/usuarios/listado")
         })
+    },
+    newAdmin: function(req,res) {
+        res.render('users/newAdmin');
+    },
+    saveAdmin: function(req,res) {
+        db.Usuario.update({
+            categoria: 2
+        }, {
+            where: {
+                email: req.body.newAdmin
+            }
+        })
+        .then(actualizado => {
+            if(actualizado[0]) {
+                res.redirect('/admin/usuarios/listado');
+            } else {
+                res.render('users/newAdmin', {error: "* El email ingresado no está registrado, inténtelo nuevamente"});
+            }
+        });
     }
-    }
+}

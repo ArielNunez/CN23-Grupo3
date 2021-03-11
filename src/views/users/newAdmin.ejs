@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head', {title: "Nuevo Producto"}) %>
+</head>
+<body>
+    <header>
+        <%- include("../partials/adminHeader") %>
+    </header>
+    <main class="newAdmin">
+        <section class="principal">
+            <div class="titulo">
+                <h1>Nuevo usuario administrador</h1>
+            </div>
+            <div class="formulario">
+                <form id='form' action="" method="POST">
+                    <div class="newAdmin">
+                        <label for="nombre">eMail del nuevo admin</label>
+                        <input type="email" name="newAdmin" id="newAdmin">
+                    </div>
+                    <small><%= typeof error != 'undefined' ? error : '' %></small>
+                    <div class="button">
+                        <a href=""><button id="button" type="submit">Guardar</button></a>
+                    </div>
+                </form>
+            </div>        
+        </section>
+    </main>
+</body>
+</html>

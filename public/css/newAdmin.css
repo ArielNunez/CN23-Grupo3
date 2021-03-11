@@ -1,0 +1,80 @@
+/* =============== 
+- General
+================= */
+main.newAdmin section.principal {
+    width: 85%;
+    padding: 60px 200px;
+    padding-left: 445px;
+    margin: auto;
+}
+
+main.newAdmin section.principal div.titulo {    
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+main.newAdmin section.principal div h1 {
+    padding: 0px 5px 20px 5px;
+    font-size: 30px;
+}
+
+main.newAdmin section.principal div.formulario form div {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 5px
+}
+
+main.newAdmin section.principal div.formulario form div label {
+    margin-right: 15px;
+    align-self: center;
+}
+
+main.newAdmin section.principal div.formulario form div input {
+    width: 40%;
+    border-radius: 5px;    
+    padding: 8px;
+}
+
+main.newAdmin section.principal div.formulario form small {
+    padding-top: 10px;
+    color: #ce0000;
+    font-size: 13px;
+}
+
+main.newAdmin .button {
+    display: flex;
+    align-items: center;
+    padding: 40px;    
+    border-top: 1px solid #eaeaea;
+    margin-top: 40px;
+}
+
+main.newAdmin #button {
+    background-color: #BF488D;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    width: 200px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold; 
+    margin: 20px 0px; 
+}
+
+main.newAdmin #button:hover {
+    filter: brightness(110%);
+}
+
+@media (max-width: 500px) {
+
+    main.newAdmin section.principal {
+        padding: 40px 0px;
+    }
+
+    main.newAdmin section.principal div.formulario form div {
+        padding: 0px;
+        flex-wrap: wrap;
+    }
+
+}
