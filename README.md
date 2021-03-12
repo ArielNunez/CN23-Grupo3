@@ -34,6 +34,11 @@ Página web de E-Comerce para un emprendimiento de venta de calzado multimarca.
 
 [https://trello.com/b/tvRqxLq4/championes](https://trello.com/b/tvRqxLq4/championes)
 
-## Heroku (desactualizado)
+## Heroku 
 
 [http://championes.herokuapp.com](http://championes.herokuapp.com/)
+
+
+## Repositorio Dashboard
+
+https://github.com/eulupo/dashboard-react
