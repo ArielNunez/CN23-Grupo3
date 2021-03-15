@@ -16,13 +16,19 @@
             </div>
 
             <div class="banner">
-                <h1>Calzado Urbano y Deportivo</h1>
+                <i class="fas fa-circle dots"  id="prevBtn"></i>
+                <i class="fas fa-circle dots" id="nextBtn"></i>
+                <div class="carousel-slide">
+                        <img src="/img/banner.jpg" id="ultimoSlide">
+                        <img src="/img/banner.jpg">
+                        <img src="/img/banner.jpg">
+                        <img src="/img/banner.jpg">
+                        <img src="/img/banner.jpg" id="primerSlide">
+                  </div>
             </div>
 
             <div class="puntos">            
-                <a href="#"><i class="fas fa-circle"></i></a>
-                <a href="#" class="negro"><i class="fas fa-circle"></i></a>
-                <a href="#"><i class="fas fa-circle"></i></a>
+                
             </div>
         </section>
 
@@ -92,6 +98,6 @@
     <footer>
         <%- include("./partials/footer") %>
     </footer>
-    
+    <script src="/js/index.js"></script>
 </body>
 </html>

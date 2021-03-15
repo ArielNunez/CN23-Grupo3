@@ -6,19 +6,20 @@ main.index {
     BANNER
 ===============*/
 
+
 main.index section.arriba .banner {
-    background-image: url('../img/banner.jpg');
+    /*background-image: url('../img/banner.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 425px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 425px;*/
+    width: 89%;
+    margin: auto;
+    overflow: hidden;
 }
 
-main.index section.arriba .banner h1 {
-    display: none
+.carousel-slide {
+    display: flex;
 }
 
 main.index section.arriba div.puntos {
@@ -27,20 +28,33 @@ main.index section.arriba div.puntos {
     letter-spacing: 5px;
 }
 
-main.index section.arriba div.puntos a {
-    color: grey;
+i.dots{
+    color: black;
     font-size: 15px;
     align-self: center;
 }
+/*
+i.dots #prevBtn {
+    position: absolute;
+    bottom: 20%;
+    right: 49%;
+}
+
+i.dots #nextBtn {
+    position: absolute;
+    bottom: 20%;
+    right: 51%;
+}*/
 
 main.index section.arriba div.puntos a.negro {
     color: #BF488D;
     font-size: 16px;
 }
 
-main.index section.arriba div.puntos a:hover {
+i.dots:hover {
     color: #BF488D;
 }
+
 
 /* ============
     BANNER 2
