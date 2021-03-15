@@ -118,7 +118,7 @@ window.addEventListener('load', function() {
         errores.errorTyC = true;
     }
 
-    if(Object.keys(errores).length == 0) {
+    if (Object.keys(errores).length == 0) {
         form.submit()
     }
 }) 

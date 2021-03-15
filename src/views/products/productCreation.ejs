@@ -21,15 +21,18 @@
                         <label for="nombre">Nombre del Producto</label>
                         <input type="text" name="producto" id="nombre">
                         <small> <%= (typeof errors != 'undefined' && errors.producto) ? errors.producto.msg : '' %> </small>
+                        <small id="errorNombre"></small>
                     </div>
                     <div class="descripcionProducto">
                         <label for="descripcion">Descripcion del Producto</label>
                         <textarea name="descripcion" id="descripcion" rows="10"></textarea>
+                        <small id="errorDescripcion"></small>
                         <small> <%= (typeof errors != 'undefined' && errors.descripcion) ? errors.descripcion.msg : '' %> </small>
                     </div>
                     <div class="imagen">
                         <label for="">Imagen del producto</label>
                         <input type="file" name="imagenes" id="imagen" accept=".jpg,.jpeg,.png" multiple>
+                        <small id="errorImagen"></small>
                         <small> <%= (typeof errors != 'undefined' && errors.imagen) ? errors.imagen.msg : '' %> </small>
                     </div>
                     <div class="categoria">
@@ -92,15 +95,18 @@
                                 <label for="t44"> 44</label>
                             </div>
                         </div>
+                        <small id="errorTalles"></small>
                     </div>
                     <div class="precio">
                         <label for="precio">Precio del Producto</label>
                         <input type="number" name="precio" id="precio">
                         <small> <%= (typeof errors != 'undefined' && errors.precio) ? errors.precio.msg : '' %> </small>
+                        <small id="errorPrecio"></small>
                     </div>
                     <div class="precio">
                         <label for="descuento">Descuento</label>
                         <input type="number" name="descuento" id="descuento">
+                        <small id="errorDescuento"></small>
                     </div>
                     <div class="button">
                         <a href=""><button id="button" type="submit">Crear Producto</button></a>
