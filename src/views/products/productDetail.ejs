@@ -70,34 +70,26 @@
         <section class="similares">
             <h3>Productos similares</h3>
             <div>
-                <a href="#"><i class="fas fa-arrow-left"></i></a>
-                <ul class="similares">
-                    <div class="similares1">
-                        <li><div>
-                            <img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">
-                            <p>Zapatillas Vans Original</p>
-                            <p class="precio">$7.999</p>
-                        </div></li>
-                        <li><div>
-                            <img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">
-                            <p>Zapatillas Vans Original</p>
-                            <p class="precio">$7.999</p>
-                        </div></li>
-                    </div>
-                    <div class="similares2">
-                        <li><div>
-                            <img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">
-                            <p>Zapatillas Vans Original</p>
-                            <p class="precio">$7.999</p>
-                        </div></li>
-                        <li><div>
-                            <img src="/img/vans-old-skool.jpg" alt="Zapatillas Vans Old Skool Negras">
-                            <p>Zapatillas Vans Original</p>
-                            <p class="precio">$7.999</p>
-                        </div></li>
-                    </div>
-                </ul>
-                <a href="#"><i class="fas fa-arrow-right"></i></a>
+                <div class="similares">
+                    <i class="fas fa-arrow-left"></i>
+                    <% for(let i = 0; i < similares.length; i++) { %>
+                        <div class="producto">
+                            <a href="/productos/detalle/<%= similares[i].id %>" id="enlace"></a>
+                            <img src="/img/uploads/productimage/<%= similares[i].imagenes[0].nombre %>" alt="">
+                            <h5><%= similares[i].producto %></h5>
+                            <% if(similares[i].descuento == null || similares[i].descuento == 0) { %>
+                                <p>$<%= similares[i].precio %></p>
+                            <% } else { %>
+                                <div class="descuento">
+                                    <p><span class="precioTachado">$<%= similares[i].precio %></span><span class="precioConDescuento">$<%= (similares[i].precio / 100 * (100-similares[i].descuento)) - (similares[i].precio / 100 * (100-similares[i].descuento))%1 %></span></p>
+                                    <h3 class="porcentaje"><%= similares[i].descuento %>% OFF</h3>
+                                    <div class="circle"></div>
+                                </div>
+                            <% } %> 
+                        </div>
+                    <% } %>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
             </div>
         </section>
     </main>

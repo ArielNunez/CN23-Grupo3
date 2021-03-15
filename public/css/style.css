@@ -12,6 +12,7 @@
 @import "productList.css";
 @import "tables.css";
 @import "userProfile.css";
+@import "newAdmin.css";
 /* =============== 
 - General
 ================= */
@@ -73,6 +74,10 @@ header nav.nav1 ul li a {
     font-weight: 800;
     text-transform: uppercase;    
     letter-spacing: 3px;
+}
+
+header nav.nav1 .perfil {
+    display: none;
 }
 
 header nav.nav2 {
@@ -184,9 +189,10 @@ footer a:hover{
         width: 60px;
     }
 
-    header nav.nav1 {
+    header nav.nav1, .navAdmin {
         width: auto;
-        order: -1;
+        order: -1;        
+        align-self: center;
     }
 
     header nav.nav1 ul {
@@ -201,8 +207,18 @@ footer a:hover{
         margin-top: 20px;
     }
 
-    header nav.nav1 ul.display-none {
+    header nav.nav1 .perfil {
+        display: block;
+    }
+
+    header nav.nav1 .display-none,
+    header .navAdmin div.display-none {
         display: none;
+    }
+
+    header .admin {            
+        top: 85px;
+        width: 45vw;
     }
 
     header nav.nav1 ul li {

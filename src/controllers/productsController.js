@@ -17,7 +17,40 @@ module.exports = {
             ]
         }).then(function(producto){
             if(producto.estado == 1) {
-                return res.render('products/productDetail', {producto: producto});
+                let mismaMarca = db.Producto.findAll({
+                    where: {
+                        id_marca: producto.id_marca,
+                        id: {
+                            [db.Sequelize.Op.ne]: producto.id
+                        }
+                    },
+                    limit: 4,
+                    include: [
+                        {association: "imagenes"}
+                    ]
+                });
+
+                let mismaCategoria = db.Producto.findAll({
+                    where: {
+                        id_categoria: producto.id_categoria,
+                        id: {
+                            [db.Sequelize.Op.ne]: producto.id
+                        }
+                    },
+                    limit: 4,
+                    include: [
+                        {association: "imagenes"}
+                    ]
+                });
+
+                Promise.all([mismaMarca, mismaCategoria])
+                    .then(([mismaMarca, mismaCategoria]) => {
+                        let similares = mismaMarca.concat(mismaCategoria);
+                        return res.render('products/productDetail', {producto: producto, similares: similares});
+                    })
+                    .catch(() => {
+                        return res.redirect('/');
+                    });
             } else {
                 return res.redirect('/');
             }

@@ -50,22 +50,20 @@
                 <% } %> 
             </div>
         </section>
-        <article class="ofertas">
         <section class="der">
-            <div class="listado-ofertas">
                 <% for(let i=0; i<4; i++) { %>
                 <div class="producto">
                     <a href="/productos/detalle/<%= ofertas[i].id %>" id="enlace"></a>
                     <img src="/img/uploads/productimage/<%= ofertas[i].imagenes[0].nombre %>" alt="">
                     <h5><%= ofertas[i].producto %></h5>
-                    <p><span class="precioTachado">$<%= ofertas[i].precio %></span><span class="precioConDescuento">$<%= (ofertas[i].precio / 100 * (100-ofertas[i].descuento)) - (ofertas[i].precio / 100 * (100-ofertas[i].descuento))%1 %></span></p>
-                    <h3 class="porcentaje"><%= ofertas[i].descuento %>% OFF</h3>
-                    <div class="circle"></div>
+                    <div class="descuento">
+                        <p><span class="precioTachado">$<%= ofertas[i].precio %></span><span class="precioConDescuento">$<%= (ofertas[i].precio / 100 * (100-ofertas[i].descuento)) - (ofertas[i].precio / 100 * (100-ofertas[i].descuento))%1 %></span></p>
+                        <h3 class="porcentaje"><%= ofertas[i].descuento %>% OFF</h3>
+                        <div class="circle"></div>
+                    </div>
                 </div>
                 <% } %>                    
-            </div>                     
         </section>
-    </article>
     </main>
     <footer>
         <%- include("../partials/footer") %>

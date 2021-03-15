@@ -6,7 +6,8 @@ module.exports = {
     db.Usuario.findAll ()
 .then(function(users){
     return res.status(200).json({
-        users:users
+        users:users,
+        count: users.length
     });
     
 })

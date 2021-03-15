@@ -75,3 +75,24 @@ section button.eliminar:hover {
     background-color: #bb2d3b;
     border-color: #b02a37;
 }
+
+@media (max-width: 500px) {
+
+    section.tablaUsuarios,
+    section.tablaProductos {
+        padding: 40px 0px;
+    }
+
+    table {
+        width: 90%;
+    }
+
+    th, td {
+        padding: 7px;
+        font-size: 15px;
+    }
+
+    td.nombre {        
+    width: 40%;
+    }
+}

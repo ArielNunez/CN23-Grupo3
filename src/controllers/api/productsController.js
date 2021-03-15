@@ -3,20 +3,34 @@ const sequelize = db.sequelize;
 
 module.exports = {
     all: (req, res) => {
+        let condicionesMarcas = [], condicionesCategoria = [], condiciones={};
+
         // contar cantidad de productos por categoria mediante un GROUP BY
         let countByCategory = db.Producto.findAll({
-            include: [
-                {association: "categoriaProducto"}
-            ],
+            include: [{association: "categoriaProducto"}],
             attributes: [[sequelize.fn('count', sequelize.col('producto')), 'cantidad']],
             group: ['id_categoria']
         });
 
-        // traer todos los productos
+        // generar condiciones de busqueda en base a la req.query
+        if(req.query.categoria) {
+            for(let i=0; i<req.query.categoria.length; i++) {
+                condicionesCategoria.push({id_categoria: parseInt(req.query.categoria[i])});
+            }
+            condicionesCategoria = {[db.Sequelize.Op.or]: condicionesCategoria}
+        }
+        if(req.query.marcas) {
+            for(let i=0; i<req.query.marcas.length; i++) {
+                condicionesMarcas.push({id_marca: parseInt(req.query.marcas[i])});
+            }
+            condicionesMarcas = {[db.Sequelize.Op.or]: condicionesMarcas}
+        }
+        condiciones={[db.Sequelize.Op.and]: [condicionesCategoria, condicionesMarcas]}
+        
+        // traer todos los productos que cumplan las condiciones
         let products = db.Producto.findAll({
-            include: [
-                {association: "categoriaProducto"}
-            ]
+            where: condiciones,
+            include: [{association: "categoriaProducto"}, {association: "imagenes"}, {association: 'talles'}]
         });
 
         Promise.all([products, countByCategory])
@@ -27,6 +41,10 @@ module.exports = {
                     producto: product.producto,
                     descripcion: product.descripcion,
                     categoria: product.categoriaProducto.categoria,
+                    precio: product.precio,
+                    descuento: product.descuento,
+                    imagen: product.imagenes[0].nombre,
+                    talles: product.talles,
                     detalle: '/api/productos/' + product.id
                 }
                 return product;

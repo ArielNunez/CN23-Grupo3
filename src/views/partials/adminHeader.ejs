@@ -1,4 +1,32 @@
 <a href="/"><img src="/design/logo/championes-logo.svg" alt="logo del sitio"></a>   
+<nav class="navAdmin">
+    <span class="burger"></span>
+    <div class="display-none admin">
+        <div class="productos">
+            <h3>Administrar Productos</h3>
+            <ul>
+                <li><a href="/admin/productos/listado">Ver todos</a></li>
+                <li><a href="/admin/productos/crear">Nuevo producto</a></li>
+            </ul>
+        </div>
+    
+        <div class="usuarios">
+            <h3>Administrar Usuarios</h3>
+            <ul>
+                <li><a href="/admin/usuarios/listado">Ver todos</a></li>
+                <li><a href="/admin/nuevo">Nuevo admin</a></li>
+            </ul>
+        </div>
+
+        <div class="dashboard">
+            <a href="/admin/dashboard"><h3>Dashboard</h3></a>
+        </div>
+
+        <div class="small">        
+            <small>© Championes 2021</small>
+        </div>
+    </div>
+</nav>
 <nav class="nav2">
     <ul>
         <li class="datosUsuario"><a href="/usuarios/perfil"><%= user.nombre %></a></li>

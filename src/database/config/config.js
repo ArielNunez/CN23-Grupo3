@@ -17,10 +17,10 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "229282",
+    "password": "Galileo2450",
+    "database": "santiagobullrich_championes",
+    "host": "mysql-santiagobullrich.alwaysdata.net",
     "dialect": "mysql"
   }
 }
