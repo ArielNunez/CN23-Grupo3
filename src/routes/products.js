@@ -3,6 +3,7 @@ const router = express.Router();
 const productsController = require('../controllers/productsController');
 const authMiddleware = require('../middlewares/authMiddleware');
 
+
 router.get('/detalle/:id', productsController.detalle);
 router.get('/carrito-de-compras', authMiddleware, productsController.carrito);
 router.get('/add-to-cart/:id, ')
