@@ -24,7 +24,7 @@ module.exports = function(sequelize, dataTypes) {
         },
         email: {
             type: dataTypes.STRING,
-            notNull: true
+            notNull: true,
         },
         password: {
             type: dataTypes.STRING,

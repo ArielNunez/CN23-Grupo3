@@ -25,7 +25,9 @@ module.exports = [
         .notEmpty()
         .withMessage('* Este campo es obligatorio')
         .isEmail()
-        .withMessage('* Debés ingresar un email válido.'),
+        .withMessage('* Debés ingresar un email válido.')
+        .exists()
+        .withMessage('* El email ingresado ya existe en nuestra base de datos'),
     check('confEmail')
         .notEmpty()
         .withMessage('* Este campo es obligatorio'),
