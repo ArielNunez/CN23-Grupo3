@@ -37,6 +37,8 @@ window.addEventListener('load', function() {
     } else if (inputNombre.value.length < 2) { 
         errores.nombre = "* El nombre del producto debe tener como mínimo 2 caracteres"
         errorNombre.innerText = errores.nombre
+    } else {
+        errorNombre.innerText = "";
     }
 
     // VALIDACIÓN DESCRIPCIÓN
@@ -47,6 +49,8 @@ window.addEventListener('load', function() {
     } else if (inputDescripcion.value.length < 2) { 
         errores.descripcion = "* La descripción del producto debe tener como mínimo 20 caracteres"
         errorDescripcion.innerText = errores.descripcion
+    } else {
+        errorDescripcion.innerText = "";
     }
 
    // VALIDACIÓN IMAGEN
@@ -54,7 +58,9 @@ window.addEventListener('load', function() {
    if (inputImagen.files.length <= 0) {
         errores.imagen = "* Debe cargar al menos una imagen"
         errorImagen.innerText = errores.imagen
-   };
+    }else {
+        errorImagen.innerText = "";
+    };
    
    //VALIDACIÓN TALLES
 
@@ -92,6 +98,8 @@ window.addEventListener('load', function() {
    if(!(numRegEx.test(inputPrecio.value))) {
     errores.precio = "* Ingrese un precio válido"
     errorPrecio.innerText = errores.precio
+    } else {
+        errorPrecio.innerText = '';
     }
 
     // VALIDACIÓN DESCUENTO
@@ -99,6 +107,8 @@ window.addEventListener('load', function() {
    if(!(numRegEx.test(inputDescuento.value))) {
     errores.descuento = "* Ingrese un número del 1 al 99"
     errorDescuento.innerText = errores.descuento
+    } else {
+        errorDescuento.innerText = '';
     }
 
     if (Object.keys(errores).length == 0) {

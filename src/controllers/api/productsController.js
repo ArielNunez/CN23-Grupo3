@@ -65,5 +65,19 @@ module.exports = {
         .catch( (error) => {
             return res.json(error);
         });
+    },
+    detail: (req, res) => {
+        db.Producto.findByPk(req.params.id, {
+            include: [{association: "categoriaProducto"}, {association: "imagenes"}, {association: 'talles'}]
+        })
+        .then(product => {
+            return res.status(200).json({
+                ...product.dataValues,
+                url: `/img/uploads/productimage/${product.imagenes[0].nombre}`
+            });
+        })
+        .catch(error => {
+            return res.json(error);
+        });
     }
 }
