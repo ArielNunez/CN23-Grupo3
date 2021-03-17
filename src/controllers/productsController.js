@@ -56,9 +56,6 @@ module.exports = {
             }
         });
     },
-    carrito: function(req,res) {
-        res.render('../views/products/productCart');
-    },
     crear: function(req, res) {
         let marcas = db.Marca.findAll({
             where: {
