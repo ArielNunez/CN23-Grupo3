@@ -218,6 +218,7 @@ main.index section.abajo .logos img.vans {
 
 main.index section.abajo .logos a.flechas {    
     padding: 0px 10px;
+    color: gray;
 }
 
 main.index section.abajo .logos a:hover {

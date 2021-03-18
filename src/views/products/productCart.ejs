@@ -11,16 +11,18 @@
     <main class="Carrito">
         <h2>MI CARRITO</h2>
         <div class="container">
+            <div class="contenedor-carrito">
+            <% for(let i = 0; i < carrito.length; i++) { %>
             <div class="carrito">
                 <div class="sin-sub">
                     <div class="imagen">
-                        <img src="https://www.dressinn.com/f/125/1252953/vans-old-skool.jpg" alt="producto">
+                        <img src="/img/uploads/productimage/<%= carrito[i].imagen %>" alt="<%= carrito[i].producto.producto %>">
                     </div>
                     <div class="detalle">
-                        <h3>Zapatillas Vans Original</h3>
+                        <h3><%= carrito[i].producto.producto %></h3>
                         <div class="talle">
                             <h6>Talle:</h6>
-                            <p>38</p>
+                            <p><%= carrito[i].talle %></p>
                         </div>
                         <div class="cantidad">
                             <h6>Cantidad:</h6>
@@ -34,34 +36,45 @@
                         </div>
                         <div class="precio">
                             <h6>Precio:</h6>
-                            <p>$10.000</p>
+                            <% if(carrito[i].producto.descuento == "") { %>
+                                <p>$<%= carrito[i].producto.precio %></p>
+                            <% } else { %>                        
+                                    <p>$<%= (carrito[i].producto.precio / 100 * (100-carrito[i].producto.descuento)) - (carrito[i].producto.precio / 100 * (100-carrito[i].producto.descuento))%1 %></p>
+                            <% } %>
                         </div>
-                        <form action="">
+                        <form action="?_method=DELETE" method="POST">
                                 <button><i class="fas fa-trash-alt"></i></button>
+                                <input type="hidden" name="idProducto" value="<%= carrito[i].producto.id %>">
                         </form>                    
                     </div>
-                </div>   
-                <p class="subtotal">$10.000</p>                
+                </div>                 
+            </div>
+            <% } %>
+            <a href="/"><button class="SG">Seguir comprando</button></a>
             </div>
             <div class="resumen">
                 <h3>Resumen</h3>
-                <div class="datosProducto">
-                    <p class="num">1x</p>
-                    <div>
-                        <p>Zapatillas Vans Original</p>
-                        <p class="talle">Talle:38</p>
-                    </div>
-                    <p>$10.000</p>
-                </div>
+                <table id="datosProducto">
+                    <% for(let i=0; i<carrito.length; i++) { %>
+                        <tr>
+                            <td><p class="num"><%= carrito[i].cantidad %>x</p></td>
+                            <td>
+                                <div class="producto">
+                                    <p><%= carrito[i].producto.producto %></p>
+                                    <p class="talle">Talle:<%= carrito[i].talle %></p>
+                                </div>
+                            </td>
+                            <td><p class="precio">$<%= carrito[i].producto.precio %></p></td>
+                        </tr>
+                    <% } %>
+                </table>
                 <p>¿Tenés un cupón de descuento?</p>
                 <form>
                     <input type="text" name="cupon">
                     <button type="submit">Aplicar Cupón</button>
-                    <div>
-                        <p>Subtotal</p>
-                        <p>$10.000</p>
+                    <div class="total">
                         <p>Total</p>
-                        <p>$10.000</p>
+                        <p id="precioTotal">$<%= totalCarrito %></p>
                     </div>
                     <button type="submit">Comprar</button>
                 </form>

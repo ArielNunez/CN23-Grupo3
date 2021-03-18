@@ -138,6 +138,7 @@ main.listaProductos section.der .circle {
         width: auto;
         justify-content: space-evenly;
         align-items: center;
+        flex-wrap: wrap;
     }
 
     main.listaProductos section.izq div {
@@ -160,7 +161,11 @@ main.listaProductos section.der .circle {
         letter-spacing: 1px;
     }
 
-    main.listaProductos section.izq div.container {
+    main.listaProductos section.izq div.categoria {
+        align-self: flex-start;
+    }
+
+    main.listaProductos section.izq div.display-none {
         display: none;
     }
 

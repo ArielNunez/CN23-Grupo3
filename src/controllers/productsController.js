@@ -56,9 +56,6 @@ module.exports = {
             }
         });
     },
-    carrito: function(req,res) {
-        res.render('../views/products/productCart');
-    },
     crear: function(req, res) {
         let marcas = db.Marca.findAll({
             where: {
@@ -322,7 +319,8 @@ module.exports = {
             },
             include: [
                 {association: "imagenes"}
-            ]
+            ],
+            order: [['updated_at', 'DESC'], ['created_at', 'DESC']]
         })
         
         Promise.all([marcas, talles, productos, ofertas])

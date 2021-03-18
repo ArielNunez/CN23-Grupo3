@@ -22,7 +22,6 @@ module.exports = {
                 email: req.body.email,
                 confEmail: req.body.confEmail
             }
-            res.send(errors)
             return res.render('users/register', {errors: errors.mapped(), user: user});
         } else {
             db.Usuario.create({

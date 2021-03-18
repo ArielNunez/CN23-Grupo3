@@ -23,7 +23,7 @@ window.addEventListener('load', function() {
                 errorConfEmail = document.querySelector('#errorConfEmail');
                 errorPass = document.querySelector('#errorPass');
                 errorConfPass = document.querySelector('#errorConfPass');
-                errorTyC = document.querySelector('#errorTyC')
+                errorTyC = document.querySelector('.errorTyC')
 
             let errores = {};
             let regEx = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -39,6 +39,8 @@ window.addEventListener('load', function() {
     } else if (inputNombre.value.length < 2) { 
         errores.nombre = "* El nombre debe tener como mínimo 2 caracteres"
         errorNombre.innerText = errores.nombre
+    } else {
+        errorNombre.innerText = "";
     }
 
     // VALIDACIÓN APELLIDO
@@ -49,6 +51,8 @@ window.addEventListener('load', function() {
     } else if (inputApellido.value.length < 2) { 
         errores.apellido = "* El apellido debe tener como mínimo 2 caracteres"
         errorApellido.innerText = errores.apellido
+    } else {
+        errorApellido.innerText = "";
     }
 
     // VALIDACIÓN NACIMIENTO
@@ -56,6 +60,8 @@ window.addEventListener('load', function() {
     if (!(dateRegEx.test(inputNacimiento.value))) {
     errores.nacimiento = "* Ingrese una fecha de nacimiento válida"
     errorNacimiento.innerText = errores.nacimiento
+    } else {
+        errorNacimiento.innerText = "";
     }
 
     // VALIDACIÓN DNI
@@ -63,6 +69,8 @@ window.addEventListener('load', function() {
     if(!(numRegEx.test(inputDni.value))) {
         errores.dni = "* Ingrese un número de DNI válido, sin puntos ni comas"
         errorDni.innerText = errores.dni
+    } else {
+        errorDni.innerText = "";
     }
 
     //VALIDACIÓN MAIL
@@ -73,19 +81,23 @@ window.addEventListener('load', function() {
     } else if (!regEx.test(inputEmail.value)) {
         errorEmail.innerHTML = "* Debes ingresar un email válido";
         errores.email = true;
+    } else {
+        errorEmail.innerText = "";
     }
 
     //VALIDACIÓN CONFIRMACIÓN EMAIL
     
     if (inputConfEmail.value == 0) {
-        errorconfEmail.innerHTML = "* Este campo es obligatorio"
+        errorConfEmail.innerHTML = "* Este campo es obligatorio"
         errores.confEmail = true;
     } else if (!regEx.test(inputEmail.value)) {
         errorConfEmail.innerHTML = "* Debes ingresar un email válido";
         errores.confEmail = true;
     } else if (inputEmail.value !== inputConfEmail.value) {
-        errorConfEmail.innerText = "* La contraseña debe coincidir con la ingresada anteriormente"
+        errorConfEmail.innerText = "* Los emails no coinciden"
         errores.ConfEmail = true;
+    } else {
+        errorConfEmail.innerText = "";
     }
 
     //VALIDACIÓN PASSWORD
@@ -96,6 +108,8 @@ window.addEventListener('load', function() {
     } else if (inputPass.value < 6) {
         errorPass.innerHTML = "* La contraseña debe tener un mínimo de 6 caracteres"
         errores.pass = true;
+    } else {
+        errorPass.innerText = "";
     }
 
     //VALIDACIÓN CONFIRMACIÓN PASSWORD
@@ -109,6 +123,8 @@ window.addEventListener('load', function() {
     } else if (inputPass.value !== inputConfPass.value) {
         errorConfPass.innerText = "* La contraseña debe coincidir con la ingresada anteriormente"
         errores.errorConfPass = true;
+    } else {
+        errorConfPass.innerText = "";
     }
 
     // VALIDACIÓN TYC
@@ -116,6 +132,8 @@ window.addEventListener('load', function() {
     if(!inputTyC.checked) {
         errorTyC.innerHTML = "* Debes aceptar los términos y condiciones"
         errores.errorTyC = true;
+    } else {
+        errorTyC.innerText = "";
     }
 
     if (Object.keys(errores).length == 0) {

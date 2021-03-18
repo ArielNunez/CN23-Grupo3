@@ -3,7 +3,7 @@ const sequelize = db.sequelize;
 
 module.exports = {
     all: (req, res) => {
-        let condicionesMarcas = [], condicionesCategoria = [], condiciones={};
+        let condicionesMarcas = [], condicionesCategoria = [], condiciones={}, orden=[];
 
         // contar cantidad de productos por categoria mediante un GROUP BY
         let countByCategory = db.Producto.findAll({
@@ -20,17 +20,31 @@ module.exports = {
             condicionesCategoria = {[db.Sequelize.Op.or]: condicionesCategoria}
         }
         if(req.query.marcas) {
-            for(let i=0; i<req.query.marcas.length; i++) {
-                condicionesMarcas.push({id_marca: parseInt(req.query.marcas[i])});
+            if(typeof req.query.marcas == 'string') {
+                condicionesMarcas.push({id_marca: parseInt(req.query.marcas)});
+            } else {
+                for(let i=0; i<req.query.marcas.length; i++) {
+                    condicionesMarcas.push({id_marca: parseInt(req.query.marcas[i])});
+                }
             }
             condicionesMarcas = {[db.Sequelize.Op.or]: condicionesMarcas}
         }
+        switch(req.query.orden) {
+            case 'novedades':
+                orden = [['updated_at', 'DESC'],['created_at', 'DESC']];
+                break;
+            case 'menorPrecio':
+                orden = [['precio', 'ASC']];
+                break;
+            case 'mayorPrecio':
+                orden = [['precio', 'DESC']];
+        }
         condiciones={[db.Sequelize.Op.and]: [condicionesCategoria, condicionesMarcas]}
-        
         // traer todos los productos que cumplan las condiciones
         let products = db.Producto.findAll({
             where: condiciones,
-            include: [{association: "categoriaProducto"}, {association: "imagenes"}, {association: 'talles'}]
+            include: [{association: "categoriaProducto"}, {association: "imagenes"}, {association: 'talles'}],
+            order: orden
         });
 
         Promise.all([products, countByCategory])

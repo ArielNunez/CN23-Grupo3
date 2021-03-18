@@ -54,11 +54,13 @@
                         </div>
                         <div class="tallesNum">
                             <% for(let i=0;i<producto.talles.length; i++) { %>
-                                <input type="radio" name="talle" value="<%= producto.talles[i].id %>" id="<%= producto.talles[i].talle %>">
+                                <input type="radio" name="talle" value="<%= producto.talles[i].talle %>" id="<%= producto.talles[i].talle %>">
                                 <label for="<%= producto.talles[i].talle %>"><%= producto.talles[i].talle %></label>
                             <% } %>
                         </div>
                     </div>
+                    <input type="hidden" name="productoId" value="<%= producto.id %>">
+                    <input type="hidden" name="imagen" value="<%= producto.imagenes[0].nombre %>">
                     <button type="submit">AGREGAR AL CARRITO</button>
                 </form>
             </article>

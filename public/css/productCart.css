@@ -14,9 +14,14 @@ main.Carrito div.container {
     flex-wrap: wrap;
 }
 
+main.Carrito div.contenedor-carrito {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
 main.Carrito div.carrito {
     display: flex;  
-    width: 65%;  
     height: min-content;
     padding: 10px 15px;
     border-bottom: solid 1px #CCCCCC;
@@ -65,6 +70,7 @@ main.Carrito div.carrito div.sin-sub div.detalle form button {
     background: none;
     padding-top: 5px;
     padding-left: 5px;
+    cursor: pointer;
 }
 
 main.Carrito div.carrito div.sin-sub div.detalle form button i {
@@ -78,6 +84,26 @@ main.Carrito div.carrito p.subtotal {
     align-self: flex-end;
 }
 
+main.Carrito div.contenedor-carrito a {
+    align-self: flex-end;
+}
+
+main.Carrito div.contenedor-carrito button.SG {
+    background-color: #BF488D;
+    color: white;
+    border-radius: 5px;
+    padding: 6px 12px 6px 12px;
+    font-size: 14px;
+    border: none;
+    margin: 20px 0px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+main.Carrito div.contenedor-carrito button.SG:hover {
+    filter: brightness(110%);
+}
+
 main.Carrito div.resumen {
     border: solid 1px #CCCCCC;
     width: 28%;
@@ -88,19 +114,20 @@ main.Carrito div.resumen {
 }
 
 main.Carrito div.resumen h3 {
-    padding-bottom: 48px;
+    padding-bottom: 23px;
     padding-top: 23px;
     text-transform: uppercase;
 }
 
-main.Carrito div.resumen .datosProducto {
-    display: flex;
-    justify-content: space-between;
-    width: 85%;
-    padding-bottom: 30px;
+main.Carrito div.resumen #datosProducto {
+    margin-bottom: 23px;
 }
 
-main.Carrito div.resumen .datosProducto p.num {    
+main.Carrito div.resumen #datosProducto td {
+    border: none;
+}
+
+main.Carrito div.resumen #datosProducto p.num {    
     padding-right: 10px;
 }
 
@@ -132,6 +159,12 @@ main.Carrito div.resumen form button:nth-child(2) {
     font-weight: 700;
 }
 
+main.Carrito div.resumen form button:nth-child(2):hover {
+    color: #fff;
+    background-color: #BF488D;
+    cursor: pointer;
+}
+
 main.Carrito div.resumen form div {
     display: flex;
     flex-wrap: wrap;
@@ -158,6 +191,12 @@ main.Carrito div.resumen form button:nth-child(4) {
     text-transform: uppercase;
     font-size: 17px;
     font-weight: 700;
+    cursor: pointer;
+}
+
+main.Carrito div.resumen form button:nth-child(4):hover {
+    background-color: #fff;
+    color: #BF488D;
 }
 
 @media(max-width: 500px) {
@@ -176,8 +215,11 @@ main.Carrito div.resumen form button:nth-child(4) {
         align-items: center;
     }
 
-    main.Carrito div.carrito {
+    main.Carrito div.contenedor-carrito {
         width: 85%;
+    }
+
+    main.Carrito div.carrito {
         flex-direction: column;
     }
     
