@@ -14,9 +14,12 @@ main.Carrito div.container {
     flex-wrap: wrap;
 }
 
+main.Carrito div.contenedor-carrito {
+    width: 65%;
+}
+
 main.Carrito div.carrito {
     display: flex;  
-    width: 65%;  
     height: min-content;
     padding: 10px 15px;
     border-bottom: solid 1px #CCCCCC;
@@ -88,19 +91,20 @@ main.Carrito div.resumen {
 }
 
 main.Carrito div.resumen h3 {
-    padding-bottom: 48px;
+    padding-bottom: 23px;
     padding-top: 23px;
     text-transform: uppercase;
 }
 
-main.Carrito div.resumen .datosProducto {
-    display: flex;
-    justify-content: space-between;
-    width: 85%;
-    padding-bottom: 30px;
+main.Carrito div.resumen #datosProducto {
+    margin-bottom: 23px;
 }
 
-main.Carrito div.resumen .datosProducto p.num {    
+main.Carrito div.resumen #datosProducto td {
+    border: none;
+}
+
+main.Carrito div.resumen #datosProducto p.num {    
     padding-right: 10px;
 }
 
@@ -176,8 +180,11 @@ main.Carrito div.resumen form button:nth-child(4) {
         align-items: center;
     }
 
-    main.Carrito div.carrito {
+    main.Carrito div.contenedor-carrito {
         width: 85%;
+    }
+
+    main.Carrito div.carrito {
         flex-direction: column;
     }
     

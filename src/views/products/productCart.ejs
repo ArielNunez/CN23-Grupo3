@@ -11,6 +11,7 @@
     <main class="Carrito">
         <h2>MI CARRITO</h2>
         <div class="container">
+            <div class="contenedor-carrito">
             <% for(let i = 0; i < carrito.length; i++) { %>
             <div class="carrito">
                 <div class="sin-sub">
@@ -49,23 +50,30 @@
                 </div>                 
             </div>
             <% } %>
+            </div>
             <div class="resumen">
                 <h3>Resumen</h3>
-                <div class="datosProducto">
-                    <p class="num">1x</p>
-                    <div>
-                        <p>Zapatillas Vans Original</p>
-                        <p class="talle">Talle:38</p>
-                    </div>
-                    <p>$10.000</p>
-                </div>
+                <table id="datosProducto">
+                    <% for(let i=0; i<carrito.length; i++) { %>
+                        <tr>
+                            <td><p class="num"><%= carrito[i].cantidad %>x</p></td>
+                            <td>
+                                <div class="producto">
+                                    <p><%= carrito[i].producto.producto %></p>
+                                    <p class="talle">Talle:<%= carrito[i].talle %></p>
+                                </div>
+                            </td>
+                            <td><p class="precio">$<%= carrito[i].producto.precio %></p></td>
+                        </tr>
+                    <% } %>
+                </table>
                 <p>¿Tenés un cupón de descuento?</p>
                 <form>
                     <input type="text" name="cupon">
                     <button type="submit">Aplicar Cupón</button>
                     <div class="total">
                         <p>Total</p>
-                        <p id="precioTotal">$10.000</p>
+                        <p id="precioTotal">$<%= totalCarrito %></p>
                     </div>
                     <button type="submit">Comprar</button>
                 </form>

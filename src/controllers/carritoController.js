@@ -27,7 +27,11 @@ module.exports = {
             ]
         })
         .then(function(carrito){
-            res.render('products/productCart', {carrito:carrito})
+            let totalCarrito = 0;
+            for(let i=0; i<carrito.length; i++) {
+                totalCarrito += parseFloat(carrito[i].producto.precio);
+            }
+            res.render('products/productCart', {carrito:carrito, totalCarrito: totalCarrito});
         })
 
     },
