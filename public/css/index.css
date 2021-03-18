@@ -12,10 +12,11 @@ main.index section.arriba .banner {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;*/
-    width: 1100px;
-    height: 315px;
     margin: auto;
+    width: 80%;
     overflow: hidden;
+    display: flex;
+    position: relative;
 }
 
 .carousel-slide {
@@ -28,28 +29,22 @@ main.index section.arriba div.puntos {
     letter-spacing: 5px;
 }
 
-i.dots{
-    color:grey;
-    font-size: 15px;
+i.dots {
+    color: grey;
+    font-size: 20px;
     align-self: center;
-    
-}
-/*
-i.dots #prevBtn {
     position: absolute;
-    bottom: 0%;
-    right: 50%;
     z-index: 10;
-    left: 51%;
 }
 
-i.dots #nextBtn {
-    position: absolute;
-    right: 50%;
-    z-index: 10;
-    right: 51%;
+i#prevBtn {
+    left: 10px; 
 }
-*/
+
+ i#nextBtn {
+    right: 10px;
+}
+
 
 main.index section.arriba div.puntos a.negro {
     color: #BF488D;
