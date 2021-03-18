@@ -6,7 +6,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 
 
 router.get('/detalle/:id', productsController.detalle);
-router.post('/detalle/:id', carritoController.guardarCarrito)
+router.post('/detalle/:id', authMiddleware, carritoController.guardarCarrito)
 router.get('/carrito-de-compras', authMiddleware, carritoController.getCarrito);
 router.delete('/carrito-de-compras', carritoController.deleteItem);
 router.get('/explorar', productsController.productosTodos)

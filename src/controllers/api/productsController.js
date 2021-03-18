@@ -20,13 +20,16 @@ module.exports = {
             condicionesCategoria = {[db.Sequelize.Op.or]: condicionesCategoria}
         }
         if(req.query.marcas) {
-            for(let i=0; i<req.query.marcas.length; i++) {
-                condicionesMarcas.push({id_marca: parseInt(req.query.marcas[i])});
+            if(typeof req.query.marcas == 'string') {
+                condicionesMarcas.push({id_marca: parseInt(req.query.marcas)});
+            } else {
+                for(let i=0; i<req.query.marcas.length; i++) {
+                    condicionesMarcas.push({id_marca: parseInt(req.query.marcas[i])});
+                }
             }
             condicionesMarcas = {[db.Sequelize.Op.or]: condicionesMarcas}
         }
         condiciones={[db.Sequelize.Op.and]: [condicionesCategoria, condicionesMarcas]}
-        
         // traer todos los productos que cumplan las condiciones
         let products = db.Producto.findAll({
             where: condiciones,
