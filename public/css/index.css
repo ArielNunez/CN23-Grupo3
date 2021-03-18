@@ -13,7 +13,7 @@ main.index section.arriba .banner {
     background-repeat: no-repeat;
     background-size: cover;*/
     margin: auto;
-    width: 80%;
+    width: 100%;
     overflow: hidden;
     display: flex;
     position: relative;
@@ -21,6 +21,10 @@ main.index section.arriba .banner {
 
 .carousel-slide {
     display: flex;
+}
+
+.carousel-slide img {
+    width: 100vw;
 }
 
 main.index section.arriba div.puntos {
@@ -31,7 +35,7 @@ main.index section.arriba div.puntos {
 
 i.dots {
     color: grey;
-    font-size: 20px;
+    font-size: 30px;
     align-self: center;
     position: absolute;
     z-index: 10;
