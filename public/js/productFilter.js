@@ -62,6 +62,7 @@ window.addEventListener('load', () => {
         filtrar();
     } else if(window.location.search == '?urbano'){
         inputsCategoria[0].checked = 1;
+        filtrar();
     }
 
     // RESPONSIVE
