@@ -11,8 +11,7 @@
         <section class="izq">
             <div class="orden">
                 <select name="orden" id="orden">
-                    <option value="relevantes">Más relevantes</option>
-                    <option value="nodevades">Novedades</option>
+                    <option value="novedades">Novedades</option>
                     <option value="menorPrecio">Menor precio</option>
                     <option value="mayorPrecio">Mayor precio</option>
                 </select>
@@ -20,7 +19,7 @@
             <div class="filtro">
                 <button>Filtro</button>
             </div>
-            <div class="container categoria">
+            <div class="container categoria display-none">
                 <p>Categoria</p>
                 <div>
                     <input type="checkbox" name="categoria" id="urbano" value="1" class="categoria">
@@ -31,7 +30,7 @@
                     <label for="deportivo">Deportivo</label>
                 </div>
             </div>
-            <div class="container marca">
+            <div class="container marca display-none">
                 <p>Marca</p>
                 <% for (i = 0; i < marcas.length; i++) { %>
                     <div>
@@ -40,15 +39,6 @@
                     </div> 
                 <% } %> 
             </div>
-            <!-- <div class="container talle">
-                <p>Talle</p>
-                <% for (i = 0; i < talles.length; i++) { %>
-                    <div>
-                        <input type="checkbox" name="talles" id="<%= talles[i].talle %> " value="<%= talles[i].id %>" class="talle">
-                        <label for="<%= talles[i].talle %>"><%= talles[i].talle %></label>
-                    </div>
-                <% } %> 
-            </div> -->
         </section>
         <section class="der">
             <% for(let i = 0; i < productos.length; i++) { %>

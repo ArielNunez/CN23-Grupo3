@@ -319,7 +319,8 @@ module.exports = {
             },
             include: [
                 {association: "imagenes"}
-            ]
+            ],
+            order: [['updated_at', 'DESC'], ['created_at', 'DESC']]
         })
         
         Promise.all([marcas, talles, productos, ofertas])
