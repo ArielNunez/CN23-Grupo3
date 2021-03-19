@@ -57,12 +57,22 @@ window.addEventListener('load', () => {
     inputsMarca.forEach(input => {input.addEventListener('click', filtrar)});
     selectOrden.addEventListener('change', filtrar);
 
-    if(window.location.search == '?deportivo') {
-        inputsCategoria[1].checked = 1;
-        filtrar();
-    } else if(window.location.search == '?urbano'){
-        inputsCategoria[0].checked = 1;
-        filtrar();
+    switch(window.location.search) {
+        case '?urbano':
+            inputsCategoria[0].checked = 1;
+            filtrar();
+            break;
+        case '?deportivo':
+            inputsCategoria[1].checked = 1;
+            filtrar();
+            break;
+        default:
+            for(let i=0; i<inputsMarca.length; i++) {
+                if(window.location.search == ('?' + inputsMarca[i].id)) {
+                    inputsMarca[i].checked = 1;
+                    filtrar();
+                }
+            }
     }
 
     // RESPONSIVE
