@@ -57,6 +57,14 @@ window.addEventListener('load', () => {
     inputsMarca.forEach(input => {input.addEventListener('click', filtrar)});
     selectOrden.addEventListener('change', filtrar);
 
+    if(window.location.search == '?deportivo') {
+        inputsCategoria[1].checked = 1;
+        filtrar();
+    } else if(window.location.search == '?urbano'){
+        inputsCategoria[0].checked = 1;
+        filtrar();
+    }
+
     // RESPONSIVE
     botonFiltro.addEventListener('click', () => {
         categorias.classList.toggle('display-none');
