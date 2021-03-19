@@ -39,5 +39,8 @@ module.exports = {
 
     dashboard: function(req, res) {
         res.redirect('http://localhost:3000')
+    },
+    contacto: function(req, res) {
+        res.render('contacto')
     }
 }

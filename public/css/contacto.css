@@ -1,0 +1,45 @@
+
+.contacto h2 {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.formularioContacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formularioContacto form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 40px;
+}
+
+#email {
+    margin-top: 5px;
+}
+
+#mensaje {
+    margin-top: 20px;
+}
+
+#texto {
+    height: 40px;
+    margin-top: 5px;
+}
+
+#botonContacto {
+    margin-top: 20px;
+    width: 10%;
+    margin-bottom: 175px;
+    background-color: #BF488D;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold; 
+}
+
