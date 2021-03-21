@@ -81,6 +81,7 @@ main.productCreation section.principal div.formulario form div.talles div.numero
 main.productCreation section.principal div.formulario form div.talles div.numeros div input {
     opacity: 0;
     position: absolute;
+    width: auto;
 }
 
 main.productCreation section.principal div.formulario form div.talles div.numeros div label {

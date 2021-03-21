@@ -239,6 +239,10 @@ footer a:hover{
         display: none;
     } 
 
+    header .admin .sidebar-brand {
+        display: none;
+    }
+
     header .burger::before {
         color: white; 
         background-color: black;

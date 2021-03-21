@@ -1,16 +1,19 @@
 .admin {
     display: flex;
     flex-direction: column;
-    background-color: #aeaeae;
-    height: 100%;
+    background-color: #3c3c3c;
+    font-family: "Roboto";
+    height: 100%;    
+    width: 14rem!important;
     padding: 20px;
+    padding-top: 0px;
     left: 0;
     position: fixed;
-    top: 116px;
-    width: 17vw;
+    top: 0px;
+    z-index: 99;
 }
 
-.admin .productos,
+/*.admin .productos,
 .admin .usuarios {
     display: flex;
     flex-direction: column;
@@ -52,4 +55,111 @@
 .admin small {
     align-self: flex-end;
     font-size: 14px;
+}*/
+
+.sidebar-brand {
+    color: #fff;
+}
+
+.sidebar-brand {
+    height: 4.375rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+    z-index: 1;
+}
+
+.align-items-center {
+    align-items: center!important;
+}
+
+.justify-content-center {
+    justify-content: center!important;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.sidebar-brand-icon img {
+    height: 3rem;
+    width: auto;
+    vertical-align: middle;
+}
+
+.sidebar-brand div.sidebar-brand-text {
+    margin-left: 0.3rem!important;
+    margin-right: 1rem!important;
+}
+
+.admin ul {
+    border-top: 1px solid rgba(255,255,255,.15);
+    border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+.admin .sidebar-heading {
+    border-top: 1px solid rgba(255,255,255,.15);
+    padding-top: 20px;
+}
+
+.admin li a {
+    padding: 20px 0px;
+}
+
+.admin .nav-item.active .nav-link {
+    color: #fff;
+    font-weight: 700;
+}
+
+.admin .nav-item .nav-link {
+    color: rgba(255,255,255,.8);
+}
+
+.admin .nav-item .nav-link {
+    display: block;
+    text-align: left;
+    width: 14rem;
+}
+
+.admin .nav-item .nav-link span {
+    font-size: .85rem;
+    display: inline;
+}
+
+.admin .sidebar-heading {
+    color: rgba(255,255,255,.4);
+}
+
+.admin .sidebar-heading {
+    text-align: left;
+}
+
+.admin .sidebar-heading {
+    font-weight: 800;
+    font-size: .65rem;
+}
+
+.admin .sidebar-heading {
+    text-transform: uppercase!important;
+}
+
+.admin .nav-item .nav-link i {
+    color: rgba(255,255,255,.3);
+}
+
+.admin .nav-item .nav-link i {
+    font-size: .85rem;
+    margin-right: .25rem;
+}
+
+.admin .fa, .admin .fas {
+    font-weight: 900;
+}
+
+.admin .nav-item.active .nav-link i {
+    color: #fff;
 }
