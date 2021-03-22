@@ -6,16 +6,18 @@ main.newAdmin section.principal {
     padding: 60px 200px;
     padding-left: 445px;
     margin: auto;
+    color: #5a5c69!important;
 }
 
 main.newAdmin section.principal div.titulo {    
     margin-bottom: 40px;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid #c8c8c8;
 }
 
 main.newAdmin section.principal div h1 {
     padding: 0px 5px 20px 5px;
     font-size: 30px;
+    font-weight: 500;
 }
 
 main.newAdmin section.principal div.formulario form div {
@@ -45,7 +47,7 @@ main.newAdmin .button {
     display: flex;
     align-items: center;
     padding: 40px;    
-    border-top: 1px solid #eaeaea;
+    border-top: 1px solid #c8c8c8;
     margin-top: 40px;
 }
 

@@ -1,3 +1,11 @@
+.headerAdmin {
+    background-color: white;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+    height: 4.375rem;
+    color: black;
+    font-family: "Roboto";
+}
+
 .admin {
     display: flex;
     flex-direction: column;
@@ -10,7 +18,15 @@
     left: 0;
     position: fixed;
     top: 0px;
-    z-index: 99;
+    z-index: 99;    
+}
+
+.headerAdmin .nav2 a {
+    color: #858796;
+}
+
+.headerAdmin .nav2 a:hover {
+    color: #BF488D;
 }
 
 /*.admin .productos,
@@ -163,3 +179,12 @@
 .admin .nav-item.active .nav-link i {
     color: #fff;
 }
+
+.nav-item .nav-link:hover {
+    color:#BF488D
+}
+
+.nav-item .nav-link:hover i {
+    color:#BF488D
+}
+
