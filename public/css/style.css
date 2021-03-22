@@ -259,6 +259,11 @@ footer a:hover{
         content: "\f0c9";
     }
 
+    .headerAdmin .burger::before {
+        color: black; 
+        background-color: initial;
+    }
+
     header .cross::before {
         content: "\f00d";
         margin-left: 5px;

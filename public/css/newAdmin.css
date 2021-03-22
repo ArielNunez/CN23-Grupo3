@@ -1,12 +1,17 @@
 /* =============== 
 - General
 ================= */
-main.newAdmin section.principal {
+main.newAdmin section.principal,
+main.edit-user section.edit-user {
     width: 85%;
     padding: 60px 200px;
     padding-left: 445px;
     margin: auto;
     color: #5a5c69!important;
+}
+
+main.edit-user section.edit-user {
+    width: auto;
 }
 
 main.newAdmin section.principal div.titulo {    
@@ -70,7 +75,8 @@ main.newAdmin #button:hover {
 
 @media (max-width: 500px) {
 
-    main.newAdmin section.principal {
+    main.newAdmin section.principal,
+    main.edit-user section.edit-user {
         padding: 40px 0px;
     }
 
