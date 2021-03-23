@@ -8,6 +8,9 @@
             <li><a href="/usuarios/perfil">Mi Cuenta</a></li>
             <li><a href="#">Mis Pedidos</a></li>
             <li><a href="/usuarios/editar">Editar</a></li>
+            <% if(user && user.categoria == 2) { %>
+                <li><a href="http://localhost:3000/">Dashboard</a></li>
+            <% } %>
         </ul>
         <div class="lineaDivisoria">
         </div>
